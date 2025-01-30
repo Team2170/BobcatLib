@@ -410,6 +410,14 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="BobcatLib/Hardware/Sensors/SpatialSensor/Utility/DistanceMode.html#asPWF()" class="member-name-link">asPWF()</a> - Method in class BobcatLib.Hardware.Sensors.SpatialSensor.Utility.<a href="BobcatLib/Hardware/Sensors/SpatialSensor/Utility/DistanceMode.html" title="class in BobcatLib.Hardware.Sensors.SpatialSensor.Utility">DistanceMode</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="BobcatLib/Utilities/OperationalMode.html#asReal()" class="member-name-link">asReal()</a> - Static method in class BobcatLib.Utilities.<a href="BobcatLib/Utilities/OperationalMode.html" title="class in BobcatLib.Utilities">OperationalMode</a></dt>
+<dd>
+<div class="block">Creates an instance representing the real mode.</div>
+</dd>
+<dt><a href="BobcatLib/Utilities/OperationalMode.html#asReplay()" class="member-name-link">asReplay()</a> - Static method in class BobcatLib.Utilities.<a href="BobcatLib/Utilities/OperationalMode.html" title="class in BobcatLib.Utilities">OperationalMode</a></dt>
+<dd>
+<div class="block">Creates an instance representing the replay mode.</div>
+</dd>
 <dt><a href="BobcatLib/Hardware/Motors/Utility/SoftwareLimitWrapper.html#asRev()" class="member-name-link">asRev()</a> - Method in class BobcatLib.Hardware.Motors.Utility.<a href="BobcatLib/Hardware/Motors/Utility/SoftwareLimitWrapper.html" title="class in BobcatLib.Hardware.Motors.Utility">SoftwareLimitWrapper</a></dt>
 <dd>
 <div class="block">Converts the current configuration to a REV-compatible LimitSwitchConfig object.</div>
@@ -428,6 +436,10 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="BobcatLib/Subsystems/Swerve/SimpleSwerve/Swerve/Module/SwerveModuleReal.html#assignSteerMotor(java.lang.String,int)" class="member-name-link">assignSteerMotor(String, int)</a> - Method in class BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.<a href="BobcatLib/Subsystems/Swerve/SimpleSwerve/Swerve/Module/SwerveModuleReal.html" title="class in BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module">SwerveModuleReal</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="BobcatLib/Utilities/OperationalMode.html#asSim()" class="member-name-link">asSim()</a> - Static method in class BobcatLib.Utilities.<a href="BobcatLib/Utilities/OperationalMode.html" title="class in BobcatLib.Utilities">OperationalMode</a></dt>
+<dd>
+<div class="block">Creates an instance representing the simulation mode.</div>
+</dd>
 <dt><a href="BobcatLib/Subsystems/Swerve/SimpleSwerve/Swerve/interfaces/AutomatedSwerve.html#autoAlignAngle()" class="member-name-link">autoAlignAngle()</a> - Method in interface BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.interfaces.<a href="BobcatLib/Subsystems/Swerve/SimpleSwerve/Swerve/interfaces/AutomatedSwerve.html" title="interface in BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.interfaces">AutomatedSwerve</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="BobcatLib/Subsystems/Swerve/SimpleSwerve/SwerveDrive.html#autoAlignAngle()" class="member-name-link">autoAlignAngle()</a> - Method in class BobcatLib.Subsystems.Swerve.SimpleSwerve.<a href="BobcatLib/Subsystems/Swerve/SimpleSwerve/SwerveDrive.html" title="class in BobcatLib.Subsystems.Swerve.SimpleSwerve">SwerveDrive</a></dt>
@@ -538,6 +550,8 @@ loadScripts(document, 'script');</script>
 <dt><a href="BobcatLib/Subsystems/Swerve/SimpleSwerve/Constants.FieldConstants.html#blueAmpCenter" class="member-name-link">blueAmpCenter</a> - Static variable in class BobcatLib.Subsystems.Swerve.SimpleSwerve.<a href="BobcatLib/Subsystems/Swerve/SimpleSwerve/Constants.FieldConstants.html" title="class in BobcatLib.Subsystems.Swerve.SimpleSwerve">Constants.FieldConstants</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="BobcatLib/Subsystems/Swerve/SimpleSwerve/Constants.FieldConstants.html#blueSpeakerPose" class="member-name-link">blueSpeakerPose</a> - Static variable in class BobcatLib.Subsystems.Swerve.SimpleSwerve.<a href="BobcatLib/Subsystems/Swerve/SimpleSwerve/Constants.FieldConstants.html" title="class in BobcatLib.Subsystems.Swerve.SimpleSwerve">Constants.FieldConstants</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="BobcatLib/package-summary.html">BobcatLib</a> - package BobcatLib</dt>
 <dd>&nbsp;</dd>
 <dt><a href="BobcatLib/Hardware/Controllers/package-summary.html">BobcatLib.Hardware.Controllers</a> - package BobcatLib.Hardware.Controllers</dt>
 <dd>
@@ -684,6 +698,16 @@ loadScripts(document, 'script');</script>
 <dt><a href="BobcatLib/Utilities/package-summary.html">BobcatLib.Utilities</a> - package BobcatLib.Utilities</dt>
 <dd>
 <div class="block">BobcatLib Utilities</div>
+</dd>
+<dt><a href="BobcatLib/BobcatLibCoreRobot.html" class="type-name-link" title="class in BobcatLib">BobcatLibCoreRobot</a> - Class in <a href="BobcatLib/package-summary.html">BobcatLib</a></dt>
+<dd>
+<div class="block">The methods in this class are called automatically corresponding to each mode, as described in
+ the TimedRobot documentation.</div>
+</dd>
+<dt><a href="BobcatLib/BobcatLibCoreRobot.html#%3Cinit%3E(BobcatLib.Utilities.OperationalMode)" class="member-name-link">BobcatLibCoreRobot(OperationalMode)</a> - Constructor for class BobcatLib.<a href="BobcatLib/BobcatLibCoreRobot.html" title="class in BobcatLib">BobcatLibCoreRobot</a></dt>
+<dd>
+<div class="block">This function is run when the robot is first started up and should be used for any
+ initialization code.</div>
 </dd>
 <dt><a href="BobcatLib/Utilities/BobcatRunner.html" class="type-name-link" title="class in BobcatLib.Utilities">BobcatRunner</a> - Class in <a href="BobcatLib/Utilities/package-summary.html">BobcatLib.Utilities</a></dt>
 <dd>&nbsp;</dd>
@@ -2408,6 +2432,10 @@ loadScripts(document, 'script');</script>
 <dt><a href="BobcatLib/Subsystems/Vision/Components/Utility/apriltag/AprilTagDetection.html#getCornerY(int)" class="member-name-link">getCornerY(int)</a> - Method in class BobcatLib.Subsystems.Vision.Components.Utility.apriltag.<a href="BobcatLib/Subsystems/Vision/Components/Utility/apriltag/AprilTagDetection.html" title="class in BobcatLib.Subsystems.Vision.Components.Utility.apriltag">AprilTagDetection</a></dt>
 <dd>
 <div class="block">Gets a corner of the tag in image pixel coordinates.</div>
+</dd>
+<dt><a href="BobcatLib/Utilities/OperationalMode.html#getCurrentMode()" class="member-name-link">getCurrentMode()</a> - Method in class BobcatLib.Utilities.<a href="BobcatLib/Utilities/OperationalMode.html" title="class in BobcatLib.Utilities">OperationalMode</a></dt>
+<dd>
+<div class="block">Gets the current mode of operation.</div>
 </dd>
 <dt><a href="BobcatLib/Subsystems/Vision/Limelight/Structures/LimelightPipelineData.html#getCurrentPipelineIndex()" class="member-name-link">getCurrentPipelineIndex()</a> - Method in class BobcatLib.Subsystems.Vision.Limelight.Structures.<a href="BobcatLib/Subsystems/Vision/Limelight/Structures/LimelightPipelineData.html" title="class in BobcatLib.Subsystems.Vision.Limelight.Structures">LimelightPipelineData</a></dt>
 <dd>
@@ -4924,6 +4952,14 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Ioen Loop Ramp</div>
 </dd>
+<dt><a href="BobcatLib/Utilities/OperationalMode.html" class="type-name-link" title="class in BobcatLib.Utilities">OperationalMode</a> - Class in <a href="BobcatLib/Utilities/package-summary.html">BobcatLib.Utilities</a></dt>
+<dd>
+<div class="block">Represents the operational mode of a robot.</div>
+</dd>
+<dt><a href="BobcatLib/Utilities/OperationalMode.Mode.html" class="type-name-link" title="enum class in BobcatLib.Utilities">OperationalMode.Mode</a> - Enum Class in <a href="BobcatLib/Utilities/package-summary.html">BobcatLib.Utilities</a></dt>
+<dd>
+<div class="block">Enumeration of possible operational modes.</div>
+</dd>
 <dt><a href="BobcatLib/Subsystems/Swerve/SimpleSwerve/Swerve/Module/Utility/BaseModuleState.html#optimize(edu.wpi.first.math.kinematics.SwerveModuleState,edu.wpi.first.math.geometry.Rotation2d)" class="member-name-link">optimize(SwerveModuleState, Rotation2d)</a> - Static method in class BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.Utility.<a href="BobcatLib/Subsystems/Swerve/SimpleSwerve/Swerve/Module/Utility/BaseModuleState.html" title="class in BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.Utility">BaseModuleState</a></dt>
 <dd>
 <div class="block">Minimize the change in heading the desired swerve module state would require by potentially
@@ -5335,6 +5371,10 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Running on a real robot.</div>
 </dd>
+<dt><a href="BobcatLib/Utilities/OperationalMode.Mode.html#REAL" class="member-name-link">REAL</a> - Enum constant in enum class BobcatLib.Utilities.<a href="BobcatLib/Utilities/OperationalMode.Mode.html" title="enum class in BobcatLib.Utilities">OperationalMode.Mode</a></dt>
+<dd>
+<div class="block">Running on a real robot.</div>
+</dd>
 <dt><a href="BobcatLib/Subsystems/Vision/Limelight/Estimator/LimelightPoseEstimator.BotPose.html#RED" class="member-name-link">RED</a> - Enum constant in enum class BobcatLib.Subsystems.Vision.Limelight.Estimator.<a href="BobcatLib/Subsystems/Vision/Limelight/Estimator/LimelightPoseEstimator.BotPose.html" title="enum class in BobcatLib.Subsystems.Vision.Limelight.Estimator">LimelightPoseEstimator.BotPose</a></dt>
 <dd>
 <div class="block">(Not Recommended) The robot's pose in the WPILib Red Alliance Coordinate System.</div>
@@ -5371,6 +5411,10 @@ loadScripts(document, 'script');</script>
 <div class="block">Removes a family of tags from the detector.</div>
 </dd>
 <dt><a href="BobcatLib/Subsystems/Swerve/SimpleSwerve/Constants.Mode.html#REPLAY" class="member-name-link">REPLAY</a> - Enum constant in enum class BobcatLib.Subsystems.Swerve.SimpleSwerve.<a href="BobcatLib/Subsystems/Swerve/SimpleSwerve/Constants.Mode.html" title="enum class in BobcatLib.Subsystems.Swerve.SimpleSwerve">Constants.Mode</a></dt>
+<dd>
+<div class="block">Replaying from a log file.</div>
+</dd>
+<dt><a href="BobcatLib/Utilities/OperationalMode.Mode.html#REPLAY" class="member-name-link">REPLAY</a> - Enum constant in enum class BobcatLib.Utilities.<a href="BobcatLib/Utilities/OperationalMode.Mode.html" title="enum class in BobcatLib.Utilities">OperationalMode.Mode</a></dt>
 <dd>
 <div class="block">Replaying from a log file.</div>
 </dd>
@@ -6061,6 +6105,10 @@ loadScripts(document, 'script');</script>
 <dt><a href="BobcatLib/Hardware/Sensors/SpatialSensor/Utility/DistanceMode.modes.html#SHORT" class="member-name-link">SHORT</a> - Enum constant in enum class BobcatLib.Hardware.Sensors.SpatialSensor.Utility.<a href="BobcatLib/Hardware/Sensors/SpatialSensor/Utility/DistanceMode.modes.html" title="enum class in BobcatLib.Hardware.Sensors.SpatialSensor.Utility">DistanceMode.modes</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="BobcatLib/Subsystems/Swerve/SimpleSwerve/Constants.Mode.html#SIM" class="member-name-link">SIM</a> - Enum constant in enum class BobcatLib.Subsystems.Swerve.SimpleSwerve.<a href="BobcatLib/Subsystems/Swerve/SimpleSwerve/Constants.Mode.html" title="enum class in BobcatLib.Subsystems.Swerve.SimpleSwerve">Constants.Mode</a></dt>
+<dd>
+<div class="block">Running a physics simulator.</div>
+</dd>
+<dt><a href="BobcatLib/Utilities/OperationalMode.Mode.html#SIM" class="member-name-link">SIM</a> - Enum constant in enum class BobcatLib.Utilities.<a href="BobcatLib/Utilities/OperationalMode.Mode.html" title="enum class in BobcatLib.Utilities">OperationalMode.Mode</a></dt>
 <dd>
 <div class="block">Running a physics simulator.</div>
 </dd>
@@ -6991,6 +7039,10 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Returns the enum constant of this class with the specified name.</div>
 </dd>
+<dt><a href="BobcatLib/Utilities/OperationalMode.Mode.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in enum class BobcatLib.Utilities.<a href="BobcatLib/Utilities/OperationalMode.Mode.html" title="enum class in BobcatLib.Utilities">OperationalMode.Mode</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this class with the specified name.</div>
+</dd>
 <dt><a href="BobcatLib/Hardware/LedControllers/CANdleWrapper.BuiltInAnimations.html#values()" class="member-name-link">values()</a> - Static method in enum class BobcatLib.Hardware.LedControllers.<a href="BobcatLib/Hardware/LedControllers/CANdleWrapper.BuiltInAnimations.html" title="enum class in BobcatLib.Hardware.LedControllers">CANdleWrapper.BuiltInAnimations</a></dt>
 <dd>
 <div class="block">Returns an array containing the constants of this enum class, in
@@ -7087,6 +7139,11 @@ the order they are declared.</div>
 the order they are declared.</div>
 </dd>
 <dt><a href="BobcatLib/Utilities/CANDeviceDetails.Manufacturer.html#values()" class="member-name-link">values()</a> - Static method in enum class BobcatLib.Utilities.<a href="BobcatLib/Utilities/CANDeviceDetails.Manufacturer.html" title="enum class in BobcatLib.Utilities">CANDeviceDetails.Manufacturer</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum class, in
+the order they are declared.</div>
+</dd>
+<dt><a href="BobcatLib/Utilities/OperationalMode.Mode.html#values()" class="member-name-link">values()</a> - Static method in enum class BobcatLib.Utilities.<a href="BobcatLib/Utilities/OperationalMode.Mode.html" title="enum class in BobcatLib.Utilities">OperationalMode.Mode</a></dt>
 <dd>
 <div class="block">Returns an array containing the constants of this enum class, in
 the order they are declared.</div>
@@ -7320,6 +7377,10 @@ the order they are declared.</div>
 <dt><a href="BobcatLib/Hardware/Motors/BaseMotor.html#withLowerLimit(edu.wpi.first.math.geometry.Rotation2d)" class="member-name-link">withLowerLimit(Rotation2d)</a> - Method in class BobcatLib.Hardware.Motors.<a href="BobcatLib/Hardware/Motors/BaseMotor.html" title="class in BobcatLib.Hardware.Motors">BaseMotor</a></dt>
 <dd>
 <div class="block">Configures the motor with a lower software limit.</div>
+</dd>
+<dt><a href="BobcatLib/Utilities/OperationalMode.html#withMode(boolean)" class="member-name-link">withMode(boolean)</a> - Static method in class BobcatLib.Utilities.<a href="BobcatLib/Utilities/OperationalMode.html" title="class in BobcatLib.Utilities">OperationalMode</a></dt>
+<dd>
+<div class="block">Creates an instance based on whether the robot is real or simulated.</div>
 </dd>
 <dt><a href="BobcatLib/Subsystems/Swerve/SimpleSwerve/SwerveDrive.html#withPathPlanner(edu.wpi.first.wpilibj.smartdashboard.Field2d,BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.Utility.PIDConstants,BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.Utility.PIDConstants)" class="member-name-link">withPathPlanner(Field2d, PIDConstants, PIDConstants)</a> - Method in class BobcatLib.Subsystems.Swerve.SimpleSwerve.<a href="BobcatLib/Subsystems/Swerve/SimpleSwerve/SwerveDrive.html" title="class in BobcatLib.Subsystems.Swerve.SimpleSwerve">SwerveDrive</a></dt>
 <dd>&nbsp;</dd>

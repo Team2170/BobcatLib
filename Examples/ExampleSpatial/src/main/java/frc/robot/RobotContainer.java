@@ -14,6 +14,7 @@ import BobcatLib.Hardware.Sensors.SpatialSensor.Spatial;
 import BobcatLib.Hardware.Sensors.SpatialSensor.SpatialTOF;
 import BobcatLib.Hardware.Sensors.SpatialSensor.Components.RangeSensor;
 import BobcatLib.Hardware.Sensors.SpatialSensor.Components.SENS3006;
+import BobcatLib.Hardware.Sensors.SpatialSensor.Components.SimTOF;
 import BobcatLib.Hardware.Sensors.SpatialSensor.Utility.DistanceMode;
 import BobcatLib.Hardware.Sensors.SpatialSensor.Utility.DistanceMode.modes;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Containers.SwerveBase;
@@ -69,6 +70,7 @@ public class RobotContainer extends SwerveBase{
                         distanceSensing.getSpatialSensors().get(0).updateFromDirectional(1);
                         distanceSensing.getSpatialSensors().get(1).updateFromDirectional(1);
                 }
+                distanceSensing.periodic();
                 distanceSensing.isSquared();
         }
 

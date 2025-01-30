@@ -18,8 +18,9 @@ public class BobcatLibCoreRobot extends LoggedRobot {
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
    */
-  public BobcatLibCoreRobot(OperationalMode current) {
-    OperationalMode.Mode cm = current.getCurrentMode();
+  public BobcatLibCoreRobot(boolean isReal) {
+    OperationalMode op = OperationalMode.withMode(isReal);
+    OperationalMode.Mode cm = op.getCurrentMode();
     // Set up data receivers & replay source
     switch (cm) {
       case REAL:

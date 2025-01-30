@@ -17,7 +17,9 @@ public final class OperationalMode {
     SIM,
 
     /** Replaying from a log file. */
-    REPLAY
+    REPLAY,
+    /** No default? */
+    NONE
   }
 
   /**
@@ -27,6 +29,27 @@ public final class OperationalMode {
    */
   private OperationalMode(Mode mode) {
     this.currentMode = mode;
+  }
+
+  /**
+   * Private constructor to enforce immutability.
+   *
+   * @param isReal is real
+   */
+  private OperationalMode(boolean isReal) {
+    if (isReal) {
+      this.currentMode = Mode.REAL;
+    } else {
+      this.currentMode = Mode.SIM;
+    }
+  }
+  /**
+   * Private constructor to enforce immutability.
+   *
+   * <p>use factory classes!
+   */
+  private OperationalMode() {
+    this.currentMode = Mode.NONE;
   }
 
   /**

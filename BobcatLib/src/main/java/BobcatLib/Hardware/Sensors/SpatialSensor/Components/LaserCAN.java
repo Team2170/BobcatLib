@@ -93,4 +93,6 @@ public class LaserCAN implements RangeSensor {
     DistanceMode distanceMode = new DistanceMode();
     return distanceMode.fromLaserCAN(mode);
   }
+
+  public void updateFromDirectional(double translation) {}
 }

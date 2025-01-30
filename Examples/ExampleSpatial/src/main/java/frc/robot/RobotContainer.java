@@ -37,6 +37,7 @@ public class RobotContainer extends SwerveBase{
         /* Subsystems */
         private final LoggedDashboardChooser<Command> autoChooser = new LoggedDashboardChooser<>("Auto Routine"); // Choose an Auto!
         private final Spatial distanceSensing;
+        private boolean isSim;
 
         /**
          * The container for the robot. Contains subsystems, OI devices, and commands.
@@ -50,13 +51,24 @@ public class RobotContainer extends SwerveBase{
                         PIDConstants rotPidPathPlanner) {
 
                 super(driver_controller, autos, robotName, isSim, alliance, tranPidPathPlanner, rotPidPathPlanner);
+                this.isSim = isSim;
                 List<RangeSensor> distanceSensors = new ArrayList<RangeSensor>();
-                distanceSensors.add(new SENS3006(0, new DistanceMode(modes.SHORT), 20));
-                distanceSensors.add(new SENS3006(0, new DistanceMode(modes.SHORT), 20));
+                if( this.isSim ){
+                        distanceSensors.add(new SimTOF(0, new DistanceMode(modes.SHORT), 20));
+                        distanceSensors.add(new SimTOF(0, new DistanceMode(modes.SHORT), 20));
+                }
+                else{
+                        distanceSensors.add(new SENS3006(0, new DistanceMode(modes.SHORT), 20));
+                        distanceSensors.add(new SENS3006(0, new DistanceMode(modes.SHORT), 20));
+                }
                 distanceSensing = new Spatial( new SpatialTOF( distanceSensors ) );
         }
 
-        public void periodic(){
+        public void periodic() {
+                if (this.isSim) {
+                        distanceSensing.getSpatialSensors().get(0).updateFromDirectional(1);
+                        distanceSensing.getSpatialSensors().get(1).updateFromDirectional(1);
+                }
                 distanceSensing.isSquared();
         }
 

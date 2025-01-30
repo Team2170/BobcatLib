@@ -72,4 +72,6 @@ public class SENS3006 implements RangeSensor {
     DistanceMode distanceMode = new DistanceMode();
     return distanceMode.fromPWF(mode);
   }
+
+  public void updateFromDirectional(double translation) {}
 }

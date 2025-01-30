@@ -94,4 +94,6 @@ public class CANRange implements RangeSensor {
     distanceMode.currentMode = DistanceMode.modes.MEDIUM;
     return distanceMode;
   }
+
+  public void updateFromDirectional(double translation) {}
 }

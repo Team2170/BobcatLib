@@ -8,9 +8,9 @@ import java.util.List;
 
 public class SpatialTOF implements SpatialIO {
   /** Sensors as identified by "field centric" side. */
-  public HashMap<String, RangeSensor[]> mRangeSensors;
+  public List<RangeSensor> mRangeSensors;
 
-  public SpatialTOF(HashMap<String, RangeSensor[]> sensors) {
+  public SpatialTOF(List<RangeSensor> sensors) {
     mRangeSensors = sensors;
     configAllSensors();
   }
@@ -22,14 +22,15 @@ public class SpatialTOF implements SpatialIO {
    */
   public void updateInputs(SpatialIOInputs inputs) {
     HashMap<String, Double> distances = detectObjects();
-    inputs.front_left_distance = distances.get("left");
-    inputs.front_right_distance = distances.get("right");
+    inputs.front_left_distance = distances.get(0);
+    inputs.front_right_distance = distances.get(1);
+    inputs.isAligned = isSquared(inputs.front_left_distance, inputs.front_right_distance, 5);
   }
 
   /** Configure all Sensors */
   public void configAllSensors() {
-    mRangeSensors.put("left", new RangeSensor[] {});
-    mRangeSensors.put("right", new RangeSensor[] {});
+    mRangeSensors.add(null);
+    mRangeSensors.add(null);
   }
 
   /**
@@ -39,10 +40,9 @@ public class SpatialTOF implements SpatialIO {
    */
   public HashMap<String, Double> detectObjects() {
     HashMap<String, Double> mDistances = new HashMap<String, Double>();
-    for (String label : new String[] {"left", "right"}) {
-      double avg = detectObject(mRangeSensors.get(label));
-      mDistances.put(label, avg);
-    }
+
+    mDistances.put("left", mRangeSensors.get(0).getRange());
+    mDistances.put("right", mRangeSensors.get(1).getRange());
 
     return mDistances;
   }
@@ -54,8 +54,8 @@ public class SpatialTOF implements SpatialIO {
    *
    * @return range in mm
    */
-  public Double detectObject(RangeSensor[] sensors) {
-    if (sensors.length < 1) {
+  public Double detectObject(List<RangeSensor> sensors) {
+    if (sensors.size() < 1) {
       return 0.00;
     }
     ArrayList<Double> distances = new ArrayList<Double>(2);
@@ -83,7 +83,20 @@ public class SpatialTOF implements SpatialIO {
     return sensorDistances.stream().mapToDouble(d -> d).average().orElse(0.0);
   }
 
-  public HashMap<String, RangeSensor[]> getRangeSensors() {
+  public List<RangeSensor> getRangeSensors() {
     return mRangeSensors;
+  }
+
+  /**
+   * Checks if two lengths are approximately equal within a given tolerance.
+   *
+   * @param l1 The first length in mm.
+   * @param l2 The second length in mm.
+   * @param tolerance The acceptable difference between the two lengths in mm
+   * @return {@code true} if the absolute difference between l1 and l2 is within the tolerance,
+   *     {@code false} otherwise.
+   */
+  public boolean isSquared(double l1, double l2, double tolerance) {
+    return Math.abs(l1 - l2) <= tolerance;
   }
 }

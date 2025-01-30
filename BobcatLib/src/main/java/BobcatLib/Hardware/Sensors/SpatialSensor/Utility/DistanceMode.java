@@ -9,6 +9,12 @@ public class DistanceMode {
     LONG
   }
 
+  public DistanceMode(modes cm) {
+    this.currentMode = cm;
+  }
+
+  public DistanceMode() {}
+
   public modes currentMode;
 
   public au.grapplerobotics.interfaces.LaserCanInterface.RangingMode asLaserCAN() {

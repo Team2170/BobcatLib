@@ -1,7 +1,7 @@
 package BobcatLib.Hardware.Sensors.SpatialSensor;
 
 import BobcatLib.Hardware.Sensors.SpatialSensor.Components.RangeSensor;
-import java.util.HashMap;
+import java.util.List;
 import org.littletonrobotics.junction.Logger;
 
 public class Spatial {
@@ -19,7 +19,7 @@ public class Spatial {
     Logger.processInputs("Spatial", inputs);
   }
 
-  public HashMap<String, RangeSensor[]> getSpatialSensors() {
+  public List<RangeSensor> getSpatialSensors() {
     return io.getRangeSensors();
   }
 }

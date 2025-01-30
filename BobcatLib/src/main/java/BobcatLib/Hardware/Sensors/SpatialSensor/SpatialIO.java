@@ -1,7 +1,7 @@
 package BobcatLib.Hardware.Sensors.SpatialSensor;
 
 import BobcatLib.Hardware.Sensors.SpatialSensor.Components.RangeSensor;
-import java.util.HashMap;
+import java.util.List;
 import org.littletonrobotics.junction.AutoLog;
 
 public interface SpatialIO {
@@ -10,6 +10,7 @@ public interface SpatialIO {
   public static class SpatialIOInputs {
     public double front_left_distance = 0.0;
     public double front_right_distance = 0.0;
+    public boolean isAligned = false;
   }
 
   /**
@@ -19,7 +20,7 @@ public interface SpatialIO {
    */
   public default void updateInputs(SpatialIOInputs inputs, boolean isEnabled) {}
 
-  public default HashMap<String, RangeSensor[]> getRangeSensors() {
+  public default List<RangeSensor> getRangeSensors() {
     return null;
   }
   ;

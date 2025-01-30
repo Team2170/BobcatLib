@@ -24,4 +24,17 @@ public interface SpatialIO {
     return null;
   }
   ;
+
+  /**
+   * Checks if two lengths are approximately equal within a given tolerance.
+   *
+   * @param l1 The first length in mm.
+   * @param l2 The second length in mm.
+   * @param tolerance The acceptable difference between the two lengths in mm
+   * @return {@code true} if the absolute difference between l1 and l2 is within the tolerance,
+   *     {@code false} otherwise.
+   */
+  public default boolean isSquared(double l1, double l2, double tolerance) {
+    return false;
+  }
 }

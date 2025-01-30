@@ -22,4 +22,8 @@ public class Spatial {
   public List<RangeSensor> getSpatialSensors() {
     return io.getRangeSensors();
   }
+
+  public boolean isSquared() {
+    return inputs.isAligned;
+  }
 }

@@ -27,10 +27,6 @@ import edu.wpi.first.wpilibj2.command.Command;
  * subsystems, commands, and button mappings) should be declared here.
  */
 public class RobotContainer extends SwerveBase {
-        /* Subsystems */
-        private final LoggedDashboardChooser<Command> autoChooser = new LoggedDashboardChooser<>("Auto Choices"); // Choose
-                                                                                                                  // an
-                                                                                                                  // Auto!
 
         /**
          * The container for the robot. Contains subsystems, OI devices, and commands.
@@ -73,8 +69,6 @@ public class RobotContainer extends SwerveBase {
                 // This method loads the auto when it is called, however, it is recommended
                 // to first load your paths/autos when code starts, then return the
                 // pre-loaded auto/path
-                Command auto = autoChooser.get();
-                name = auto.getName();
                 return super.getAutonomousCommand(name);
         }
 

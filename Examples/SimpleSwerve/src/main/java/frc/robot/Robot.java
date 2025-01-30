@@ -54,8 +54,8 @@ public class Robot extends BobcatLibCoreRobot {
     isSim, alliance, tranPidPathPlanner,
     rotPidPathPlanner);
 
-    loadableAutos.add(new LoadablePathPlannerAuto("Base", new PathPlannerAuto("Base"), false));
-    loadableAutos.add(new LoadablePathPlannerAuto("Auto1", new PathPlannerAuto("Auto1"), false));
+    loadableAutos.add(new LoadablePathPlannerAuto("Base", new PathPlannerAuto("Base").withName("Base"), false));
+    loadableAutos.add(new LoadablePathPlannerAuto("Auto1", new PathPlannerAuto("Auto1").withName("Auto1"), false));
     m_robotContainer.updateLoadedPaths(loadableAutos);
 
   }
@@ -86,7 +86,11 @@ public class Robot extends BobcatLibCoreRobot {
   /** This autonomous runs the autonomous command selected by your {@link RobotContainer} class. */
   @Override
   public void autonomousInit() {
-    String name = "Base";
+    String name  = "";
+    name = m_robotContainer.getAutoChooser().getSendableChooser().getSelected();
+    if( name == "" || name == null){
+      name  = m_robotContainer.getAutoChooser().get().getName();
+    }
     m_autonomousCommand = m_robotContainer.getAutonomousCommand(name);
 
     // schedule the autonomous command (example)

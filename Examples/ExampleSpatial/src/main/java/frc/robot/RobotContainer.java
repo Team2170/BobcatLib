@@ -57,7 +57,7 @@ public class RobotContainer extends SwerveBase{
         }
 
         public void periodic(){
-                
+                distanceSensing.isSquared();
         }
 
         /**

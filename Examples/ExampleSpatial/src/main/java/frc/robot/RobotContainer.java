@@ -66,6 +66,7 @@ public class RobotContainer extends SwerveBase{
         }
 
         public void periodic() {
+                s_Swerve.periodic();
                 if (this.isSim) {
                         distanceSensing.getSpatialSensors().get(0).updateFromDirectional(1);
                         distanceSensing.getSpatialSensors().get(1).updateFromDirectional(1);

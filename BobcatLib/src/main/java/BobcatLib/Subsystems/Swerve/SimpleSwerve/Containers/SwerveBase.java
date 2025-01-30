@@ -90,6 +90,10 @@ public class SwerveBase {
     return autoChooser.get() != null;
   }
 
+  public LoggedDashboardChooser<Command> getAutoChooser() {
+    return autoChooser;
+  }
+
   /** this should only be called once DS and FMS are attached */
   public void configureAutos() {
     // PID constants for translation

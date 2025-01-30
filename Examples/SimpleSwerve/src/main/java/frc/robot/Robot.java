@@ -9,11 +9,12 @@ import java.util.List;
 
 import com.pathplanner.lib.commands.PathPlannerAuto;
 
+import BobcatLib.BobcatLibCoreRobot;
 import BobcatLib.Hardware.Controllers.OI;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.Utility.PIDConstants;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Utility.Alliance;
 import BobcatLib.Subsystems.Swerve.Utility.LoadablePathPlannerAuto;
-import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.RobotBase;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import edu.wpi.first.wpilibj2.command.Commands;
@@ -22,7 +23,7 @@ import edu.wpi.first.wpilibj2.command.Commands;
  * the TimedRobot documentation. If you change the name of this class or the package after creating
  * this project, you must also update the Main.java file in the project.
  */
-public class Robot extends TimedRobot {
+public class Robot extends BobcatLibCoreRobot {
   private Command m_autonomousCommand;
   private OI driver_controller;
   public static Alliance alliance;
@@ -34,6 +35,7 @@ public class Robot extends TimedRobot {
    * initialization code.
    */
   public Robot() {
+    super(RobotBase.isReal());
       
     alliance = new Alliance();
     
@@ -45,8 +47,8 @@ public class Robot extends TimedRobot {
 
     String robotName = "RobotName";
     boolean isSim = false;
-    PIDConstants tranPidPathPlanner = new PIDConstants(10, kDefaultPeriod, kDefaultPeriod);
-    PIDConstants rotPidPathPlanner = new PIDConstants(5, kDefaultPeriod, kDefaultPeriod);
+    PIDConstants tranPidPathPlanner = new PIDConstants(10, 0, 0);
+    PIDConstants rotPidPathPlanner = new PIDConstants(5, 0, 0);
     driver_controller = new OI(robotName);
     m_robotContainer = new RobotContainer(driver_controller, loadableAutos, robotName,
     isSim, alliance, tranPidPathPlanner,

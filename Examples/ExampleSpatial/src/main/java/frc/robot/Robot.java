@@ -4,6 +4,7 @@
 
 package frc.robot;
 
+import java.rmi.server.Operation;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,10 +22,13 @@ import BobcatLib.Hardware.Controllers.OI;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.Utility.PIDConstants;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Utility.Alliance;
 import BobcatLib.Subsystems.Swerve.Utility.LoadablePathPlannerAuto;
+import BobcatLib.Utilities.OperationalMode;
+import edu.wpi.first.wpilibj.RobotBase;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import edu.wpi.first.wpilibj2.command.Commands;
+import BobcatLib.Utilities.OperationalMode.Mode;
 /**
  * The methods in this class are called automatically corresponding to each mode, as described in
  * the TimedRobot documentation. If you change the name of this class or the package after creating
@@ -34,14 +38,13 @@ public class Robot extends BobcatLibCoreRobot {
   private Command m_autonomousCommand;
   private OI driver_controller;
   public static Alliance alliance;
-
   private final RobotContainer m_robotContainer;
-
   /**
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
    */
   public Robot() {
+    super(OperationalMode.withMode(RobotBase.isReal()));
       
     alliance = new Alliance();
 

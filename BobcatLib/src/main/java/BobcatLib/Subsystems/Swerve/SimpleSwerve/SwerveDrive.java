@@ -599,6 +599,11 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
     // swerveDrivePoseEstimator.setStateStdDevs(new state std devs here);
     handleOdometry();
     // swerveDrivePoseEstimator.addVisionMeasurement();
+
+    Logger.recordOutput("Swerve/Rotation", getGyroYaw());
+    Logger.recordOutput("Swerve/DesiredModuleStates", getDesiredModuleStates());
+    Logger.recordOutput("Swerve/ModuleStates", getModuleStates());
+    Logger.recordOutput("Swerve/Pose", getPose());
   }
 
   public void handleOdometry() {

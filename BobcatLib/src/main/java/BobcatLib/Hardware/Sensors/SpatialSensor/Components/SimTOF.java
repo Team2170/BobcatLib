@@ -10,7 +10,6 @@ public class SimTOF implements RangeSensor {
   public double range = 100;
   public Alert sensorAlert;
   public double sampleTime;
-  public boolean enable = false;
 
   public SimTOF(int id, DistanceMode mode, double sampleTime) {
     this.id = id;
@@ -18,7 +17,6 @@ public class SimTOF implements RangeSensor {
     this.mode = mode;
     try {
       configRangeSensor();
-      enable = true;
     } catch (Exception e) {
       // TODO: handle exception
       AlertType level = AlertType.INFO;
@@ -33,9 +31,6 @@ public class SimTOF implements RangeSensor {
    * @return range in mm
    */
   public double getRange() {
-    if (!enable) {
-      return 0;
-    }
     return range;
   }
 

@@ -13,7 +13,6 @@ public class CANRange implements RangeSensor {
   public DistanceMode mode;
   public double range;
   public Alert sensorAlert;
-  public boolean enable = false;
 
   public CANRange(int id, DistanceMode mode, double sampleTime, String busname) {
     this.id = id;
@@ -29,7 +28,6 @@ public class CANRange implements RangeSensor {
       }
 
       configRangeSensor();
-      enable = true;
     } catch (Exception e) {
       // TODO: handle exception
       AlertType level = AlertType.INFO;
@@ -48,7 +46,6 @@ public class CANRange implements RangeSensor {
       tof = new CANrange(id);
 
       configRangeSensor();
-      enable = true;
     } catch (Exception e) {
       // TODO: handle exception
       AlertType level = AlertType.INFO;
@@ -63,9 +60,7 @@ public class CANRange implements RangeSensor {
    * @return range in mm
    */
   public double getRange() {
-    if (!enable) {
-      return 0;
-    }
+    range = 0;
     // Get Distance
     range = tof.getDistance().getValueAsDouble();
 

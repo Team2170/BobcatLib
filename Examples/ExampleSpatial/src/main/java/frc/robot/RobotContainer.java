@@ -55,14 +55,15 @@ public class RobotContainer extends SwerveBase{
                 this.isSim = isSim;
                 List<RangeSensor> distanceSensors = new ArrayList<RangeSensor>();
                 if( this.isSim ){
-                        distanceSensors.add(new SimTOF(0, new DistanceMode(modes.SHORT), 20));
-                        distanceSensors.add(new SimTOF(0, new DistanceMode(modes.SHORT), 20));
+                        distanceSensors.add(new SimTOF(1, new DistanceMode(modes.SHORT), 20));
+                        distanceSensors.add(new SimTOF(2, new DistanceMode(modes.SHORT), 20));
                 }
                 else{
-                        distanceSensors.add(new SENS3006(0, new DistanceMode(modes.SHORT), 20));
-                        distanceSensors.add(new SENS3006(0, new DistanceMode(modes.SHORT), 20));
+                        distanceSensors.add(new SENS3006(1, new DistanceMode(modes.SHORT), 20));
+                        distanceSensors.add(new SENS3006(2, new DistanceMode(modes.SHORT), 20));
                 }
-                distanceSensing = new Spatial( new SpatialTOF( distanceSensors ) );
+                SpatialTOF stof = new SpatialTOF( distanceSensors );
+                distanceSensing = new Spatial( stof );
         }
 
         public void periodic() {

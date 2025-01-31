@@ -13,7 +13,6 @@ public class SENS3006 implements RangeSensor {
   public DistanceMode mode;
   public double range;
   public Alert sensorAlert;
-  public boolean enable = false;
 
   public SENS3006(int id, DistanceMode mode, double sampleTime) {
     this.id = id;
@@ -22,7 +21,6 @@ public class SENS3006 implements RangeSensor {
     try {
       tof = new TimeOfFlight(id);
       configRangeSensor();
-      enable = true;
     } catch (Exception e) {
       // TODO: handle exception
       AlertType level = AlertType.INFO;
@@ -37,9 +35,7 @@ public class SENS3006 implements RangeSensor {
    * @return range in mm
    */
   public double getRange() {
-    if (!enable) {
-      return 0;
-    }
+    range = 0;
     range = tof.getRange();
     return range;
   }

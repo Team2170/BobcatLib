@@ -14,7 +14,6 @@ public class LaserCAN implements RangeSensor {
   public double range;
   public Alert sensorAlert;
   public double sampleTime;
-  public boolean enable = false;
 
   public LaserCAN(int id, DistanceMode mode, double sampleTime) {
     this.id = id;
@@ -23,7 +22,6 @@ public class LaserCAN implements RangeSensor {
     try {
       tof = new LaserCan(id);
       configRangeSensor();
-      enable = true;
     } catch (Exception e) {
       // TODO: handle exception
       AlertType level = AlertType.INFO;
@@ -39,9 +37,6 @@ public class LaserCAN implements RangeSensor {
    */
   public double getRange() {
     range = 0;
-    if (!enable) {
-      return 0;
-    }
     LaserCan.Measurement measurement = tof.getMeasurement();
     if (measurement != null && measurement.status == LaserCan.LASERCAN_STATUS_VALID_MEASUREMENT) {
       range = measurement.distance_mm;

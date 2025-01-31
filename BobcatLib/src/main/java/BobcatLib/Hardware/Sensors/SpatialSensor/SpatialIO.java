@@ -19,7 +19,7 @@ public interface SpatialIO {
    *
    * @param inputs The inputs to update.
    */
-  public default void updateInputs(SpatialIOInputs inputs, boolean isEnabled) {}
+  public default void updateInputs(SpatialIOInputs inputs) {}
 
   public default List<RangeSensor> getRangeSensors() {
     return new ArrayList<RangeSensor>();

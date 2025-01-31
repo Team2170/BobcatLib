@@ -16,7 +16,7 @@ public class Spatial {
   }
 
   public void periodic() {
-    io.updateInputs(inputs, isEnabled);
+    io.updateInputs(inputs);
     Logger.processInputs("Spatial", inputs);
   }
 

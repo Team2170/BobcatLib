@@ -35,11 +35,14 @@ import edu.wpi.first.wpilibj2.command.Command;
  * the robot (including
  * subsystems, commands, and button mappings) should be declared here.
  */
-public class RobotContainer extends SwerveBase{
+public class RobotContainer extends SwerveBase {
         /* Subsystems */
-        private final LoggedDashboardChooser<Command> autoChooser = new LoggedDashboardChooser<>("Auto Routine"); // Choose an Auto!
+        private final LoggedDashboardChooser<Command> autoChooser = new LoggedDashboardChooser<>("Auto Routine"); // Choose
+                                                                                                                  // an
+                                                                                                                  // Auto!
         private final Spatial distanceSensing;
         private boolean isSim;
+        private SpatialTOF stof;
 
         /**
          * The container for the robot. Contains subsystems, OI devices, and commands.
@@ -55,28 +58,22 @@ public class RobotContainer extends SwerveBase{
                 super(driver_controller, autos, robotName, isSim, alliance, tranPidPathPlanner, rotPidPathPlanner);
                 this.isSim = isSim;
                 List<RangeSensor> distanceSensors = new ArrayList<RangeSensor>();
-                if( this.isSim ){
+                if (this.isSim) {
                         SimTOF stof = new SimTOF(1, new DistanceMode(modes.SHORT), 20);
                         distanceSensors.add(stof);
                         SimTOF stof1 = new SimTOF(2, new DistanceMode(modes.SHORT), 20);
                         distanceSensors.add(stof1);
-                }
-                else{
+                } else {
                         distanceSensors.add(new SENS3006(1, new DistanceMode(modes.SHORT), 20));
                         distanceSensors.add(new SENS3006(2, new DistanceMode(modes.SHORT), 20));
                 }
-                SpatialTOF stof = new SpatialTOF( distanceSensors );
-                distanceSensing = new Spatial( stof );
+                stof = new SpatialTOF(distanceSensors);
+                distanceSensing = new Spatial(stof);
         }
 
         public void periodic() {
                 s_Swerve.periodic();
                 distanceSensing.periodic();
-                RangeSensor leftSensor = distanceSensing.getSpatialSensors().get(0);
-                Logger.recordOutput("Spatial/Left" , leftSensor.getRange());
-                RangeSensor rightSensor = distanceSensing.getSpatialSensors().get(1);
-                Logger.recordOutput("Spatial/Right" , rightSensor.getRange());
-                distanceSensing.isSquared();
         }
 
         /**

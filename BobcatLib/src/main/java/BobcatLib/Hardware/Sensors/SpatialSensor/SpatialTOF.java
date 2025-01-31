@@ -54,4 +54,8 @@ public class SpatialTOF implements SpatialIO {
   public boolean isSquared(double l1, double l2, double tolerance) {
     return Math.abs(l1 - l2) <= tolerance;
   }
+
+  public List<RangeSensor> getRangeSensors() {
+    return this.mRangeSensors;
+  }
 }

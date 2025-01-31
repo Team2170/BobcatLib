@@ -1,6 +1,7 @@
 package BobcatLib.Hardware.Sensors.SpatialSensor;
 
 import BobcatLib.Hardware.Sensors.SpatialSensor.Components.RangeSensor;
+import java.util.ArrayList;
 import java.util.List;
 import org.littletonrobotics.junction.AutoLog;
 
@@ -21,9 +22,8 @@ public interface SpatialIO {
   public default void updateInputs(SpatialIOInputs inputs, boolean isEnabled) {}
 
   public default List<RangeSensor> getRangeSensors() {
-    return null;
+    return new ArrayList<RangeSensor>();
   }
-  ;
 
   /**
    * Checks if two lengths are approximately equal within a given tolerance.

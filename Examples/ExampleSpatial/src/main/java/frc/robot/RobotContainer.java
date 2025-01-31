@@ -7,6 +7,7 @@ package frc.robot;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.littletonrobotics.junction.Logger;
 import org.littletonrobotics.junction.networktables.LoggedDashboardChooser;
 
 import BobcatLib.Hardware.Controllers.OI;
@@ -70,11 +71,11 @@ public class RobotContainer extends SwerveBase{
 
         public void periodic() {
                 s_Swerve.periodic();
-                if (this.isSim) {
-                        distanceSensing.getSpatialSensors().get(0).updateFromDirectional(1);
-                        distanceSensing.getSpatialSensors().get(1).updateFromDirectional(1);
-                }
                 distanceSensing.periodic();
+                RangeSensor leftSensor = distanceSensing.getSpatialSensors().get(0);
+                Logger.recordOutput("Spatial/Left" , leftSensor.getRange());
+                RangeSensor rightSensor = distanceSensing.getSpatialSensors().get(1);
+                Logger.recordOutput("Spatial/Right" , rightSensor.getRange());
                 distanceSensing.isSquared();
         }
 

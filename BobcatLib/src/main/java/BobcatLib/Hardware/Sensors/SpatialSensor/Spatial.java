@@ -1,6 +1,7 @@
 package BobcatLib.Hardware.Sensors.SpatialSensor;
 
 import BobcatLib.Hardware.Sensors.SpatialSensor.Components.RangeSensor;
+import java.util.HashMap;
 import java.util.List;
 import org.littletonrobotics.junction.Logger;
 
@@ -25,5 +26,12 @@ public class Spatial {
 
   public boolean isSquared() {
     return inputs.isAligned;
+  }
+
+  public HashMap<String, Double> getDistances() {
+    HashMap<String, Double> distances = new HashMap<String, Double>();
+    distances.put("left", inputs.front_left_distance);
+    distances.put("right", inputs.front_left_distance);
+    return distances;
   }
 }

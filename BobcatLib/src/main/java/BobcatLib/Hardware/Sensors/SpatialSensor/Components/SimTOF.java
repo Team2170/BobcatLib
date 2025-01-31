@@ -24,7 +24,7 @@ public class SimTOF implements RangeSensor {
     this.sampleTime = sampleTime;
     this.mode = mode;
     simDevice = new SimDevice(SimDeviceJNI.createSimDevice("SimTOF [" + id + "]"));
-    simRange = simDevice.createDouble("distance", Direction.kBidir, 0.00);
+    simRange = simDevice.createDouble("range", Direction.kBidir, 0.00);
     try {
       configRangeSensor();
     } catch (Exception e) {

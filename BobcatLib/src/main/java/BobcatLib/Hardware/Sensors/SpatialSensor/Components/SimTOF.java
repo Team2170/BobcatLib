@@ -3,6 +3,10 @@ package BobcatLib.Hardware.Sensors.SpatialSensor.Components;
 import BobcatLib.Hardware.Sensors.SpatialSensor.Utility.DistanceMode;
 import BobcatLib.Logging.Alert;
 import BobcatLib.Logging.Alert.AlertType;
+import edu.wpi.first.hal.SimDevice;
+import edu.wpi.first.hal.SimDevice.Direction;
+import edu.wpi.first.hal.SimDeviceJNI;
+import edu.wpi.first.hal.SimDouble;
 
 public class SimTOF implements RangeSensor {
   public int id;
@@ -10,11 +14,17 @@ public class SimTOF implements RangeSensor {
   public double range = 100;
   public Alert sensorAlert;
   public double sampleTime;
+  public SimDevice simDevice;
+
+  // Sim Stuff
+  public SimDouble simRange;
 
   public SimTOF(int id, DistanceMode mode, double sampleTime) {
     this.id = id;
     this.sampleTime = sampleTime;
     this.mode = mode;
+    simDevice = new SimDevice(SimDeviceJNI.createSimDevice("SimTOF [" + id + "]"));
+    simRange = simDevice.createDouble("distance", Direction.kBidir, 0.00);
     try {
       configRangeSensor();
     } catch (Exception e) {
@@ -31,15 +41,8 @@ public class SimTOF implements RangeSensor {
    * @return range in mm
    */
   public double getRange() {
+    range = simRange.get();
     return range;
-  }
-
-  public void updateFromDirectional(double translation) {
-    if (translation > 0) {
-      range -= 1;
-    } else {
-      range += 1;
-    }
   }
 
   public void configRangeSensor() {}

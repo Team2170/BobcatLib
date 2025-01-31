@@ -33,6 +33,4 @@ public interface RangeSensor {
   public default DistanceMode getOptimalMode() {
     return null;
   }
-
-  public default void updateFromDirectional(double translation) {}
 }

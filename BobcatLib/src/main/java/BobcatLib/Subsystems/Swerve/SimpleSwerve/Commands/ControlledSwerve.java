@@ -65,10 +65,19 @@ public class ControlledSwerve extends Command {
   @Override
   public void execute() {
     // Apply deadband to control inputs
-    Axis translation = new Axis(translationSup, controllerJson.driver.deadband);
-    Axis strafe = new Axis(strafeSup, controllerJson.driver.deadband);
-    Axis rotation = new Axis(rotationSup, controllerJson.driver.deadband);
+    Axis translation;
+    Axis strafe;
+    Axis rotation;
 
+    if (controllerJson.isDual) {
+      translation = new Axis(translationSup, controllerJson.single.deadband);
+      strafe = new Axis(strafeSup, controllerJson.single.deadband);
+      rotation = new Axis(rotationSup, controllerJson.split_one.deadband);
+    } else {
+      translation = new Axis(translationSup, controllerJson.single.deadband);
+      strafe = new Axis(strafeSup, controllerJson.single.deadband);
+      rotation = new Axis(rotationSup, controllerJson.single.deadband);
+    }
     // Retrieve drive limits from the swerve configuration
     double maxSpeed = s_Swerve.jsonSwerve.moduleSpeedLimits.maxSpeed;
     double maxAngularVelocity = s_Swerve.jsonSwerve.moduleSpeedLimits.maxAngularVelocity;

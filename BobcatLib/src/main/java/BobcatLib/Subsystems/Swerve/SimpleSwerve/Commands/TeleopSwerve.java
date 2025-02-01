@@ -66,10 +66,19 @@ public class TeleopSwerve extends Command {
    */
   @Override
   public void execute() {
-    // Apply deadband to control inputs
-    Axis translation = new Axis(translationSup.getAsDouble(), controllerJson.driver.deadband);
-    Axis strafe = new Axis(strafeSup.getAsDouble(), controllerJson.driver.deadband);
-    Axis rotation = new Axis(rotationSup.getAsDouble(), controllerJson.driver.deadband);
+    Axis translation;
+    Axis strafe;
+    Axis rotation;
+
+    if (controllerJson.isDual) {
+      translation = new Axis(translationSup.getAsDouble(), controllerJson.single.deadband);
+      strafe = new Axis(strafeSup.getAsDouble(), controllerJson.single.deadband);
+      rotation = new Axis(rotationSup.getAsDouble(), controllerJson.split_one.deadband);
+    } else {
+      translation = new Axis(translationSup.getAsDouble(), controllerJson.single.deadband);
+      strafe = new Axis(strafeSup.getAsDouble(), controllerJson.single.deadband);
+      rotation = new Axis(rotationSup.getAsDouble(), controllerJson.single.deadband);
+    }
 
     // Retrieve drive limits from the swerve configuration
     double maxSpeed = s_Swerve.jsonSwerve.moduleSpeedLimits.maxSpeed;
@@ -91,7 +100,12 @@ public class TeleopSwerve extends Command {
    * @return the processed value of the rotation stick
    */
   public double getRotationStick() {
-    Axis rotation = new Axis(rotationSup.getAsDouble(), controllerJson.driver.deadband);
+    Axis rotation;
+    if (controllerJson.isDual) {
+      rotation = new Axis(rotationSup.getAsDouble(), controllerJson.split_one.deadband);
+    } else {
+      rotation = new Axis(rotationSup.getAsDouble(), controllerJson.single.deadband);
+    }
     return rotation.getDeadband();
   }
 }

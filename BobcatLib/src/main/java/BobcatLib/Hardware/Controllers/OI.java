@@ -24,9 +24,6 @@ public class OI {
   /** Driver Zero Gyros */
   public Trigger zeroGyro;
 
-  /** Spatial Trigger */
-  public Trigger spatialTrigger;
-
   /* controller configuration */
   public ControllerJson controllerJson;
 
@@ -66,34 +63,38 @@ public class OI {
     switch (type) {
       case "xbox":
         tmp = new XboxControllerWrapper(driverPort);
-        robotCentric = tmp.getLeftBumper();
-        zeroGyro = tmp.getRightBumper();
+        robotCentric = tmp.getAorCross();
+        zeroGyro = tmp.getBorCircle();
         break;
       case "ps4":
         tmp = new PS4ControllerWrapper(driverPort);
-        robotCentric = tmp.getLeftBumper();
-        zeroGyro = tmp.getRightBumper();
+        robotCentric = tmp.getAorCross();
+        zeroGyro = tmp.getBorCircle();
         break;
       case "ps5":
         tmp = new PS5ControllerWrapper(driverPort);
-        robotCentric = tmp.getLeftBumper();
-        zeroGyro = tmp.getRightBumper();
+        robotCentric = tmp.getAorCross();
+        zeroGyro = tmp.getBorCircle();
         break;
       case "ruffy":
         tmp = new Ruffy(driverPort);
+        robotCentric = tmp.getAorCross();
+        zeroGyro = tmp.getBorCircle();
         break;
       case "logitech":
         tmp = new Logitech(driverPort);
+        robotCentric = tmp.getAorCross();
+        zeroGyro = tmp.getBorCircle();
         break;
       case "eightbitdo":
         tmp = new EightBitDo(driverPort);
-        robotCentric = tmp.getLeftBumper();
-        zeroGyro = tmp.getRightBumper();
+        robotCentric = tmp.getAorCross();
+        zeroGyro = tmp.getBorCircle();
         break;
       default:
         tmp = new XboxControllerWrapper(driverPort);
-        robotCentric = tmp.getLeftBumper();
-        zeroGyro = tmp.getRightBumper();
+        robotCentric = tmp.getAorCross();
+        zeroGyro = tmp.getBorCircle();
         break;
     }
     return tmp;

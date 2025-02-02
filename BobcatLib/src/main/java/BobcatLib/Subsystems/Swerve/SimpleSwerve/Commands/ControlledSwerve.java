@@ -26,7 +26,7 @@ public class ControlledSwerve extends Command {
   private Double rotationSup;
 
   /** Flag for enabling robot-centric control. */
-  private boolean robotCentricSup;
+  private boolean fieldCentricSup;
 
   /** Configuration details parsed from a JSON controller configuration. */
   private ControllerJson controllerJson;
@@ -38,7 +38,7 @@ public class ControlledSwerve extends Command {
    * @param translationSup supplier for translation (forward/backward) control
    * @param strafeSup supplier for strafing (side-to-side) control
    * @param rotationSup supplier for rotational control
-   * @param robotCentricSup flag indicating if the drive should be robot-centric
+   * @param fieldCentricSup flag indicating if the drive should be robot-centric
    * @param controllerJson parsed configuration details for driver input and limits
    */
   public ControlledSwerve(
@@ -46,7 +46,7 @@ public class ControlledSwerve extends Command {
       Double translationSup,
       Double strafeSup,
       Double rotationSup,
-      boolean robotCentricSup,
+      boolean fieldCentricSup,
       ControllerJson controllerJson) {
     this.s_Swerve = s_Swerve;
     addRequirements(s_Swerve);
@@ -54,7 +54,7 @@ public class ControlledSwerve extends Command {
     this.translationSup = translationSup;
     this.strafeSup = strafeSup;
     this.rotationSup = rotationSup;
-    this.robotCentricSup = robotCentricSup;
+    this.fieldCentricSup = fieldCentricSup;
     this.controllerJson = controllerJson;
   }
 
@@ -86,7 +86,7 @@ public class ControlledSwerve extends Command {
     s_Swerve.drive(
         new Translation2d(translation.getDeadband(), strafe.getDeadband()).times(maxSpeed),
         rotation.getDeadband() * maxAngularVelocity,
-        !robotCentricSup, // Whether field-centric mode is active
+        fieldCentricSup, // Whether field-centric mode is active
         true,
         s_Swerve.getHeading(),
         s_Swerve.getPose());

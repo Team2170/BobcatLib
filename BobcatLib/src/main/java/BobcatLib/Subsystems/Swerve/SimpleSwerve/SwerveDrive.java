@@ -53,8 +53,6 @@ import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import java.io.File;
 import java.io.IOException;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 import org.littletonrobotics.junction.Logger;
 
 public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve, AutomatedSwerve {
@@ -73,7 +71,6 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
 
   public PIDConstants pidTranslation;
   public PIDConstants pidRotation;
-  static final Lock odometryLock = new ReentrantLock();
   public PoseLib swerveDrivePoseEstimator;
   private Alliance team;
   Matrix<N3, N1> visionStdDevs;
@@ -737,9 +734,7 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
    * @return
    */
   public Pose2d getPose() {
-    odometryLock.lock();
     Pose2d poseEstimation = swerveDrivePoseEstimator.getEstimatedPosition();
-    odometryLock.unlock();
     return poseEstimation;
   }
 
@@ -749,18 +744,14 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
    * @param pose
    */
   public void setPose(Pose2d pose) {
-    odometryLock.lock();
     swerveDrivePoseEstimator.resetPosition(getGyroYaw(), getModulePositions(), pose);
-    odometryLock.unlock();
     swerveKinematics.toSwerveModuleStates(
         ChassisSpeeds.fromFieldRelativeSpeeds(0, 0, 0, getGyroYaw()));
   }
 
   /** Zeros the heading of the swerve based on the gyro */
   public void zeroHeading() {
-    odometryLock.lock();
     swerveDrivePoseEstimator.resetPosition(getGyroYaw(), getModulePositions(), getPose());
-    odometryLock.unlock();
     swerveKinematics.toSwerveModuleStates(
         ChassisSpeeds.fromFieldRelativeSpeeds(0, 0, 0, getGyroYaw()));
   }

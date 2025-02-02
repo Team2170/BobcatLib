@@ -129,7 +129,7 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
       gyro = new BaseGyro("Swerve-Gyro", new GyroSim());
       mSwerveMods = new SwerveModule[] {};
     } else {
-      gyro = new BaseGyro("Swerve-Gyro", new Pigeon2Gyro());
+      gyro = new BaseGyro("Swerve-Gyro", new Pigeon2Gyro(robotName));
       mSwerveMods =
           new SwerveModule[] {
             new SwerveModule(new SwerveModuleReal(0, jsonSwerve.moduleSpeedLimits, robotName), 0),
@@ -210,7 +210,7 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
             new SwerveModule(new SwerveModuleReal(3, jsonSwerve.moduleSpeedLimits, robotName), 3)
           };
 
-      gyro = new BaseGyro("Swerve-Gyro", new Pigeon2Gyro());
+      gyro = new BaseGyro("Swerve-Gyro", new Pigeon2Gyro(robotName));
     }
     Timer.delay(1);
     resetModulesToAbsolute();

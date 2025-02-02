@@ -80,6 +80,8 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
   Matrix<N3, N1> stateStdDevs;
   private String robotName;
   private final PIDController autoAlignPID;
+
+  public boolean fieldCentric = false;
   /*
    * Swerve Kinematics
    * No need to ever change this unless you are not doing a traditional
@@ -379,6 +381,7 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
       boolean isOpenLoop,
       Rotation2d currentHeading,
       Pose2d currentPose) {
+    fieldRelative = fieldCentric;
     currentHeading = getHeading();
     currentPose = getPose();
     if (Constants.SwerveConstants.firstOrderDriving) {
@@ -750,5 +753,9 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
     odometryLock.unlock();
     swerveKinematics.toSwerveModuleStates(
         ChassisSpeeds.fromFieldRelativeSpeeds(0, 0, 0, getGyroYaw()));
+  }
+
+  public void setFieldCentric() {
+    fieldCentric = (fieldCentric) ? false : true;
   }
 }

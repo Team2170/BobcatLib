@@ -19,7 +19,7 @@ public class OI {
   public Joystick split_two;
 
   /** Driver Buttons */
-  public Trigger robotCentric;
+  public Trigger fieldCentric;
 
   /** Driver Zero Gyros */
   public Trigger zeroGyro;
@@ -63,37 +63,37 @@ public class OI {
     switch (type) {
       case "xbox":
         tmp = new XboxControllerWrapper(driverPort);
-        robotCentric = tmp.getAorCross();
+        fieldCentric = tmp.getAorCross();
         zeroGyro = tmp.getBorCircle();
         break;
       case "ps4":
         tmp = new PS4ControllerWrapper(driverPort);
-        robotCentric = tmp.getAorCross();
+        fieldCentric = tmp.getAorCross();
         zeroGyro = tmp.getBorCircle();
         break;
       case "ps5":
         tmp = new PS5ControllerWrapper(driverPort);
-        robotCentric = tmp.getAorCross();
+        fieldCentric = tmp.getAorCross();
         zeroGyro = tmp.getBorCircle();
         break;
       case "ruffy":
         tmp = new Ruffy(driverPort);
-        robotCentric = tmp.getAorCross();
+        fieldCentric = tmp.getAorCross();
         zeroGyro = tmp.getBorCircle();
         break;
       case "logitech":
         tmp = new Logitech(driverPort);
-        robotCentric = tmp.getAorCross();
+        fieldCentric = tmp.getAorCross();
         zeroGyro = tmp.getBorCircle();
         break;
       case "eightbitdo":
         tmp = new EightBitDo(driverPort);
-        robotCentric = tmp.getAorCross();
+        fieldCentric = tmp.getAorCross();
         zeroGyro = tmp.getBorCircle();
         break;
       default:
         tmp = new XboxControllerWrapper(driverPort);
-        robotCentric = tmp.getAorCross();
+        fieldCentric = tmp.getAorCross();
         zeroGyro = tmp.getBorCircle();
         break;
     }

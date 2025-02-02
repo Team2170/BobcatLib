@@ -82,7 +82,7 @@ public class SwerveBase {
             translation,
             strafe,
             rotate,
-            () -> s_Controls.robotCentric.getAsBoolean(),
+            () -> s_Controls.fieldCentric.getAsBoolean(),
             s_Controls.controllerJson));
   }
 
@@ -126,6 +126,9 @@ public class SwerveBase {
     Command zeroGyro = Commands.runOnce(s_Swerve::zeroHeading);
     /* Driver Buttons */
     s_Controls.zeroGyro.onTrue(zeroGyro);
+
+    Command setFieldCentric = Commands.runOnce(s_Swerve::setFieldCentric);
+    s_Controls.fieldCentric.toggleOnTrue(setFieldCentric);
   }
 
   /**
@@ -178,5 +181,9 @@ public class SwerveBase {
             .andThen(testRIPCCW)
             .andThen(stopMotorsCmd);
     return testCommand;
+  }
+
+  public void setFieldCentric() {
+    s_Swerve.setFieldCentric();
   }
 }

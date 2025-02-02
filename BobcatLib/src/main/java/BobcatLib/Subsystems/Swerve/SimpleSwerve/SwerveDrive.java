@@ -378,7 +378,7 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
       Rotation2d currentHeading,
       Pose2d currentPose) {
     Logger.recordOutput("Swerve/FieldCentric", fieldCentric);
-    currentHeading = getHeading();
+    currentHeading = getGyroYaw();
     currentPose = getPose();
     if (Constants.SwerveConstants.firstOrderDriving) {
       drive1stOrder(translation, rotation, isOpenLoop, currentHeading, currentPose);
@@ -430,17 +430,16 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
       Rotation2d currentHeading,
       Pose2d currentPose) {
     SwerveModuleState[] swerveModuleStates;
+
     if (fieldCentric) {
       swerveModuleStates =
           swerveKinematics.toSwerveModuleStates(
               ChassisSpeeds.fromFieldRelativeSpeeds(
                   translation.getX(), translation.getY(), rotation, currentHeading));
-      Logger.recordOutput("Swerve/FieldCenteric-actual", true);
     } else {
       swerveModuleStates =
           swerveKinematics.toSwerveModuleStates(
               new ChassisSpeeds(translation.getX(), translation.getY(), rotation));
-      Logger.recordOutput("Swerve/FieldCenteric-actual", false);
     }
     double maxSpeed = jsonSwerve.moduleSpeedLimits.maxSpeed;
     SwerveDriveKinematics.desaturateWheelSpeeds(swerveModuleStates, maxSpeed);

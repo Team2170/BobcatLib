@@ -15,6 +15,7 @@ import java.io.IOException;
 public class OI {
   /** The driver joystick. */
   public Joystick single;
+
   /** The driver joystick. */
   public Joystick split_two;
 
@@ -78,8 +79,8 @@ public class OI {
         break;
       case "ruffy":
         tmp = new Ruffy(driverPort);
-        fieldCentric = tmp.getAorCross();
-        zeroGyro = tmp.getBorCircle();
+        fieldCentric = tmp.getTopButton();
+        zeroGyro = tmp.getTopButton();
         break;
       case "logitech":
         tmp = new Logitech(driverPort);

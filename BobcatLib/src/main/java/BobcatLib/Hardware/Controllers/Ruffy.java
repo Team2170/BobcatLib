@@ -13,10 +13,12 @@ public class Ruffy implements ControllerWrapper {
   CommandJoystick ruffyJoystick;
 
   /** Axis index for forward/backward LeftY. */
-  public final int LeftYAxis = 0;
+  public final int LeftYAxis = 1;
 
   /** Axis index for side-to-side strafing. */
-  public final int LeftXAxis = 1;
+  public final int LeftXAxis = 0;
+
+  public int topButtonIndex = 1;
 
   /**
    * Constructs a Ruffy joystick controller wrapper for the specified port.
@@ -169,5 +171,9 @@ public class Ruffy implements ControllerWrapper {
    */
   public Trigger getDPadTriggerRight() {
     return new Trigger(() -> false);
+  }
+
+  public Trigger getTopButton() {
+    return ruffyJoystick.button(topButtonIndex);
   }
 }

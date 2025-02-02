@@ -6,7 +6,6 @@ import BobcatLib.Hardware.Gyros.Pigeon2Gyro;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.SwerveModule;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.SwerveModuleReal;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.Utility.PIDConstants;
-import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.Utility.Pose.PoseLib;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.Utility.Pose.WpiPoseEstimator;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.parser.ModuleLimitsJson;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Parser.BaseJson;
@@ -71,7 +70,7 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
 
   public PIDConstants pidTranslation;
   public PIDConstants pidRotation;
-  public PoseLib swerveDrivePoseEstimator;
+  public WpiPoseEstimator swerveDrivePoseEstimator;
   private Alliance team;
   Matrix<N3, N1> visionStdDevs;
   Matrix<N3, N1> stateStdDevs;
@@ -625,11 +624,11 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
           Timer.getFPGATimestamp(), getGyroYaw(), getModulePositions());
     } else if (gyro.getAccel() > 4) {
       state = OdometryStates.DISTRUST;
-      swerveDrivePoseEstimator.updateWithTimeAndDevs(
+      swerveDrivePoseEstimator.updateWithTime(
           Timer.getFPGATimestamp(), getGyroYaw(), getModulePositions());
     } else {
       state = OdometryStates.TRUST;
-      swerveDrivePoseEstimator.updateWithTimeAndDevs(
+      swerveDrivePoseEstimator.updateWithTime(
           Timer.getFPGATimestamp(), getGyroYaw(), getModulePositions());
     }
   }

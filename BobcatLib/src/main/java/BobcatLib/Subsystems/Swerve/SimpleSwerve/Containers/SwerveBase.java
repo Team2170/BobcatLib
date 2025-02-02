@@ -82,7 +82,6 @@ public class SwerveBase {
             translation,
             strafe,
             rotate,
-            () -> s_Controls.fieldCentric.getAsBoolean(),
             s_Controls.controllerJson));
   }
 
@@ -154,22 +153,22 @@ public class SwerveBase {
    */
   public Command getTestCommand() {
     Command testSwerveForward =
-        new ControlledSwerve(s_Swerve, 0.2, 0.0, 0.0, false, s_Controls.controllerJson)
+        new ControlledSwerve(s_Swerve, 0.2, 0.0, 0.0, s_Controls.controllerJson)
             .withTimeout(3);
     Command testSwerveRight =
-        new ControlledSwerve(s_Swerve, 0.0, 0.2, 0.0, false, s_Controls.controllerJson)
+        new ControlledSwerve(s_Swerve, 0.0, 0.2, 0.0, s_Controls.controllerJson)
             .withTimeout(3);
     Command testSwerveBackwards =
-        new ControlledSwerve(s_Swerve, -0.2, 0.0, 0.0, false, s_Controls.controllerJson)
+        new ControlledSwerve(s_Swerve, -0.2, 0.0, 0.0, s_Controls.controllerJson)
             .withTimeout(3);
     Command testSwerveLeft =
-        new ControlledSwerve(s_Swerve, 0.0, -0.2, 0.0, false, s_Controls.controllerJson)
+        new ControlledSwerve(s_Swerve, 0.0, -0.2, 0.0, s_Controls.controllerJson)
             .withTimeout(3);
     Command testRIPCW =
-        new ControlledSwerve(s_Swerve, 0.0, 0.0, 0.2, false, s_Controls.controllerJson)
+        new ControlledSwerve(s_Swerve, 0.0, 0.0, 0.2, s_Controls.controllerJson)
             .withTimeout(3);
     Command testRIPCCW =
-        new ControlledSwerve(s_Swerve, 0.0, 0.0, -0.2, false, s_Controls.controllerJson)
+        new ControlledSwerve(s_Swerve, 0.0, 0.0, -0.2, s_Controls.controllerJson)
             .withTimeout(3);
     Command stopMotorsCmd = new InstantCommand(() -> s_Swerve.stopMotors());
     Command testCommand =

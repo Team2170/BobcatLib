@@ -48,7 +48,6 @@ public class TeleopSwerve extends Command {
       DoubleSupplier translationSup,
       DoubleSupplier strafeSup,
       DoubleSupplier rotationSup,
-      BooleanSupplier fieldCentricSup,
       ControllerJson controllerJson) {
     this.s_Swerve = s_Swerve;
     addRequirements(s_Swerve);
@@ -56,7 +55,6 @@ public class TeleopSwerve extends Command {
     this.translationSup = translationSup;
     this.strafeSup = strafeSup;
     this.rotationSup = rotationSup;
-    this.fieldCentricSup = fieldCentricSup;
     this.controllerJson = controllerJson;
   }
 
@@ -88,7 +86,6 @@ public class TeleopSwerve extends Command {
     s_Swerve.drive(
         new Translation2d(translation.getDeadband(), strafe.getDeadband()).times(maxSpeed),
         rotation.getDeadband() * maxAngularVelocity,
-        fieldCentricSup.getAsBoolean(), // Whether field-centric mode is active
         true, // Always apply safety mechanisms
         s_Swerve.getHeading(),
         s_Swerve.getPose());

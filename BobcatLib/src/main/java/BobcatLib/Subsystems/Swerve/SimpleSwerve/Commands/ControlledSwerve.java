@@ -46,7 +46,6 @@ public class ControlledSwerve extends Command {
       Double translationSup,
       Double strafeSup,
       Double rotationSup,
-      boolean fieldCentricSup,
       ControllerJson controllerJson) {
     this.s_Swerve = s_Swerve;
     addRequirements(s_Swerve);
@@ -54,7 +53,6 @@ public class ControlledSwerve extends Command {
     this.translationSup = translationSup;
     this.strafeSup = strafeSup;
     this.rotationSup = rotationSup;
-    this.fieldCentricSup = fieldCentricSup;
     this.controllerJson = controllerJson;
   }
 
@@ -86,7 +84,6 @@ public class ControlledSwerve extends Command {
     s_Swerve.drive(
         new Translation2d(translation.getDeadband(), strafe.getDeadband()).times(maxSpeed),
         rotation.getDeadband() * maxAngularVelocity,
-        fieldCentricSup, // Whether field-centric mode is active
         true,
         s_Swerve.getHeading(),
         s_Swerve.getPose());

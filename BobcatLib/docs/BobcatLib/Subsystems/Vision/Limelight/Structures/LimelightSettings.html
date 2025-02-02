@@ -154,10 +154,10 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#save()" class="member-name-link">save</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Push any pending changes to the <a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/networktables/NetworkTable.html" title="class or interface in edu.wpi.first.networktables" class="external-link"><code>NetworkTable</code></a> instance immediately.</div>
+<div class="block">Push any pending changes to the <code>NetworkTable</code> instance immediately.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="LimelightSettings.html" title="class in BobcatLib.Subsystems.Vision.Limelight.Structures">LimelightSettings</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withAprilTagOffset(edu.wpi.first.math.geometry.Translation3d)" class="member-name-link">withAprilTagOffset</a><wbr>(<a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/geometry/Translation3d.html" title="class or interface in edu.wpi.first.math.geometry" class="external-link">Translation3d</a>&nbsp;offset)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withAprilTagOffset(edu.wpi.first.math.geometry.Translation3d)" class="member-name-link">withAprilTagOffset</a><wbr>(edu.wpi.first.math.geometry.Translation3d&nbsp;offset)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Set the offset from the AprilTag that is of interest.</div>
 </div>
@@ -167,7 +167,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Set the <a href="../LimelightCamera.html" title="class in BobcatLib.Subsystems.Vision.Limelight"><code>LimelightCamera</code></a> AprilTagID filter/override of which to track.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="LimelightSettings.html" title="class in BobcatLib.Subsystems.Vision.Limelight.Structures">LimelightSettings</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withCameraOffset(edu.wpi.first.math.geometry.Pose3d)" class="member-name-link">withCameraOffset</a><wbr>(<a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/geometry/Pose3d.html" title="class or interface in edu.wpi.first.math.geometry" class="external-link">Pose3d</a>&nbsp;offset)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withCameraOffset(edu.wpi.first.math.geometry.Pose3d)" class="member-name-link">withCameraOffset</a><wbr>(edu.wpi.first.math.geometry.Pose3d&nbsp;offset)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Set the <a href="../LimelightCamera.html" title="class in BobcatLib.Subsystems.Vision.Limelight"><code>LimelightCamera</code></a> offset.</div>
 </div>
@@ -383,14 +383,14 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="withAprilTagOffset(edu.wpi.first.math.geometry.Translation3d)">
 <h3>withAprilTagOffset</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LimelightSettings.html" title="class in BobcatLib.Subsystems.Vision.Limelight.Structures">LimelightSettings</a></span>&nbsp;<span class="element-name">withAprilTagOffset</span><wbr><span class="parameters">(<a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/geometry/Translation3d.html" title="class or interface in edu.wpi.first.math.geometry" class="external-link">Translation3d</a>&nbsp;offset)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LimelightSettings.html" title="class in BobcatLib.Subsystems.Vision.Limelight.Structures">LimelightSettings</a></span>&nbsp;<span class="element-name">withAprilTagOffset</span><wbr><span class="parameters">(edu.wpi.first.math.geometry.Translation3d&nbsp;offset)</span></div>
 <div class="block">Set the offset from the AprilTag that is of interest. More information here. <a href="https://docs.limelightvision.io/docs/docs-limelight/pipeline-apriltag/apriltag-3d#point-of-interest-tracking">Docs
  page</a>
 
  <p>This method changes the Limelight - normally immediately.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>offset</code> - <a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/geometry/Translation3d.html" title="class or interface in edu.wpi.first.math.geometry" class="external-link"><code>Translation3d</code></a> offset.</dd>
+<dd><code>offset</code> - <code>Translation3d</code> offset.</dd>
 <dt>Returns:</dt>
 <dd><a href="LimelightSettings.html" title="class in BobcatLib.Subsystems.Vision.Limelight.Structures"><code>LimelightSettings</code></a> for chaining.</dd>
 </dl>
@@ -414,13 +414,13 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="withCameraOffset(edu.wpi.first.math.geometry.Pose3d)">
 <h3>withCameraOffset</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LimelightSettings.html" title="class in BobcatLib.Subsystems.Vision.Limelight.Structures">LimelightSettings</a></span>&nbsp;<span class="element-name">withCameraOffset</span><wbr><span class="parameters">(<a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/geometry/Pose3d.html" title="class or interface in edu.wpi.first.math.geometry" class="external-link">Pose3d</a>&nbsp;offset)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LimelightSettings.html" title="class in BobcatLib.Subsystems.Vision.Limelight.Structures">LimelightSettings</a></span>&nbsp;<span class="element-name">withCameraOffset</span><wbr><span class="parameters">(edu.wpi.first.math.geometry.Pose3d&nbsp;offset)</span></div>
 <div class="block">Set the <a href="../LimelightCamera.html" title="class in BobcatLib.Subsystems.Vision.Limelight"><code>LimelightCamera</code></a> offset.
 
  <p>This method changes the Limelight - normally immediately.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>offset</code> - <a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/geometry/Pose3d.html" title="class or interface in edu.wpi.first.math.geometry" class="external-link"><code>Pose3d</code></a> of the <a href="../LimelightCamera.html" title="class in BobcatLib.Subsystems.Vision.Limelight"><code>LimelightCamera</code></a> with the <a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/geometry/Rotation3d.html" title="class or interface in edu.wpi.first.math.geometry" class="external-link"><code>Rotation3d</code></a> set in Meters.</dd>
+<dd><code>offset</code> - <code>Pose3d</code> of the <a href="../LimelightCamera.html" title="class in BobcatLib.Subsystems.Vision.Limelight"><code>LimelightCamera</code></a> with the <code>Rotation3d</code> set in Meters.</dd>
 <dt>Returns:</dt>
 <dd><a href="LimelightSettings.html" title="class in BobcatLib.Subsystems.Vision.Limelight.Structures"><code>LimelightSettings</code></a> for chaining.</dd>
 </dl>
@@ -430,7 +430,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="save()">
 <h3>save</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">save</span>()</div>
-<div class="block">Push any pending changes to the <a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/networktables/NetworkTable.html" title="class or interface in edu.wpi.first.networktables" class="external-link"><code>NetworkTable</code></a> instance immediately.
+<div class="block">Push any pending changes to the <code>NetworkTable</code> instance immediately.
 
  <p>This method changes the Limelight immediately.
 

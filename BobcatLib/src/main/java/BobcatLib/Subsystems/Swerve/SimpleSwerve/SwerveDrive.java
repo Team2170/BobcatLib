@@ -112,51 +112,58 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
     wheelBase = Units.inchesToMeters(jsonSwerve.base.wheelBase);
     double maxAngularAccel = jsonSwerve.moduleSpeedLimits.maxAngularAcceleration;
     double maxAngularVelocity = jsonSwerve.moduleSpeedLimits.maxAngularVelocity;
-    pathfindingConstraints = new PathConstraints(
-        jsonSwerve.moduleSpeedLimits.maxSpeed,
-        jsonSwerve.moduleSpeedLimits.maxAccel,
-        maxAngularVelocity,
-        maxAngularAccel);
-    swerveKinematics = new SwerveDriveKinematics(
-        new Translation2d(wheelBase / 2.0, trackWidth / 2.0),
-        new Translation2d(wheelBase / 2.0, -trackWidth / 2.0),
-        new Translation2d(-wheelBase / 2.0, trackWidth / 2.0),
-        new Translation2d(-wheelBase / 2.0, -trackWidth / 2.0));
+    pathfindingConstraints =
+        new PathConstraints(
+            jsonSwerve.moduleSpeedLimits.maxSpeed,
+            jsonSwerve.moduleSpeedLimits.maxAccel,
+            maxAngularVelocity,
+            maxAngularAccel);
+    swerveKinematics =
+        new SwerveDriveKinematics(
+            new Translation2d(wheelBase / 2.0, trackWidth / 2.0),
+            new Translation2d(wheelBase / 2.0, -trackWidth / 2.0),
+            new Translation2d(-wheelBase / 2.0, trackWidth / 2.0),
+            new Translation2d(-wheelBase / 2.0, -trackWidth / 2.0));
     /* Setup Modules */
     if (isSim) {
       gyro = new BaseGyro("Swerve-Gyro", new GyroSim());
       mSwerveMods = new SwerveModule[] {};
     } else {
       gyro = new BaseGyro("Swerve-Gyro", new Pigeon2Gyro(robotName));
-      mSwerveMods = new SwerveModule[] {
-          new SwerveModule(new SwerveModuleReal(0, jsonSwerve.moduleSpeedLimits, robotName), 0),
-          new SwerveModule(new SwerveModuleReal(1, jsonSwerve.moduleSpeedLimits, robotName), 1),
-          new SwerveModule(new SwerveModuleReal(2, jsonSwerve.moduleSpeedLimits, robotName), 2),
-          new SwerveModule(new SwerveModuleReal(3, jsonSwerve.moduleSpeedLimits, robotName), 3)
-      };
+      mSwerveMods =
+          new SwerveModule[] {
+            new SwerveModule(new SwerveModuleReal(0, jsonSwerve.moduleSpeedLimits, robotName), 0),
+            new SwerveModule(new SwerveModuleReal(1, jsonSwerve.moduleSpeedLimits, robotName), 1),
+            new SwerveModule(new SwerveModuleReal(2, jsonSwerve.moduleSpeedLimits, robotName), 2),
+            new SwerveModule(new SwerveModuleReal(3, jsonSwerve.moduleSpeedLimits, robotName), 3)
+          };
     }
     Timer.delay(1);
     resetModulesToAbsolute();
 
-    swerveDrivePoseEstimator = new WpiPoseEstimator(
-        swerveKinematics,
-        gyro.getYaw(),
-        getModulePositions(),
-        new Pose2d()); // x,y,heading in radians; Vision measurement std dev, higher=less
+    swerveDrivePoseEstimator =
+        new WpiPoseEstimator(
+            swerveKinematics,
+            gyro.getYaw(),
+            getModulePositions(),
+            new Pose2d()); // x,y,heading in radians; Vision measurement std dev, higher=less
     // weight
 
-    pidTranslation = new PIDConstants(
-        jsonSwerve.translationPID.driveKP,
-        jsonSwerve.translationPID.driveKI,
-        jsonSwerve.translationPID.driveKD); // Translation
-    pidRotation = new PIDConstants(
-        jsonSwerve.rotationPID.driveKP,
-        jsonSwerve.rotationPID.driveKI,
-        jsonSwerve.rotationPID.driveKD); // Rotation
-    autoAlignPID = new PIDController(
-        jsonSwerve.autoAlignPID.driveKP,
-        jsonSwerve.autoAlignPID.driveKI,
-        jsonSwerve.autoAlignPID.driveKD);
+    pidTranslation =
+        new PIDConstants(
+            jsonSwerve.translationPID.driveKP,
+            jsonSwerve.translationPID.driveKI,
+            jsonSwerve.translationPID.driveKD); // Translation
+    pidRotation =
+        new PIDConstants(
+            jsonSwerve.rotationPID.driveKP,
+            jsonSwerve.rotationPID.driveKI,
+            jsonSwerve.rotationPID.driveKD); // Rotation
+    autoAlignPID =
+        new PIDController(
+            jsonSwerve.autoAlignPID.driveKP,
+            jsonSwerve.autoAlignPID.driveKI,
+            jsonSwerve.autoAlignPID.driveKD);
   }
 
   public SwerveDrive(String robotName, boolean isSim, Alliance team) {
@@ -172,60 +179,68 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
     wheelBase = Units.inchesToMeters(jsonSwerve.base.wheelBase);
     double maxAngularAccel = jsonSwerve.moduleSpeedLimits.maxAngularAcceleration;
     double maxAngularVelocity = jsonSwerve.moduleSpeedLimits.maxAngularVelocity;
-    pathfindingConstraints = new PathConstraints(
-        jsonSwerve.moduleSpeedLimits.maxSpeed,
-        jsonSwerve.moduleSpeedLimits.maxAccel,
-        maxAngularVelocity,
-        maxAngularAccel);
-    swerveKinematics = new SwerveDriveKinematics(
-        new Translation2d(wheelBase / 2.0, trackWidth / 2.0),
-        new Translation2d(wheelBase / 2.0, -trackWidth / 2.0),
-        new Translation2d(-wheelBase / 2.0, trackWidth / 2.0),
-        new Translation2d(-wheelBase / 2.0, -trackWidth / 2.0));
+    pathfindingConstraints =
+        new PathConstraints(
+            jsonSwerve.moduleSpeedLimits.maxSpeed,
+            jsonSwerve.moduleSpeedLimits.maxAccel,
+            maxAngularVelocity,
+            maxAngularAccel);
+    swerveKinematics =
+        new SwerveDriveKinematics(
+            new Translation2d(wheelBase / 2.0, trackWidth / 2.0),
+            new Translation2d(wheelBase / 2.0, -trackWidth / 2.0),
+            new Translation2d(-wheelBase / 2.0, trackWidth / 2.0),
+            new Translation2d(-wheelBase / 2.0, -trackWidth / 2.0));
     /* Setup Modules */
     if (isSim) {
-      mSwerveMods = new SwerveModule[] {
-          new SwerveModule(new SwerveModuleReal(0, jsonSwerve.moduleSpeedLimits, robotName), 0),
-          new SwerveModule(new SwerveModuleReal(1, jsonSwerve.moduleSpeedLimits, robotName), 1),
-          new SwerveModule(new SwerveModuleReal(2, jsonSwerve.moduleSpeedLimits, robotName), 2),
-          new SwerveModule(new SwerveModuleReal(3, jsonSwerve.moduleSpeedLimits, robotName), 3)
-      };
+      mSwerveMods =
+          new SwerveModule[] {
+            new SwerveModule(new SwerveModuleReal(0, jsonSwerve.moduleSpeedLimits, robotName), 0),
+            new SwerveModule(new SwerveModuleReal(1, jsonSwerve.moduleSpeedLimits, robotName), 1),
+            new SwerveModule(new SwerveModuleReal(2, jsonSwerve.moduleSpeedLimits, robotName), 2),
+            new SwerveModule(new SwerveModuleReal(3, jsonSwerve.moduleSpeedLimits, robotName), 3)
+          };
       gyro = new BaseGyro("Swerve-Gyro", new GyroSim());
     } else {
-      mSwerveMods = new SwerveModule[] {
-          new SwerveModule(new SwerveModuleReal(0, jsonSwerve.moduleSpeedLimits, robotName), 0),
-          new SwerveModule(new SwerveModuleReal(1, jsonSwerve.moduleSpeedLimits, robotName), 1),
-          new SwerveModule(new SwerveModuleReal(2, jsonSwerve.moduleSpeedLimits, robotName), 2),
-          new SwerveModule(new SwerveModuleReal(3, jsonSwerve.moduleSpeedLimits, robotName), 3)
-      };
+      mSwerveMods =
+          new SwerveModule[] {
+            new SwerveModule(new SwerveModuleReal(0, jsonSwerve.moduleSpeedLimits, robotName), 0),
+            new SwerveModule(new SwerveModuleReal(1, jsonSwerve.moduleSpeedLimits, robotName), 1),
+            new SwerveModule(new SwerveModuleReal(2, jsonSwerve.moduleSpeedLimits, robotName), 2),
+            new SwerveModule(new SwerveModuleReal(3, jsonSwerve.moduleSpeedLimits, robotName), 3)
+          };
 
       gyro = new BaseGyro("Swerve-Gyro", new Pigeon2Gyro(robotName));
     }
     Timer.delay(1);
     resetModulesToAbsolute();
 
-    swerveDrivePoseEstimator = new WpiPoseEstimator(
-        swerveKinematics,
-        getGyroYaw(),
-        getModulePositions(),
-        new Pose2d(
-            new Translation2d(0, 0),
-            Rotation2d.fromDegrees(
-                0))); // x,y,heading in radians; Vision measurement std dev, higher=less weight
+    swerveDrivePoseEstimator =
+        new WpiPoseEstimator(
+            swerveKinematics,
+            getGyroYaw(),
+            getModulePositions(),
+            new Pose2d(
+                new Translation2d(0, 0),
+                Rotation2d.fromDegrees(
+                    0))); // x,y,heading in radians; Vision measurement std dev, higher=less weight
 
-    pidTranslation = new PIDConstants(
-        jsonSwerve.translationPID.driveKP,
-        jsonSwerve.translationPID.driveKI,
-        jsonSwerve.translationPID.driveKD); // Translation
-    pidRotation = new PIDConstants(
-        jsonSwerve.rotationPID.driveKP,
-        jsonSwerve.rotationPID.driveKI,
-        jsonSwerve.rotationPID.driveKD); // Rotation
+    pidTranslation =
+        new PIDConstants(
+            jsonSwerve.translationPID.driveKP,
+            jsonSwerve.translationPID.driveKI,
+            jsonSwerve.translationPID.driveKD); // Translation
+    pidRotation =
+        new PIDConstants(
+            jsonSwerve.rotationPID.driveKP,
+            jsonSwerve.rotationPID.driveKI,
+            jsonSwerve.rotationPID.driveKD); // Rotation
 
-    autoAlignPID = new PIDController(
-        jsonSwerve.autoAlignPID.driveKP,
-        jsonSwerve.autoAlignPID.driveKI,
-        jsonSwerve.autoAlignPID.driveKD);
+    autoAlignPID =
+        new PIDController(
+            jsonSwerve.autoAlignPID.driveKP,
+            jsonSwerve.autoAlignPID.driveKI,
+            jsonSwerve.autoAlignPID.driveKD);
   }
 
   public SwerveDrive withPathPlanner(
@@ -284,7 +299,7 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
         // case
         () -> false,
         this // Subsystem for requirements
-    );
+        );
     Pathfinding.setPathfinder(new LocalADStar());
     PathPlannerLogging.setLogActivePathCallback(
         (activePath) -> {
@@ -332,7 +347,8 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
   public Command driveAsCommand(Translation2d translation) {
     Rotation2d currentHeading = new Rotation2d();
     Pose2d currentPose = new Pose2d();
-    Command driveCmd = new InstantCommand(() -> drive(translation, 0, false, currentHeading, currentPose));
+    Command driveCmd =
+        new InstantCommand(() -> drive(translation, 0, false, currentHeading, currentPose));
     return driveCmd;
   }
 
@@ -376,14 +392,13 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
   }
 
   /**
-   * drive the swerve with 1st or 2nd order. But with an auto align target
-   * rotation.
+   * drive the swerve with 1st or 2nd order. But with an auto align target rotation.
    *
    * @param translation
    * @param isOpenLoop
    * @param currentHeading rotation2d of the robots current heading
    * @param currentPose
-   * @param TargetYaw      in degrees
+   * @param TargetYaw in degrees
    */
   public void driveWithAutoAlign(
       Translation2d translation,
@@ -420,13 +435,15 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
       Pose2d currentPose) {
     SwerveModuleState[] swerveModuleStates;
     if (fieldCentric) {
-      swerveModuleStates = swerveKinematics.toSwerveModuleStates(
-          ChassisSpeeds.fromFieldRelativeSpeeds(
-              translation.getX(), translation.getY(), rotation, currentHeading));
+      swerveModuleStates =
+          swerveKinematics.toSwerveModuleStates(
+              ChassisSpeeds.fromFieldRelativeSpeeds(
+                  translation.getX(), translation.getY(), rotation, currentHeading));
       Logger.recordOutput("Swerve/FieldCenteric-actual", true);
     } else {
-      swerveModuleStates = swerveKinematics.toSwerveModuleStates(
-          new ChassisSpeeds(translation.getX(), translation.getY(), rotation));
+      swerveModuleStates =
+          swerveKinematics.toSwerveModuleStates(
+              new ChassisSpeeds(translation.getX(), translation.getY(), rotation));
       Logger.recordOutput("Swerve/FieldCenteric-actual", false);
     }
     double maxSpeed = jsonSwerve.moduleSpeedLimits.maxSpeed;
@@ -441,7 +458,7 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
    * @param rotation
    * @param isOpenLoop
    * @param currentHeading
-   * @param curentPose
+   * @param currentPose
    */
   public void drive2ndOrder(
       Translation2d translation,
@@ -451,20 +468,22 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
       Pose2d currentPose) {
     ChassisSpeeds desiredChassisSpeeds;
     if (fieldCentric) {
-      desiredChassisSpeeds = ChassisSpeeds.fromFieldRelativeSpeeds(
-          translation.getX(),
-          translation.getY(),
-          rotation,
-          currentPose
-              .getRotation()
-              .plus(
-                  Rotation2d.fromDegrees(team.get() == DriverStation.Alliance.Red ? 180 : 0)));
+      desiredChassisSpeeds =
+          ChassisSpeeds.fromFieldRelativeSpeeds(
+              translation.getX(),
+              translation.getY(),
+              rotation,
+              currentPose
+                  .getRotation()
+                  .plus(
+                      Rotation2d.fromDegrees(team.get() == DriverStation.Alliance.Red ? 180 : 0)));
     } else {
       desiredChassisSpeeds = new ChassisSpeeds(translation.getX(), translation.getY(), rotation);
     }
 
     desiredChassisSpeeds = correctForDynamics(desiredChassisSpeeds);
-    SwerveModuleState[] swerveModuleStates = swerveKinematics.toSwerveModuleStates(desiredChassisSpeeds);
+    SwerveModuleState[] swerveModuleStates =
+        swerveKinematics.toSwerveModuleStates(desiredChassisSpeeds);
     double maxSpeed = jsonSwerve.moduleSpeedLimits.maxSpeed;
     SwerveDriveKinematics.desaturateWheelSpeeds(swerveModuleStates, maxSpeed);
     applyModuleStates(swerveModuleStates, isOpenLoop);
@@ -540,8 +559,7 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
   }
 
   /**
-   * Read the modules absolute encoder and set the internal steer motors too the
-   * absoluate. angle
+   * Read the modules absolute encoder and set the internal steer motors too the absoluate. angle
    * set in units of rotations.
    */
   public void resetModulesToAbsolute() {
@@ -558,15 +576,17 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
    */
   private static ChassisSpeeds correctForDynamics(ChassisSpeeds originalSpeeds) {
     final double LOOP_TIME_S = 0.02;
-    Pose2d futureRobotPose = new Pose2d(
-        originalSpeeds.vxMetersPerSecond * LOOP_TIME_S,
-        originalSpeeds.vyMetersPerSecond * LOOP_TIME_S,
-        Rotation2d.fromRadians(originalSpeeds.omegaRadiansPerSecond * LOOP_TIME_S));
+    Pose2d futureRobotPose =
+        new Pose2d(
+            originalSpeeds.vxMetersPerSecond * LOOP_TIME_S,
+            originalSpeeds.vyMetersPerSecond * LOOP_TIME_S,
+            Rotation2d.fromRadians(originalSpeeds.omegaRadiansPerSecond * LOOP_TIME_S));
     Twist2d twistForPose = GeometryUtils.log(futureRobotPose);
-    ChassisSpeeds updatedSpeeds = new ChassisSpeeds(
-        twistForPose.dx / LOOP_TIME_S,
-        twistForPose.dy / LOOP_TIME_S,
-        twistForPose.dtheta / LOOP_TIME_S);
+    ChassisSpeeds updatedSpeeds =
+        new ChassisSpeeds(
+            twistForPose.dx / LOOP_TIME_S,
+            twistForPose.dy / LOOP_TIME_S,
+            twistForPose.dtheta / LOOP_TIME_S);
     return updatedSpeeds;
   }
 
@@ -635,8 +655,7 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
   }
 
   /**
-   * Add vision measurement to swerve drivetrain "this should be moved into the
-   * vision specific
+   * Add vision measurement to swerve drivetrain "this should be moved into the vision specific
    * stuff." - AO
    *
    * @param pose
@@ -680,8 +699,7 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
   /**
    * volts
    *
-   * <p>
-   * index of module number starts at 0
+   * <p>index of module number starts at 0
    */
   @Override
   public double getModuleVoltage(int moduleNumber) {
@@ -705,8 +723,7 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
   /* Odometry / Pose items */
 
   /**
-   * Fetch the latest odometry heading, should be trusted over
-   * {@link SwerveDrive#getGyroYaw()}.
+   * Fetch the latest odometry heading, should be trusted over {@link SwerveDrive#getGyroYaw()}.
    *
    * @return {@link Rotation2d} of the robot heading.
    */

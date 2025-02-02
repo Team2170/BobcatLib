@@ -40,7 +40,6 @@ public class TeleopSwerve extends Command {
    * @param translationSup supplier for translation (forward/backward) control
    * @param strafeSup supplier for strafing (side-to-side) control
    * @param rotationSup supplier for rotational control
-   * @param fieldCentricSup supplier indicating if the drive should be robot-centric
    * @param controllerJson parsed configuration details for driver input and limits
    */
   public TeleopSwerve(

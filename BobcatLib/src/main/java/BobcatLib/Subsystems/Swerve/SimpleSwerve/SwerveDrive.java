@@ -382,6 +382,7 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
       Rotation2d currentHeading,
       Pose2d currentPose) {
     fieldRelative = fieldCentric;
+    Logger.recordOutput("Swerve/FieldCentric", fieldRelative);
     currentHeading = getHeading();
     currentPose = getPose();
     if (Constants.SwerveConstants.firstOrderDriving) {
@@ -434,12 +435,17 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
       boolean isOpenLoop,
       Rotation2d currentHeading,
       Pose2d currentPose) {
-    SwerveModuleState[] swerveModuleStates =
-        swerveKinematics.toSwerveModuleStates(
-            fieldRelative
-                ? ChassisSpeeds.fromFieldRelativeSpeeds(
-                    translation.getX(), translation.getY(), rotation, currentHeading)
-                : new ChassisSpeeds(translation.getX(), translation.getY(), rotation));
+    SwerveModuleState[] swerveModuleStates;
+    if (fieldRelative) {
+      swerveModuleStates =
+          swerveKinematics.toSwerveModuleStates(
+              ChassisSpeeds.fromFieldRelativeSpeeds(
+                  translation.getX(), translation.getY(), rotation, currentHeading));
+    } else {
+      swerveModuleStates =
+          swerveKinematics.toSwerveModuleStates(
+              new ChassisSpeeds(translation.getX(), translation.getY(), rotation));
+    }
     double maxSpeed = jsonSwerve.moduleSpeedLimits.maxSpeed;
     SwerveDriveKinematics.desaturateWheelSpeeds(swerveModuleStates, maxSpeed);
     applyModuleStates(swerveModuleStates, isOpenLoop);
@@ -460,17 +466,21 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
       boolean isOpenLoop,
       Rotation2d currentHeading,
       Pose2d currentPose) {
-    ChassisSpeeds desiredChassisSpeeds =
-        fieldRelative
-            ? ChassisSpeeds.fromFieldRelativeSpeeds(
-                translation.getX(),
-                translation.getY(),
-                rotation,
-                currentPose
-                    .getRotation()
-                    .plus(
-                        Rotation2d.fromDegrees(team.get() == DriverStation.Alliance.Red ? 180 : 0)))
-            : new ChassisSpeeds(translation.getX(), translation.getY(), rotation);
+    ChassisSpeeds desiredChassisSpeeds;
+    if (fieldRelative) {
+      desiredChassisSpeeds =
+          ChassisSpeeds.fromFieldRelativeSpeeds(
+              translation.getX(),
+              translation.getY(),
+              rotation,
+              currentPose
+                  .getRotation()
+                  .plus(
+                      Rotation2d.fromDegrees(team.get() == DriverStation.Alliance.Red ? 180 : 0)));
+    } else {
+      desiredChassisSpeeds = new ChassisSpeeds(translation.getX(), translation.getY(), rotation);
+    }
+
     desiredChassisSpeeds = correctForDynamics(desiredChassisSpeeds);
     SwerveModuleState[] swerveModuleStates =
         swerveKinematics.toSwerveModuleStates(desiredChassisSpeeds);

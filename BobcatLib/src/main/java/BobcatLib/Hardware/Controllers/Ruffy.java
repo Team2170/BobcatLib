@@ -16,10 +16,13 @@ public class Ruffy implements ControllerWrapper {
   public final int LeftYAxis = 0;
 
   /** Axis index for side-to-side strafing. */
-  public final int strafeAxis = 1;
+  public final int LeftXAxis = 1;
 
   /** Axis index for RightX control. */
-  public final int RightXAxis = 2;
+  public final int RightYAxis = 0;
+
+  /** Axis index for RightX control. */
+  public final int RightXAxis = 1;
 
   /**
    * Constructs a Ruffy joystick controller wrapper for the specified port.
@@ -44,8 +47,17 @@ public class Ruffy implements ControllerWrapper {
    *
    * @return the axis value for strafing control.
    */
-  public double getStrafeAxis() {
-    return ruffyJoystick.getRawAxis(strafeAxis);
+  public double getLeftXAxis() {
+    return ruffyJoystick.getRawAxis(LeftXAxis);
+  }
+
+  /**
+   * Gets the axis value for RightY control.
+   *
+   * @return the axis value for RightY control.
+   */
+  public double getRightYAxis() {
+    return ruffyJoystick.getRawAxis(RightYAxis);
   }
 
   /**

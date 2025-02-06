@@ -7,12 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BooleanSupplier;
+import org.littletonrobotics.junction.Logger;
 
 /**
  * Manages fault detection and alerting for TalonFX motor controllers. Provides methods for
  * creating, activating, and deactivating alerts for various fault conditions.
  */
-public class TalonFXFaults implements FaultsWrapper {
+public class KrakenFaults implements FaultsWrapper {
 
   /** Enumeration of possible faults that can occur in the TalonFX motor controller. */
   public enum faults {
@@ -58,7 +59,7 @@ public class TalonFXFaults implements FaultsWrapper {
    * @param motor The TalonFX motor controller instance.
    * @param id The unique identifier of the TalonFX motor controller.
    */
-  public TalonFXFaults(TalonFX motor, int id) {
+  public KrakenFaults(TalonFX motor, int id) {
     this.id = id;
     this.motor = motor;
     AlertType level = AlertType.INFO;
@@ -155,5 +156,17 @@ public class TalonFXFaults implements FaultsWrapper {
     foundFaults.forEach(this::activateAlert);
 
     return !foundFaults.isEmpty();
+  }
+
+  /**
+   * logs the state and returns the alert state.
+   *
+   * @param key which represents the advantage scope key that is being written too.
+   * @param value from getting if the hardware has an error.
+   * @return the logged state.
+   */
+  public boolean LogError(String key, boolean value) {
+    Logger.recordOutput("Alerts/Kraken/" + id + "/" + key, value);
+    return value;
   }
 }

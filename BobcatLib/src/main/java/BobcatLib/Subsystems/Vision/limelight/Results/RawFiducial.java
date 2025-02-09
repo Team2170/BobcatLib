@@ -1,10 +1,9 @@
-package BobcatLib.Subsystems.Vision.Limelight.Results;
+package BobcatLib.Subsystems.Vision.limelight.results;
 
-import BobcatLib.Subsystems.Vision.Limelight.LimelightCamera;
+import BobcatLib.Subsystems.Vision.limelight.Limelight;
 
 /**
- * Represents a {@link LimelightCamera} Raw Fiducial result from {@link LimelightCamera}'s
- * NetworkTables output.
+ * Represents a {@link Limelight} Raw Fiducial result from {@link Limelight}'s NetworkTables output.
  */
 public class RawFiducial {
 

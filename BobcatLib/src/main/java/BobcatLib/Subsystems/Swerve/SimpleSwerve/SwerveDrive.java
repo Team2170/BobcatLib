@@ -70,7 +70,7 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
 
   public PIDConstants pidTranslation;
   public PIDConstants pidRotation;
-  public WpiPoseEstimator swerveDrivePoseEstimator;
+  public final WpiPoseEstimator swerveDrivePoseEstimator;
   private Alliance team;
   Matrix<N3, N1> visionStdDevs;
   Matrix<N3, N1> stateStdDevs;
@@ -756,5 +756,9 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
 
   public void setFieldCentric() {
     fieldCentric = fieldCentric ? false : true;
+  }
+
+  public BaseGyro getBaseGyro() {
+    return gyro;
   }
 }

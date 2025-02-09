@@ -1,11 +1,9 @@
 package BobcatLib.Subsystems.Vision;
 
-import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.Utility.Pose.WpiPoseEstimator;
 import BobcatLib.Subsystems.Vision.Components.VisionIO;
-import edu.wpi.first.math.geometry.Pose2d;
-import edu.wpi.first.math.geometry.Rotation2d;
-import edu.wpi.first.math.kinematics.SwerveModulePosition;
+import BobcatLib.Subsystems.Vision.Components.VisionIOInputsAutoLogged;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import org.littletonrobotics.junction.Logger;
 
 /**
  * Represents the Intake Subsystem in the robot. It interacts with the intake module to control the
@@ -13,6 +11,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
  */
 public class VisionSubsystem extends SubsystemBase {
   public VisionIO io;
+  public VisionIOInputsAutoLogged inputs = new VisionIOInputsAutoLogged();
   public final String name;
   /**
    * Constructor for the VisionSubsystem.
@@ -25,29 +24,8 @@ public class VisionSubsystem extends SubsystemBase {
   }
 
   public void periodic() {
-    io.getResult_PoseEstimate();
-    io.getResult_Target();
-  }
-
-  public void updatePoseEstimator(WpiPoseEstimator wpi) {
-    io.updatePoseEstimator(wpi);
-  }
-
-  public void updatePoseEstimator(Rotation2d angle, SwerveModulePosition[] positions) {
-    io.updatePoseEstimator(angle, positions);
-  }
-
-  public boolean TargetDetected() {
-    boolean validTarget = false;
-    boolean algaeDetected = io.findInstanceOf("algae").isSeen;
-    boolean coralDetected = io.findInstanceOf("coral").isSeen;
-    if (algaeDetected || coralDetected) {
-      validTarget = true;
-    }
-    return validTarget;
-  }
-
-  public Pose2d getTargetPose() {
-    return new Pose2d();
+    io.periodic();
+    io.updateInputs(inputs);
+    Logger.processInputs(name, inputs);
   }
 }

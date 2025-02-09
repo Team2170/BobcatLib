@@ -1,2 +1,2 @@
 /** Primary Limelight package containing LimelightLib */
-package BobcatLib.Subsystems.Vision.Limelight;
+package BobcatLib.Subsystems.Vision.limelight;

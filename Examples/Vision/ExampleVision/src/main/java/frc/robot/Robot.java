@@ -11,13 +11,14 @@ import com.pathplanner.lib.commands.PathPlannerAuto;
 import com.pathplanner.lib.path.PathPlannerPath;
 import com.pathplanner.lib.trajectory.PathPlannerTrajectory;
 
+import BobcatLib.BobcatLibCoreRobot;
 import BobcatLib.Hardware.Controllers.OI;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.Utility.PIDConstants;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Utility.Alliance;
 import BobcatLib.Subsystems.Swerve.Utility.LoadablePathPlannerAuto;
 import BobcatLib.Subsystems.Vision.Components.VisionIO.target;
-import BobcatLib.Subsystems.Vision.Limelight.LimeLightConfig;
-import edu.wpi.first.wpilibj.TimedRobot;
+import BobcatLib.Subsystems.Vision.Components.Utility.LimeLightConfig;
+import edu.wpi.first.wpilibj.RobotBase;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import edu.wpi.first.wpilibj2.command.Commands;
@@ -26,9 +27,9 @@ import edu.wpi.first.wpilibj2.command.Commands;
  * the TimedRobot documentation. If you change the name of this class or the package after creating
  * this project, you must also update the Main.java file in the project.
  */
-public class Robot extends TimedRobot {
+public class Robot extends BobcatLibCoreRobot {
   private Command m_autonomousCommand;
-  private OI driver_controller = new OI();
+  private OI driver_controller;
   public static Alliance alliance;
 
   private final RobotContainer m_robotContainer;
@@ -38,6 +39,7 @@ public class Robot extends TimedRobot {
    * initialization code.
    */
   public Robot() {
+          super(RobotBase.isReal());
       
     alliance = new Alliance();
     
@@ -47,12 +49,13 @@ public class Robot extends TimedRobot {
     List<LoadablePathPlannerAuto> loadableAutos = new ArrayList<LoadablePathPlannerAuto>();
     loadableAutos.add(new LoadablePathPlannerAuto("Do Nothing", Commands.none(), true));
 
-    String robotName = "2024-Robot";
+    String robotName = "RobotName";
     boolean isSim = false;
-    PIDConstants tranPidPathPlanner = new PIDConstants(10, kDefaultPeriod, kDefaultPeriod);
-    PIDConstants rotPidPathPlanner = new PIDConstants(5, kDefaultPeriod, kDefaultPeriod);
-    String VisionName = "LimelightVision";
+    PIDConstants tranPidPathPlanner = new PIDConstants(10, 0, 0);
+    PIDConstants rotPidPathPlanner = new PIDConstants(5, 0, 0);
+    driver_controller = new OI(robotName);
 
+    String VisionName = "LimelightVision";
     List<target> targets = new ArrayList<target>();
     target algae = new target();
     algae.name = "algae";
@@ -63,16 +66,15 @@ public class Robot extends TimedRobot {
     LimeLightConfig ll_cfg = new LimeLightConfig();
     ll_cfg.tagAmbiguity = 0.3;
     ll_cfg.tagDistanceLimit = 4;
+
     m_robotContainer = new RobotContainer(driver_controller, loadableAutos, robotName,
     isSim, alliance, tranPidPathPlanner,
     rotPidPathPlanner, VisionName, targets,
     ll_cfg);
 
-    
-    loadableAutos.add(new LoadablePathPlannerAuto("Base", new PathPlannerAuto("Base"), false));
-    loadableAutos.add(new LoadablePathPlannerAuto("Auto1", new PathPlannerAuto("Auto1"), false));
-
-    m_robotContainer.updatePaths(loadableAutos);
+    loadableAutos.add(new LoadablePathPlannerAuto("Base", new PathPlannerAuto("Base").withName("Base"), false));
+    loadableAutos.add(new LoadablePathPlannerAuto("Auto1", new PathPlannerAuto("Auto1").withName("Auto1"), false));
+    m_robotContainer.updateLoadedPaths(loadableAutos);
   }
 
   /**

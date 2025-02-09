@@ -43,7 +43,11 @@ public class AprilTagDetector implements VisionIO {
                 new AngularVelocity3d(
                     DegreesPerSecond.of(0), DegreesPerSecond.of(0), DegreesPerSecond.of(0))))
         .save();
-    poseEstimate = BotPose.BLUE_MEGATAG2.get(limelight).get();
+    try {
+      poseEstimate = BotPose.BLUE_MEGATAG2.get(limelight).get();
+    } catch (Exception e) {
+      poseEstimate = new PoseEstimate(limelight, "botpose_orb_wpiblue", true);
+    }
   }
 
   public void updateInputs(VisionIOInputs inputs) {

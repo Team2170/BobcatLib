@@ -118,10 +118,8 @@ public class SwerveBase {
    */
   public void configureButtonBindings() {
     Command zeroGyro = Commands.runOnce(s_Swerve::zeroHeading);
-    /* Driver Buttons */
-    s_Controls.zeroGyro.onTrue(zeroGyro);
-
     Command setFieldCentric = Commands.runOnce(s_Swerve::setFieldCentric);
+    s_Controls.zeroGyro.onTrue(zeroGyro);
     s_Controls.fieldCentric.toggleOnTrue(setFieldCentric);
   }
 

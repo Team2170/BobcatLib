@@ -29,9 +29,9 @@ public class OI {
   public ControllerJson controllerJson;
 
   /** The wrapper for the driver controller, supporting different controller types. */
-  public ControllerWrapper single_controller;
+  public ControllerWrapper first_controller;
 
-  public ControllerWrapper split_two_controller;
+  public ControllerWrapper second_controller;
 
   private String robotName;
   /**
@@ -43,19 +43,17 @@ public class OI {
     loadConfigurationFromFile();
     int driverPort = controllerJson.single.id;
     String type = controllerJson.single.type;
-    /* USB Xbox Controllers */
     single = new Joystick(driverPort);
     split_two = single;
-    /* Driver Buttons */
-    single_controller = init(type, driverPort);
-    split_two_controller = single_controller;
+    first_controller = init(type, driverPort);
+    second_controller = first_controller;
     if (controllerJson.isDual) {
       driverPort = controllerJson.split_one.id;
       type = controllerJson.split_one.type;
-      /* USB Xbox Controllers */
       split_two = new Joystick(driverPort);
-      /* Driver Buttons */
-      single_controller = init(type, driverPort);
+      second_controller = init(type, driverPort);
+      fieldCentric = first_controller.getTopButton();
+      zeroGyro = second_controller.getTopButton();
     }
   }
 
@@ -79,13 +77,9 @@ public class OI {
         break;
       case "ruffy":
         tmp = new Ruffy(driverPort);
-        fieldCentric = tmp.getTopButton();
-        zeroGyro = tmp.getTopButton();
         break;
       case "logitech":
         tmp = new Logitech(driverPort);
-        fieldCentric = tmp.getAorCross();
-        zeroGyro = tmp.getBorCircle();
         break;
       case "eightbitdo":
         tmp = new EightBitDo(driverPort);
@@ -129,7 +123,7 @@ public class OI {
    * @return double
    */
   public double getLeftYValue() {
-    return single_controller.getLeftYAxis();
+    return first_controller.getLeftYAxis();
   }
 
   /**
@@ -138,7 +132,7 @@ public class OI {
    * @return double
    */
   public double getLeftXValue() {
-    return single_controller.getLeftXAxis();
+    return first_controller.getLeftXAxis();
   }
 
   /**
@@ -148,9 +142,9 @@ public class OI {
    */
   public double getRightXValue() {
     if (controllerJson.isDual) {
-      return split_two_controller.getRightXAxis();
+      return second_controller.getRightXAxis();
     }
-    return single_controller.getRightXAxis();
+    return first_controller.getRightXAxis();
   }
   /**
    * Gets Driver RightY Axis
@@ -159,8 +153,8 @@ public class OI {
    */
   public double getRightYValue() {
     if (controllerJson.isDual) {
-      return split_two_controller.getRightYAxis();
+      return second_controller.getRightYAxis();
     }
-    return single_controller.getRightYAxis();
+    return first_controller.getRightYAxis();
   }
 }

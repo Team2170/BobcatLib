@@ -3,8 +3,8 @@
   <groupId>BobcatLib</groupId>
   <artifactId>BobcatLib-java</artifactId>
   <versioning>
-    <latest>2025.2.53</latest>
-    <release>2025.2.53</release>
+    <latest>2025.2.54</latest>
+    <release>2025.2.54</release>
     <versions>
       <version>test</version>
       <version>2025.0.1</version>
@@ -87,7 +87,8 @@
       <version>2025.2.51</version>
       <version>2025.2.52</version>
       <version>2025.2.53</version>
+      <version>2025.2.54</version>
     </versions>
-    <lastUpdated>20250209140559</lastUpdated>
+    <lastUpdated>20250213130814</lastUpdated>
   </versioning>
 </metadata>

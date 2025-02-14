@@ -1,26 +1,22 @@
 package BobcatLib.Subsystems.Elevators.Modules;
 
-import BobcatLib.Subsystems.Elevators.Modules.ElevatorModuleIO.ElevatorIOInputs;
 import BobcatLib.Utilities.SetPointWrapper;
 import edu.wpi.first.math.geometry.Rotation2d;
+import org.littletonrobotics.junction.Logger;
 
 public class BaseElevator {
   private final ElevatorModuleIO io;
-  private final ElevatorIOInputs inputs = new ElevatorIOInputs();
+  private final ElevatorIOInputsAutoLogged inputs = new ElevatorIOInputsAutoLogged();
   private Rotation2d currentSetPoint = new Rotation2d();
 
   public BaseElevator(ElevatorModuleIO io) {
     this.io = io;
   }
 
-  public void periodic() {
-    Rotation2d currentSetPoint = getCurrentSetPoint();
-    io.updateInputs(inputs, currentSetPoint.getRotations());
-    if (io.getPosition() == getCurrentSetPoint()) {
-      holdPosition();
-    } else {
-      io.moveElevator(currentSetPoint);
-    }
+  public void update() {
+    io.setCurrentSetPoint(currentSetPoint.getRotations());
+    io.updateInputs(inputs);
+    Logger.processInputs("Elevator/Module", inputs);
   }
 
   public void moveElevatorToNext(SetPointWrapper setPoints) {
@@ -46,6 +42,13 @@ public class BaseElevator {
     return currentSetPoint;
   }
 
+  public void runElevator(double velocity) {
+    io.runElevator(velocity);
+  }
+
+  public void runElevator() {
+    io.moveElevator(currentSetPoint);
+  }
   /** Stops the elevators motor immediately. */
   public void stop() {
     io.stop();

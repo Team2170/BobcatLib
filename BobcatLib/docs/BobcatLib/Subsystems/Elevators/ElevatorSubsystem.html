@@ -102,15 +102,18 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>double</code></div>
 <div class="col-second odd-row-color"><code><a href="#lowerLimit" class="member-name-link">lowerLimit</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="#name" class="member-name-link">name</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../../Utilities/SetPointWrapper.html" title="class in BobcatLib.Utilities">SetPointWrapper</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#setPoints" class="member-name-link">setPoints</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>double</code></div>
-<div class="col-second even-row-color"><code><a href="#upperLimit" class="member-name-link">upperLimit</a></code></div>
+<div class="col-second even-row-color"><code><a href="#maxVelocity" class="member-name-link">maxVelocity</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#name" class="member-name-link">name</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="../../Utilities/SetPointWrapper.html" title="class in BobcatLib.Utilities">SetPointWrapper</a></code></div>
+<div class="col-second even-row-color"><code><a href="#setPoints" class="member-name-link">setPoints</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>double</code></div>
+<div class="col-second odd-row-color"><code><a href="#upperLimit" class="member-name-link">upperLimit</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -126,6 +129,12 @@ loadScripts(document, 'script');</script>
  <a href="Modules/BaseElevator.html" title="class in BobcatLib.Subsystems.Elevators.Modules">BaseElevator</a>&nbsp;elevator,
  <a href="../../Utilities/SetPointWrapper.html" title="class in BobcatLib.Utilities">SetPointWrapper</a>&nbsp;points)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.String,BobcatLib.Subsystems.Elevators.Modules.BaseElevator,BobcatLib.Utilities.SetPointWrapper,double,double)" class="member-name-link">ElevatorSubsystem</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="Modules/BaseElevator.html" title="class in BobcatLib.Subsystems.Elevators.Modules">BaseElevator</a>&nbsp;elevator,
+ <a href="../../Utilities/SetPointWrapper.html" title="class in BobcatLib.Utilities">SetPointWrapper</a>&nbsp;points,
+ double&nbsp;lower,
+ double&nbsp;upper)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -141,13 +150,32 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#holdPosition()" class="member-name-link">holdPosition</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#holdPositionMechanically(double)" class="member-name-link">holdPositionMechanically</a><wbr>(double&nbsp;velocity)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#periodic()" class="member-name-link">periodic</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#runElevator()" class="member-name-link">runElevator</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#runElevator(double)" class="member-name-link">runElevator</a><wbr>(double&nbsp;velocity)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setNextPosition()" class="member-name-link">setNextPosition</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPrevPosition()" class="member-name-link">setPrevPosition</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ElevatorSubsystem.html" title="class in BobcatLib.Subsystems.Elevators">ElevatorSubsystem</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withLimits(double,double)" class="member-name-link">withLimits</a><wbr>(double&nbsp;lower,
+ double&nbsp;upper)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ElevatorSubsystem.html" title="class in BobcatLib.Subsystems.Elevators">ElevatorSubsystem</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withMaxVelocity(double)" class="member-name-link">withMaxVelocity</a><wbr>(double&nbsp;maxVelocity)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
@@ -202,6 +230,12 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">name</span></div>
 </section>
 </li>
+<li>
+<section class="detail" id="maxVelocity">
+<h3>maxVelocity</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">maxVelocity</span></div>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -218,6 +252,16 @@ loadScripts(document, 'script');</script>
  <a href="../../Utilities/SetPointWrapper.html" title="class in BobcatLib.Utilities">SetPointWrapper</a>&nbsp;points)</span></div>
 </section>
 </li>
+<li>
+<section class="detail" id="&lt;init&gt;(java.lang.String,BobcatLib.Subsystems.Elevators.Modules.BaseElevator,BobcatLib.Utilities.SetPointWrapper,double,double)">
+<h3>ElevatorSubsystem</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ElevatorSubsystem</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ <a href="Modules/BaseElevator.html" title="class in BobcatLib.Subsystems.Elevators.Modules">BaseElevator</a>&nbsp;elevator,
+ <a href="../../Utilities/SetPointWrapper.html" title="class in BobcatLib.Utilities">SetPointWrapper</a>&nbsp;points,
+ double&nbsp;lower,
+ double&nbsp;upper)</span></div>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -226,6 +270,19 @@ loadScripts(document, 'script');</script>
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="withLimits(double,double)">
+<h3>withLimits</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ElevatorSubsystem.html" title="class in BobcatLib.Subsystems.Elevators">ElevatorSubsystem</a></span>&nbsp;<span class="element-name">withLimits</span><wbr><span class="parameters">(double&nbsp;lower,
+ double&nbsp;upper)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="withMaxVelocity(double)">
+<h3>withMaxVelocity</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ElevatorSubsystem.html" title="class in BobcatLib.Subsystems.Elevators">ElevatorSubsystem</a></span>&nbsp;<span class="element-name">withMaxVelocity</span><wbr><span class="parameters">(double&nbsp;maxVelocity)</span></div>
+</section>
+</li>
 <li>
 <section class="detail" id="periodic()">
 <h3>periodic</h3>
@@ -242,6 +299,30 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="setPrevPosition()">
 <h3>setPrevPosition</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPrevPosition</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="runElevator()">
+<h3>runElevator</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">runElevator</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="runElevator(double)">
+<h3>runElevator</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">runElevator</span><wbr><span class="parameters">(double&nbsp;velocity)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="holdPosition()">
+<h3>holdPosition</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">holdPosition</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="holdPositionMechanically(double)">
+<h3>holdPositionMechanically</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">holdPositionMechanically</span><wbr><span class="parameters">(double&nbsp;velocity)</span></div>
 </section>
 </li>
 </ul>

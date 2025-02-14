@@ -5,6 +5,7 @@ import BobcatLib.Hardware.Gyros.GyroSim;
 import BobcatLib.Hardware.Gyros.Pigeon2Gyro;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.SwerveModule;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.SwerveModuleReal;
+import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.SwerveModuleSim;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.Utility.PIDConstants;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.Utility.Pose.WpiPoseEstimator;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.parser.ModuleLimitsJson;
@@ -191,10 +192,10 @@ public class SwerveDrive extends SubsystemBase implements SysidCompatibleSwerve,
     if (isSim) {
       mSwerveMods =
           new SwerveModule[] {
-            new SwerveModule(new SwerveModuleReal(0, jsonSwerve.moduleSpeedLimits, robotName), 0),
-            new SwerveModule(new SwerveModuleReal(1, jsonSwerve.moduleSpeedLimits, robotName), 1),
-            new SwerveModule(new SwerveModuleReal(2, jsonSwerve.moduleSpeedLimits, robotName), 2),
-            new SwerveModule(new SwerveModuleReal(3, jsonSwerve.moduleSpeedLimits, robotName), 3)
+            new SwerveModule(new SwerveModuleSim(0, jsonSwerve.moduleSpeedLimits, robotName), 0),
+            new SwerveModule(new SwerveModuleSim(1, jsonSwerve.moduleSpeedLimits, robotName), 1),
+            new SwerveModule(new SwerveModuleSim(2, jsonSwerve.moduleSpeedLimits, robotName), 2),
+            new SwerveModule(new SwerveModuleSim(3, jsonSwerve.moduleSpeedLimits, robotName), 3)
           };
       gyro = new BaseGyro("Swerve-Gyro", new GyroSim());
     } else {

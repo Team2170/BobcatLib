@@ -20,6 +20,8 @@ public interface ElevatorModuleIO {
 
   public default void moveElevator(Rotation2d setPoint) {}
 
+  public default void runElevator(double velocity) {}
+
   /** Stops the elevator motor immediately. */
   public default void stop() {}
 
@@ -27,5 +29,7 @@ public interface ElevatorModuleIO {
     return new Rotation2d();
   }
 
-  public void updateInputs(ElevatorIOInputs inputs, double currentSetPoint);
+  public default void updateInputs(ElevatorIOInputs inputs) {}
+
+  public default void setCurrentSetPoint(double rotations) {}
 }

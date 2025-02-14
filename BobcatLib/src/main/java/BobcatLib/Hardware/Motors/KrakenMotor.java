@@ -3,6 +3,7 @@ package BobcatLib.Hardware.Motors;
 import BobcatLib.Hardware.Motors.SensorHelpers.InvertedWrapper;
 import BobcatLib.Hardware.Motors.SensorHelpers.NeutralModeWrapper;
 import BobcatLib.Hardware.Motors.Utility.CTRE.PidControllerWrapper;
+import BobcatLib.Hardware.Motors.Utility.MotorConfigurator;
 import BobcatLib.Logging.FaultsAndErrors.KrakenFaults;
 import BobcatLib.Utilities.CANDeviceDetails;
 import com.ctre.phoenix6.configs.Slot0Configs;
@@ -27,7 +28,7 @@ public class KrakenMotor implements MotorIO {
 
   private int motorCanId = 0;
   private final SimpleMotorFeedforward motorFeedFordward;
-  private TalonFXConfiguration motorConfig;
+  private MotorConfigurator motorConfig;
   private TalonFX mMotor;
   private String busName = "";
   private final DutyCycleOut motorDutyCycle = new DutyCycleOut(0);
@@ -71,34 +72,22 @@ public class KrakenMotor implements MotorIO {
    * @param cfg The MotorConfigs object containing configuration parameters.
    */
   public void configMotor(MotorConfigs cfg) {
-    motorConfig.MotorOutput.withInverted(new InvertedWrapper(cfg.isInverted).asCTRE());
-    motorConfig.MotorOutput.withNeutralMode(new NeutralModeWrapper(cfg.mode).asNeutralModeValue());
-    motorConfig.Feedback.withSensorToMechanismRatio(cfg.motorToGearRatio);
-    motorConfig.Slot0 =
+    TalonFXConfiguration internalConfig = motorConfig.getCtreConfig();
+    internalConfig.MotorOutput.withInverted(new InvertedWrapper(cfg.isInverted).asCTRE());
+    internalConfig.MotorOutput.withNeutralMode(
+        new NeutralModeWrapper(cfg.mode).asNeutralModeValue());
+    internalConfig.Feedback.withSensorToMechanismRatio(cfg.motorToGearRatio);
+    internalConfig.Slot0 =
         new PidControllerWrapper(new Slot0Configs())
             .with_kP(cfg.kP)
             .with_kI(cfg.kI)
             .with_kD(cfg.kD)
             .getSlot0Config();
-    motorConfig.CurrentLimits.withStatorCurrentLimit(cfg.optionalCtre.StatorSupplyCurrentLimit);
-    motorConfig.CurrentLimits.withStatorCurrentLimitEnable(
+    internalConfig.CurrentLimits.withStatorCurrentLimit(cfg.optionalCtre.StatorSupplyCurrentLimit);
+    internalConfig.CurrentLimits.withStatorCurrentLimitEnable(
         cfg.optionalCtre.StatorSupplyCurrentEnable);
-    motorConfig.CurrentLimits.withSupplyCurrentLimitEnable(
-        cfg.optionalCtre.SupplyCurrentLimitEnable);
-    motorConfig.CurrentLimits.withSupplyCurrentLimit(cfg.optionalCtre.SupplyCurrentLimit);
-    motorConfig.OpenLoopRamps.withDutyCycleOpenLoopRampPeriod(
-        cfg.optionalCtre.openLoop.getDutyCycleRampPeriod());
-    motorConfig.OpenLoopRamps.withTorqueOpenLoopRampPeriod(
-        cfg.optionalCtre.openLoop.getTorqueRampPeriod());
-    motorConfig.OpenLoopRamps.withVoltageOpenLoopRampPeriod(
-        cfg.optionalCtre.openLoop.getVoltageRampPeriod());
-    motorConfig.ClosedLoopRamps.withDutyCycleClosedLoopRampPeriod(
-        cfg.optionalCtre.closedLoop.getDutyCycleRampPeriod());
-    motorConfig.ClosedLoopRamps.withTorqueClosedLoopRampPeriod(
-        cfg.optionalCtre.closedLoop.getTorqueRampPeriod());
-    motorConfig.ClosedLoopRamps.withVoltageClosedLoopRampPeriod(
-        cfg.optionalCtre.closedLoop.getVoltageRampPeriod());
-    mMotor.getConfigurator().apply(motorConfig);
+    motorConfig.update(internalConfig);
+    mMotor.getConfigurator().apply(motorConfig.getCtreConfig());
   }
   /**
    * Configures the motor with software limit switch settings.
@@ -108,8 +97,10 @@ public class KrakenMotor implements MotorIO {
    * @return The updated {@code KrakenMotor} instance for method chaining.
    */
   public KrakenMotor withLimits(SoftwareLimitSwitchConfigs cfgLimits) {
-    motorConfig.withSoftwareLimitSwitch(cfgLimits);
-    mMotor.getConfigurator().apply(motorConfig);
+    TalonFXConfiguration intConfig = motorConfig.getCtreConfig();
+    intConfig.withSoftwareLimitSwitch(cfgLimits);
+    motorConfig.update(intConfig);
+    mMotor.getConfigurator().apply(motorConfig.getCtreConfig());
     return this;
   }
 
@@ -150,7 +141,7 @@ public class KrakenMotor implements MotorIO {
    */
   public void setSpeed(double speedInMPS, boolean isOpenLoop) {
     if (config.optionalCtre.useFOC) {
-      double mechanismCircumference = motorConfig.Feedback.SensorToMechanismRatio;
+      double mechanismCircumference = motorConfig.getCtreConfig().Feedback.SensorToMechanismRatio;
       double speedInRPS = speedInMPS / mechanismCircumference;
       setSpeed(speedInRPS, mechanismCircumference, isOpenLoop);
       return;
@@ -254,5 +245,9 @@ public class KrakenMotor implements MotorIO {
    */
   public int getCanId() {
     return motorCanId;
+  }
+
+  public MotorConfigurator getConfigurator() {
+    return motorConfig;
   }
 }

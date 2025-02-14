@@ -8,11 +8,13 @@ import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.DriveMotor.DriveWr
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.DriveMotor.FalconDriveMotor;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.DriveMotor.KrakenDriveMotor;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.DriveMotor.NeoDriveMotor;
+import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.DriveMotor.SimDriveMotor;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.DriveMotor.VortexDriveMotor;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.SteerMotor.FalconSteerMotor;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.SteerMotor.KrakenSteerMotor;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.SteerMotor.Neo550SteerMotor;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.SteerMotor.NeoSteerMotor;
+import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.SteerMotor.SimSteerMotor;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.SteerMotor.SteerWrapper;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.SteerMotor.VortexSteerMotor;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.Utility.ModuleConstants;
@@ -154,9 +156,7 @@ public class SwerveModuleSim implements SwerveModuleIO {
         break;
       default:
         details = new CANDeviceDetails(canId, Manufacturer.Ctre, "Swerve/Module" + moduleNumber);
-        mAngleMotor =
-            new KrakenSteerMotor(
-                details, canId, chosenModule, jsonModule.angle.canbus, swerveLimits);
+        mAngleMotor = new SimSteerMotor(chosenModule, swerveLimits);
     }
   }
 
@@ -185,9 +185,7 @@ public class SwerveModuleSim implements SwerveModuleIO {
         break;
       default:
         details = new CANDeviceDetails(canId, Manufacturer.Rev, "Swerve/Module" + moduleNumber);
-        mDriveMotor =
-            new KrakenDriveMotor(
-                details, canId, chosenModule, jsonModule.drive.canbus, swerveLimits);
+        mDriveMotor = new SimDriveMotor(chosenModule, swerveLimits);
     }
   }
 

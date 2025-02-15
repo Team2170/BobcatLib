@@ -2,6 +2,7 @@ package BobcatLib.Hardware.Gyros;
 
 import com.ctre.phoenix6.hardware.Pigeon2;
 import edu.wpi.first.math.geometry.Rotation2d;
+import edu.wpi.first.math.geometry.Rotation3d;
 import edu.wpi.first.wpilibj.Timer;
 
 /**
@@ -136,5 +137,9 @@ public class GyroSim implements GyroIO {
    */
   public double getTimeDiff() {
     return (timer.get() - lastTime);
+  }
+
+  public Rotation3d getGyroRates() {
+    return new Rotation3d();
   }
 }

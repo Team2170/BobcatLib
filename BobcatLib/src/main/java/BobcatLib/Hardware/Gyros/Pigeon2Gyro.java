@@ -10,6 +10,7 @@ import com.ctre.phoenix6.configs.Pigeon2Configuration;
 import com.ctre.phoenix6.hardware.Pigeon2;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.wpi.first.math.geometry.Rotation2d;
+import edu.wpi.first.math.geometry.Rotation3d;
 import edu.wpi.first.networktables.StringSubscriber;
 import edu.wpi.first.units.measure.Angle;
 import edu.wpi.first.wpilibj.Filesystem;
@@ -163,5 +164,12 @@ public class Pigeon2Gyro implements GyroIO {
    */
   public double getTimeDiff() {
     return 1.0;
+  }
+
+  public Rotation3d getGyroRates() {
+    return new Rotation3d(
+        gyro.getAngularVelocityXWorld().getValueAsDouble(),
+        gyro.getAngularVelocityYWorld().getValueAsDouble(),
+        gyro.getAngularVelocityZWorld().getValueAsDouble());
   }
 }

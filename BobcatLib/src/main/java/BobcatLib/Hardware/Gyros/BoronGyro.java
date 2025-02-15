@@ -8,6 +8,7 @@ import BobcatLib.Utilities.CANDeviceDetails;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.reduxrobotics.sensors.canandgyro.Canandgyro;
 import edu.wpi.first.math.geometry.Rotation2d;
+import edu.wpi.first.math.geometry.Rotation3d;
 import edu.wpi.first.networktables.StringSubscriber;
 import edu.wpi.first.wpilibj.Filesystem;
 import java.io.File;
@@ -156,5 +157,9 @@ public class BoronGyro implements GyroIO {
    */
   public double getTimeDiff() {
     return 1.0;
+  }
+
+  public Rotation3d getGyroRates() {
+    return new Rotation3d();
   }
 }

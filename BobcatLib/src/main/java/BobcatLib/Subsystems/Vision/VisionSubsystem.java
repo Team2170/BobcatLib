@@ -1,7 +1,7 @@
 package BobcatLib.Subsystems.Vision;
 
 import BobcatLib.Subsystems.Vision.Components.VisionIO;
-import BobcatLib.Subsystems.Vision.Components.VisionIOInputsAutoLogged;
+import BobcatLib.Subsystems.Vision.Components.VisionLLIOInputsAutoLogged;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import org.littletonrobotics.junction.Logger;
 
@@ -11,7 +11,7 @@ import org.littletonrobotics.junction.Logger;
  */
 public class VisionSubsystem extends SubsystemBase {
   public VisionIO io;
-  public VisionIOInputsAutoLogged inputs = new VisionIOInputsAutoLogged();
+  public VisionLLIOInputsAutoLogged inputs = new VisionLLIOInputsAutoLogged();
   public final String name;
   /**
    * Constructor for the VisionSubsystem.

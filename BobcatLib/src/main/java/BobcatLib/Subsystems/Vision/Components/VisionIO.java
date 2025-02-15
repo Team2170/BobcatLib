@@ -11,13 +11,13 @@ public interface VisionIO {
   }
 
   @AutoLog
-  public class VisionIOInputs {
+  public class VisionLLIOInputs {
     public boolean coralDetected;
     public boolean algaeDetected;
     public Pose2d pose;
   }
 
-  public default void updateInputs(VisionIOInputs inputs) {}
+  public default void updateInputs(VisionLLIOInputs inputs) {}
 
   public default void periodic() {}
 }

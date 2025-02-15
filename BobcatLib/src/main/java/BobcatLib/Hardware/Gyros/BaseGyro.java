@@ -2,6 +2,7 @@ package BobcatLib.Hardware.Gyros;
 
 import BobcatLib.Hardware.Gyros.GyroIO.GyroIOInputs;
 import edu.wpi.first.math.geometry.Rotation2d;
+import edu.wpi.first.math.geometry.Rotation3d;
 
 /**
  * The BaseGyro class provides an abstraction for interacting with a gyro sensor. It communicates
@@ -104,5 +105,9 @@ public class BaseGyro {
 
   public double getAccel() {
     return inputs.accel;
+  }
+
+  public Rotation3d getRotationRate() {
+    return io.getGyroRates();
   }
 }

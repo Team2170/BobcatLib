@@ -4,7 +4,7 @@ import static edu.wpi.first.units.Units.DegreesPerSecond;
 
 import BobcatLib.Hardware.Gyros.BaseGyro;
 import BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.Utility.Pose.WpiPoseEstimator;
-import BobcatLib.Subsystems.Vision.Components.VisionIO.VisionIOInputs;
+import BobcatLib.Subsystems.Vision.Components.VisionIO.VisionLLIOInputs;
 import BobcatLib.Subsystems.Vision.limelight.Limelight;
 import BobcatLib.Subsystems.Vision.limelight.networktables.AngularVelocity3d;
 import BobcatLib.Subsystems.Vision.limelight.networktables.LimelightPoseEstimator;
@@ -50,7 +50,7 @@ public class AprilTagDetector implements VisionIO {
     }
   }
 
-  public void updateInputs(VisionIOInputs inputs) {
+  public void updateInputs(VisionLLIOInputs inputs) {
     inputs.algaeDetected = false;
     inputs.coralDetected = false;
     inputs.pose = getPose().pose.toPose2d();

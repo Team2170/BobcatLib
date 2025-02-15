@@ -2,6 +2,7 @@ package BobcatLib.Hardware.Gyros;
 
 import com.ctre.phoenix6.hardware.Pigeon2;
 import edu.wpi.first.math.geometry.Rotation2d;
+import edu.wpi.first.math.geometry.Rotation3d;
 
 /**
  * Represents an interface for interacting with a gyro sensor. This interface defines methods for
@@ -85,4 +86,8 @@ public interface GyroIO {
    * the gyro's state.
    */
   public default void periodic() {}
+
+  public default Rotation3d getGyroRates() {
+    return new Rotation3d(0, 0, 0);
+  }
 }

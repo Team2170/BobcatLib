@@ -1,6 +1,7 @@
 package BobcatLib.Hardware.Motors;
 
 import edu.wpi.first.math.geometry.Rotation2d;
+import org.littletonrobotics.junction.AutoLog;
 
 /**
  * The MotorIO interface defines the methods and data structures for interacting with motor input
@@ -10,6 +11,7 @@ import edu.wpi.first.math.geometry.Rotation2d;
 public interface MotorIO {
 
   /** Represents the inputs for the motor sensor. */
+  @AutoLog
   public class MotorIOInputs {
     /** The current position of the motor as a Rotation2d object. */
     public Rotation2d motorPosition = new Rotation2d();

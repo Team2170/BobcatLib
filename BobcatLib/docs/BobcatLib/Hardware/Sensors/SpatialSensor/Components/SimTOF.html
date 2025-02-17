@@ -83,6 +83,8 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">SimTOF</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="RangeSensor.html" title="interface in BobcatLib.Hardware.Sensors.SpatialSensor.Components">RangeSensor</a></span></div>
+<div class="block">The SimTOF class simulates a Time-of-Flight (ToF) sensor for use in simulation environments. It
+ provides methods for getting the range and configuring the sensor's distance mode.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -130,7 +132,9 @@ implements <a href="RangeSensor.html" title="interface in BobcatLib.Hardware.Sen
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int,BobcatLib.Hardware.Sensors.SpatialSensor.Utility.DistanceMode,double)" class="member-name-link">SimTOF</a><wbr>(int&nbsp;id,
  <a href="../Utility/DistanceMode.html" title="class in BobcatLib.Hardware.Sensors.SpatialSensor.Utility">DistanceMode</a>&nbsp;mode,
  double&nbsp;sampleTime)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructs a new SimTOF instance for simulation.</div>
+</div>
 </div>
 </section>
 </li>
@@ -148,27 +152,27 @@ implements <a href="RangeSensor.html" title="interface in BobcatLib.Hardware.Sen
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#configRangeSensor()" class="member-name-link">configRangeSensor</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">config the sensor with default setting for the device.</div>
+<div class="block">Configures the sensor with default settings.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#configRangeSensor(BobcatLib.Hardware.Sensors.SpatialSensor.Utility.DistanceMode)" class="member-name-link">configRangeSensor</a><wbr>(<a href="../Utility/DistanceMode.html" title="class in BobcatLib.Hardware.Sensors.SpatialSensor.Utility">DistanceMode</a>&nbsp;m)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Given the mode , config the sensor to the right detection parameters.</div>
+<div class="block">Configures the sensor with the specified distance mode.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Utility/DistanceMode.html" title="class in BobcatLib.Hardware.Sensors.SpatialSensor.Utility">DistanceMode</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMode()" class="member-name-link">getMode</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Gets the Ranging Mode of the sensor</div>
+<div class="block">Gets the current distance mode of the sensor.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Utility/DistanceMode.html" title="class in BobcatLib.Hardware.Sensors.SpatialSensor.Utility">DistanceMode</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getOptimalMode()" class="member-name-link">getOptimalMode</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets the distance mode of the sensor based on the provided distance.</div>
+<div class="block">Determines the optimal distance mode for the sensor based on the current range.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRange()" class="member-name-link">getRange</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Gets the range in front of the sensor.</div>
+<div class="block">Retrieves the range (distance) in front of the sensor.</div>
 </div>
 </div>
 </div>
@@ -243,6 +247,14 @@ implements <a href="RangeSensor.html" title="interface in BobcatLib.Hardware.Sen
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">SimTOF</span><wbr><span class="parameters">(int&nbsp;id,
  <a href="../Utility/DistanceMode.html" title="class in BobcatLib.Hardware.Sensors.SpatialSensor.Utility">DistanceMode</a>&nbsp;mode,
  double&nbsp;sampleTime)</span></div>
+<div class="block">Constructs a new SimTOF instance for simulation. This method initializes the simulated device
+ and its range.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>id</code> - The unique identifier for the sensor.</dd>
+<dd><code>mode</code> - The distance mode (e.g., short, medium, or long range).</dd>
+<dd><code>sampleTime</code> - The time interval between sensor measurements.</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -257,12 +269,13 @@ implements <a href="RangeSensor.html" title="interface in BobcatLib.Hardware.Sen
 <section class="detail" id="getRange()">
 <h3>getRange</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">getRange</span>()</div>
-<div class="block">Gets the range in front of the sensor.</div>
+<div class="block">Retrieves the range (distance) in front of the sensor. This method returns the simulated
+ distance in millimeters.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="RangeSensor.html#getRange()">getRange</a></code>&nbsp;in interface&nbsp;<code><a href="RangeSensor.html" title="interface in BobcatLib.Hardware.Sensors.SpatialSensor.Components">RangeSensor</a></code></dd>
 <dt>Returns:</dt>
-<dd>range in mm</dd>
+<dd>The simulated range in millimeters.</dd>
 </dl>
 </section>
 </li>
@@ -270,8 +283,8 @@ implements <a href="RangeSensor.html" title="interface in BobcatLib.Hardware.Sen
 <section class="detail" id="configRangeSensor()">
 <h3>configRangeSensor</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">configRangeSensor</span>()</div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="RangeSensor.html#configRangeSensor()">RangeSensor</a></code></span></div>
-<div class="block">config the sensor with default setting for the device.</div>
+<div class="block">Configures the sensor with default settings. Since this is a simulation, no specific
+ configuration is needed, but this method can be extended if necessary.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="RangeSensor.html#configRangeSensor()">configRangeSensor</a></code>&nbsp;in interface&nbsp;<code><a href="RangeSensor.html" title="interface in BobcatLib.Hardware.Sensors.SpatialSensor.Components">RangeSensor</a></code></dd>
@@ -282,11 +295,13 @@ implements <a href="RangeSensor.html" title="interface in BobcatLib.Hardware.Sen
 <section class="detail" id="configRangeSensor(BobcatLib.Hardware.Sensors.SpatialSensor.Utility.DistanceMode)">
 <h3>configRangeSensor</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">configRangeSensor</span><wbr><span class="parameters">(<a href="../Utility/DistanceMode.html" title="class in BobcatLib.Hardware.Sensors.SpatialSensor.Utility">DistanceMode</a>&nbsp;m)</span></div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="RangeSensor.html#configRangeSensor(BobcatLib.Hardware.Sensors.SpatialSensor.Utility.DistanceMode)">RangeSensor</a></code></span></div>
-<div class="block">Given the mode , config the sensor to the right detection parameters.</div>
+<div class="block">Configures the sensor with the specified distance mode. This method updates the mode of the
+ simulated sensor.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="RangeSensor.html#configRangeSensor(BobcatLib.Hardware.Sensors.SpatialSensor.Utility.DistanceMode)">configRangeSensor</a></code>&nbsp;in interface&nbsp;<code><a href="RangeSensor.html" title="interface in BobcatLib.Hardware.Sensors.SpatialSensor.Components">RangeSensor</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>m</code> - The new distance mode to be applied to the sensor (e.g., short, medium, long).</dd>
 </dl>
 </section>
 </li>
@@ -294,13 +309,12 @@ implements <a href="RangeSensor.html" title="interface in BobcatLib.Hardware.Sen
 <section class="detail" id="getMode()">
 <h3>getMode</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Utility/DistanceMode.html" title="class in BobcatLib.Hardware.Sensors.SpatialSensor.Utility">DistanceMode</a></span>&nbsp;<span class="element-name">getMode</span>()</div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="RangeSensor.html#getMode()">RangeSensor</a></code></span></div>
-<div class="block">Gets the Ranging Mode of the sensor</div>
+<div class="block">Gets the current distance mode of the sensor.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="RangeSensor.html#getMode()">getMode</a></code>&nbsp;in interface&nbsp;<code><a href="RangeSensor.html" title="interface in BobcatLib.Hardware.Sensors.SpatialSensor.Components">RangeSensor</a></code></dd>
 <dt>Returns:</dt>
-<dd>RangingMode</dd>
+<dd>The current distance mode used by the sensor.</dd>
 </dl>
 </section>
 </li>
@@ -308,14 +322,13 @@ implements <a href="RangeSensor.html" title="interface in BobcatLib.Hardware.Sen
 <section class="detail" id="getOptimalMode()">
 <h3>getOptimalMode</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Utility/DistanceMode.html" title="class in BobcatLib.Hardware.Sensors.SpatialSensor.Utility">DistanceMode</a></span>&nbsp;<span class="element-name">getOptimalMode</span>()</div>
-<div class="block">Sets the distance mode of the sensor based on the provided distance.
-
- <p>RangingMode.Short: if distance less than 1250 mm RangingMode.Medium: if 1250 mm less than or
- equal too distance less than 2250 mm RangingMode.Long: if distance greater than or equal to
- 2250 mm</div>
+<div class="block">Determines the optimal distance mode for the sensor based on the current range. Since this is a
+ simulation, the method returns a fixed value (SHORT).</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="RangeSensor.html#getOptimalMode()">getOptimalMode</a></code>&nbsp;in interface&nbsp;<code><a href="RangeSensor.html" title="interface in BobcatLib.Hardware.Sensors.SpatialSensor.Components">RangeSensor</a></code></dd>
+<dt>Returns:</dt>
+<dd>The optimal distance mode for the current sensor reading.</dd>
 </dl>
 </section>
 </li>

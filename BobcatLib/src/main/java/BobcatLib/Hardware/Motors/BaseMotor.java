@@ -1,9 +1,9 @@
 package BobcatLib.Hardware.Motors;
 
-import BobcatLib.Hardware.Motors.MotorIO.MotorIOInputs;
 import BobcatLib.Hardware.Motors.Utility.SoftwareLimitWrapper;
 import BobcatLib.Utilities.CANDeviceDetails;
 import edu.wpi.first.math.geometry.Rotation2d;
+import org.littletonrobotics.junction.Logger;
 
 /**
  * The BaseMotor class serves as a wrapper for motor functionality, providing methods for
@@ -13,8 +13,9 @@ import edu.wpi.first.math.geometry.Rotation2d;
 public class BaseMotor {
 
   private final MotorIO io;
-  private final MotorIOInputs inputs = new MotorIOInputs();
+  private final MotorIOInputsAutoLogged inputs = new MotorIOInputsAutoLogged();
   private SoftwareLimitWrapper limits;
+  private String name;
 
   /**
    * Constructs a new BaseMotor instance.
@@ -22,11 +23,21 @@ public class BaseMotor {
    * @param io The MotorIO implementation to be used for motor control and feedback.
    * @param limits A SoftwareLimitWrapper instance to handle motor software limits.
    */
-  public BaseMotor(MotorIO io, SoftwareLimitWrapper limits) {
+  public BaseMotor(MotorIO io, String name, SoftwareLimitWrapper limits) {
     this.limits = limits;
     this.io = io;
+    this.name = name;
   }
 
+  /**
+   * Constructs a new BaseMotor instance with a specified CAN device details, motor configuration,
+   * motor type, and software limits.
+   *
+   * @param details The CAN device details for the motor.
+   * @param mc The motor configurations.
+   * @param motor_type The type of motor (e.g., "kraken" or "falcon").
+   * @param limits A SoftwareLimitWrapper instance to handle motor software limits.
+   */
   public BaseMotor(
       CANDeviceDetails details, MotorConfigs mc, String motor_type, SoftwareLimitWrapper limits) {
     this.limits = limits;
@@ -50,6 +61,7 @@ public class BaseMotor {
    */
   public void periodic() {
     io.updateInputs(inputs);
+    Logger.processInputs(name, inputs);
   }
 
   /**
@@ -173,10 +185,20 @@ public class BaseMotor {
     return this;
   }
 
+  /**
+   * Retrieves the upper software limit of the motor.
+   *
+   * @return The upper software limit as a Rotation2d instance.
+   */
   public Rotation2d getUpperLimit() {
     return limits.getUpperLimit();
   }
 
+  /**
+   * Retrieves the lower software limit of the motor.
+   *
+   * @return The lower software limit as a Rotation2d instance.
+   */
   public Rotation2d getLowerLimit() {
     return limits.getLowerLimit();
   }

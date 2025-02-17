@@ -35,7 +35,7 @@ public class IntakeModuleReal {
   public IntakeModuleReal(MotorIO rollerMotor, IntakeJson intakeJson, SoftwareLimitWrapper limits) {
     loadConfigurationFromFile(intakeJson);
     this.limits = limits;
-    this.rollerMotor = new BaseMotor(rollerMotor, limits);
+    this.rollerMotor = new BaseMotor(rollerMotor, "Intake/Motor", limits);
     intakeType = IntakeType.STATIONARY;
   }
 
@@ -48,8 +48,8 @@ public class IntakeModuleReal {
    */
   public IntakeModuleReal(MotorIO rollerMotor, MotorIO pivotMotor, IntakeJson intakeJson) {
     loadConfigurationFromFile(intakeJson);
-    this.rollerMotor = new BaseMotor(rollerMotor, limits);
-    this.pivotMotor = new BaseMotor(pivotMotor, limits);
+    this.rollerMotor = new BaseMotor(rollerMotor, "Intake/Motor", limits);
+    this.pivotMotor = new BaseMotor(pivotMotor, "Intake/Motor", limits);
     intakeType = IntakeType.PIVOTING;
   }
 
@@ -64,8 +64,8 @@ public class IntakeModuleReal {
   public IntakeModuleReal(
       MotorIO rollerMotor, MotorIO pivotMotor, EncoderIO absEncoder, IntakeJson intakeJson) {
     loadConfigurationFromFile(intakeJson);
-    this.rollerMotor = new BaseMotor(rollerMotor, limits);
-    this.pivotMotor = new BaseMotor(pivotMotor, limits);
+    this.rollerMotor = new BaseMotor(rollerMotor, "Intake/Motor", limits);
+    this.pivotMotor = new BaseMotor(pivotMotor, "Intake/Motor", limits);
     this.intakeAbsEncoder = new BaseEncoder(absEncoder);
     intakeType = IntakeType.PIVOTING;
   }

@@ -111,24 +111,39 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/geometry/Rotation2d.html" title="class or interface in edu.wpi.first.math.geometry" class="external-link">Rotation2d</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getPosition()" class="member-name-link">getPosition</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#moveElevator(edu.wpi.first.math.geometry.Rotation2d)" class="member-name-link">moveElevator</a><wbr>(<a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/geometry/Rotation2d.html" title="class or interface in edu.wpi.first.math.geometry" class="external-link">Rotation2d</a>&nbsp;setPoint)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#runElevator(double)" class="member-name-link">runElevator</a><wbr>(double&nbsp;velocity)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#setCurrentSetPoint(double)" class="member-name-link">setCurrentSetPoint</a><wbr>(double&nbsp;rotations)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#stop()" class="member-name-link">stop</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Stops the elevator motor immediately.</div>
+<div class="block">Gets the current position of the elevator.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#updateInputs(BobcatLib.Subsystems.Elevators.Modules.ElevatorModuleIO.ElevatorIOInputs)" class="member-name-link">updateInputs</a><wbr>(<a href="ElevatorModuleIO.ElevatorIOInputs.html" title="class in BobcatLib.Subsystems.Elevators.Modules">ElevatorModuleIO.ElevatorIOInputs</a>&nbsp;inputs)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#moveElevator(edu.wpi.first.math.geometry.Rotation2d)" class="member-name-link">moveElevator</a><wbr>(<a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/geometry/Rotation2d.html" title="class or interface in edu.wpi.first.math.geometry" class="external-link">Rotation2d</a>&nbsp;setPoint)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Moves the elevator to a specified setpoint.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#runElevator(double)" class="member-name-link">runElevator</a><wbr>(double&nbsp;velocity)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Runs the elevator at a specified velocity.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#runVoltage(edu.wpi.first.units.measure.Voltage)" class="member-name-link">runVoltage</a><wbr>(<a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/units/measure/Voltage.html" title="class or interface in edu.wpi.first.units.measure" class="external-link">Voltage</a>&nbsp;volts)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Runs the elevator using a specified voltage.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#setCurrentSetPoint(double)" class="member-name-link">setCurrentSetPoint</a><wbr>(double&nbsp;rotations)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Sets the current setpoint for the elevator position.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#stop()" class="member-name-link">stop</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Stops the elevator motor immediately.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#updateInputs(BobcatLib.Subsystems.Elevators.Modules.ElevatorModuleIO.ElevatorIOInputs)" class="member-name-link">updateInputs</a><wbr>(<a href="ElevatorModuleIO.ElevatorIOInputs.html" title="class in BobcatLib.Subsystems.Elevators.Modules">ElevatorModuleIO.ElevatorIOInputs</a>&nbsp;inputs)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Updates the input values for the elevator module.</div>
+</div>
 </div>
 </div>
 </div>
@@ -147,12 +162,22 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="moveElevator(edu.wpi.first.math.geometry.Rotation2d)">
 <h3>moveElevator</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">moveElevator</span><wbr><span class="parameters">(<a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/geometry/Rotation2d.html" title="class or interface in edu.wpi.first.math.geometry" class="external-link">Rotation2d</a>&nbsp;setPoint)</span></div>
+<div class="block">Moves the elevator to a specified setpoint.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>setPoint</code> - The target position for the elevator.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="runElevator(double)">
 <h3>runElevator</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">runElevator</span><wbr><span class="parameters">(double&nbsp;velocity)</span></div>
+<div class="block">Runs the elevator at a specified velocity.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>velocity</code> - The velocity at which to run the elevator.</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -166,18 +191,44 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getPosition()">
 <h3>getPosition</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/geometry/Rotation2d.html" title="class or interface in edu.wpi.first.math.geometry" class="external-link">Rotation2d</a></span>&nbsp;<span class="element-name">getPosition</span>()</div>
+<div class="block">Gets the current position of the elevator.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The elevator position as a Rotation2d object.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="updateInputs(BobcatLib.Subsystems.Elevators.Modules.ElevatorModuleIO.ElevatorIOInputs)">
 <h3>updateInputs</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updateInputs</span><wbr><span class="parameters">(<a href="ElevatorModuleIO.ElevatorIOInputs.html" title="class in BobcatLib.Subsystems.Elevators.Modules">ElevatorModuleIO.ElevatorIOInputs</a>&nbsp;inputs)</span></div>
+<div class="block">Updates the input values for the elevator module.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>inputs</code> - Elevator input structure containing position and setpoint data.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="setCurrentSetPoint(double)">
 <h3>setCurrentSetPoint</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setCurrentSetPoint</span><wbr><span class="parameters">(double&nbsp;rotations)</span></div>
+<div class="block">Sets the current setpoint for the elevator position.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>rotations</code> - The setpoint in rotations.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="runVoltage(edu.wpi.first.units.measure.Voltage)">
+<h3>runVoltage</h3>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">runVoltage</span><wbr><span class="parameters">(<a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/units/measure/Voltage.html" title="class or interface in edu.wpi.first.units.measure" class="external-link">Voltage</a>&nbsp;volts)</span></div>
+<div class="block">Runs the elevator using a specified voltage.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>volts</code> - The voltage to apply to the motor.</dd>
+</dl>
 </section>
 </li>
 </ul>

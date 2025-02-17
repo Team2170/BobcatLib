@@ -5,6 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 import org.littletonrobotics.junction.AutoLog;
 
+/**
+ * The SpatialIO interface defines the methods for interacting with spatial sensors. It includes
+ * methods for updating inputs from hardware, retrieving range sensors, and checking if the system
+ * is squared.
+ */
 public interface SpatialIO {
   /** Represents the inputs for the Spatial sensor. */
   @AutoLog

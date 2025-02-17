@@ -3,6 +3,8 @@ package BobcatLib.Subsystems.Elevators;
 import BobcatLib.Subsystems.Elevators.Modules.BaseElevator;
 import BobcatLib.Utilities.SetPointWrapper;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import edu.wpi.first.wpilibj2.command.sysid.SysIdRoutine;
+import org.littletonrobotics.junction.Logger;
 
 public class ElevatorSubsystem extends SubsystemBase {
   private BaseElevator elevator;
@@ -12,6 +14,7 @@ public class ElevatorSubsystem extends SubsystemBase {
   public double currentSetPoint = 0;
   public String name;
   public double maxVelocity = 0.25; // Max Speed to Raise / lower in MPS
+  SysIdRoutine elevatorRoutine;
 
   public ElevatorSubsystem(String name, BaseElevator elevator, SetPointWrapper points) {
     this.name = name;
@@ -29,6 +32,22 @@ public class ElevatorSubsystem extends SubsystemBase {
     this.setPoints = points;
     this.lowerLimit = lower;
     this.upperLimit = upper;
+  }
+
+  public ElevatorSubsystem withSysId() {
+    elevatorRoutine =
+        new SysIdRoutine(
+            new SysIdRoutine.Config(
+                null,
+                null,
+                null,
+                (state) -> Logger.recordOutput("Elevator-SysIdTestState", state.toString())),
+            new SysIdRoutine.Mechanism(
+                (voltage) -> elevator.runVoltage(voltage),
+                null,
+                this // No log consumer, since data is recorded by AdvantageKit
+                ));
+    return this;
   }
 
   public ElevatorSubsystem withLimits(double lower, double upper) {

@@ -78,6 +78,9 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Spatial</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">The Spatial class interfaces with spatial sensors (range sensors) and provides functionality for
+ periodic updates and distance retrieval. It works with the SpatialIO class to communicate with
+ the hardware and manage sensor inputs.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -106,7 +109,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(BobcatLib.Hardware.Sensors.SpatialSensor.SpatialIO)" class="member-name-link">Spatial</a><wbr>(<a href="SpatialIO.html" title="interface in BobcatLib.Hardware.Sensors.SpatialSensor">SpatialIO</a>&nbsp;io)</code></div>
 <div class="col-last even-row-color">
-<div class="block">continuously gets the distances</div>
+<div class="block">Constructs a new Spatial object.</div>
 </div>
 </div>
 </section>
@@ -124,16 +127,24 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashMap.html" title="class or interface in java.util" class="external-link">HashMap</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDistances()" class="member-name-link">getDistances</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retrieves the distances from the front left and front right sensors.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Components/RangeSensor.html" title="interface in BobcatLib.Hardware.Sensors.SpatialSensor.Components">RangeSensor</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSpatialSensors()" class="member-name-link">getSpatialSensors</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns a list of spatial sensors (range sensors) associated with this system.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSquared()" class="member-name-link">isSquared</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Checks whether the spatial system is squared (aligned).</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#periodic()" class="member-name-link">periodic</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Periodic function that updates sensor inputs and logs the data.</div>
+</div>
 </div>
 </div>
 </div>
@@ -169,7 +180,11 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;(BobcatLib.Hardware.Sensors.SpatialSensor.SpatialIO)">
 <h3>Spatial</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Spatial</span><wbr><span class="parameters">(<a href="SpatialIO.html" title="interface in BobcatLib.Hardware.Sensors.SpatialSensor">SpatialIO</a>&nbsp;io)</span></div>
-<div class="block">continuously gets the distances</div>
+<div class="block">Constructs a new Spatial object.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>io</code> - The SpatialIO object that interacts with the hardware for sensor inputs.</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -184,24 +199,42 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="periodic()">
 <h3>periodic</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">periodic</span>()</div>
+<div class="block">Periodic function that updates sensor inputs and logs the data. This method should be called
+ periodically, such as once per robot loop.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="getSpatialSensors()">
 <h3>getSpatialSensors</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Components/RangeSensor.html" title="interface in BobcatLib.Hardware.Sensors.SpatialSensor.Components">RangeSensor</a>&gt;</span>&nbsp;<span class="element-name">getSpatialSensors</span>()</div>
+<div class="block">Returns a list of spatial sensors (range sensors) associated with this system.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>A list of RangeSensor objects.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="isSquared()">
 <h3>isSquared</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isSquared</span>()</div>
+<div class="block">Checks whether the spatial system is squared (aligned).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>true if the system is squared (aligned), false otherwise.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getDistances()">
 <h3>getDistances</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashMap.html" title="class or interface in java.util" class="external-link">HashMap</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&gt;</span>&nbsp;<span class="element-name">getDistances</span>()</div>
+<div class="block">Retrieves the distances from the front left and front right sensors.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>A HashMap containing the sensor names ("left" and "right") as keys, with their
+     corresponding distance values in millimeters.</dd>
+</dl>
 </section>
 </li>
 </ul>

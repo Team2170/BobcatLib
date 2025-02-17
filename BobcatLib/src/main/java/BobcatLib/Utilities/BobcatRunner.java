@@ -2,15 +2,21 @@ package BobcatLib.Utilities;
 
 import edu.wpi.first.wpilibj.Notifier;
 
+/**
+ * The {@code BobcatRunner} class provides a mechanism to execute a given method periodically or as
+ * a one-time execution after a specified delay.
+ */
 public class BobcatRunner {
-  private Notifier executer = null;
+  private Notifier executer = new Notifier(() -> {});
 
   /**
-   * Constructs an instance of the runner, this will allow you to take an method and execute
-   * periodically given a configuration you pass in.
+   * Constructs an instance of the {@code BobcatRunner}, allowing a method to be executed
+   * periodically or once after a given delay.
    *
-   * @param callback
-   * @param delayInSeconds
+   * @param callback The method to be executed.
+   * @param delayInSeconds The delay in seconds before the execution starts.
+   * @param isContinuous If {@code true}, the method runs periodically with the given delay;
+   *     otherwise, it runs only once after the delay.
    */
   public BobcatRunner(Runnable callback, int delayInSeconds, boolean isContinuous) {
     executer.setCallback(callback);
@@ -21,6 +27,7 @@ public class BobcatRunner {
     }
   }
 
+  /** Stops the execution of the scheduled task. */
   public void endExecution() {
     executer.stop();
   }

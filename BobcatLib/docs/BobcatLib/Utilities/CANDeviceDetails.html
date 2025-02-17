@@ -78,6 +78,9 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">CANDeviceDetails</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">This class represents the details of a CAN (Controller Area Network) device. It includes
+ information such as the device's manufacturer, device number, bus, and subsystem name. This class
+ is useful for managing and identifying CAN devices in a robotic system.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -92,7 +95,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static enum&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="CANDeviceDetails.Manufacturer.html" class="type-name-link" title="enum class in BobcatLib.Utilities">CANDeviceDetails.Manufacturer</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Enum representing the manufacturer of the CAN device.</div>
+</div>
 </div>
 </section>
 </li>
@@ -106,34 +111,34 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int)" class="member-name-link">CANDeviceDetails</a><wbr>(int&nbsp;deviceNumber)</code></div>
 <div class="col-last even-row-color">
-<div class="block">CAN Device Id constructor given only the device number Uses the default bus name of "" (empty
- string) and Unknown manufacturer</div>
+<div class="block">Constructs a CANDeviceDetails object with the specified device number.</div>
 </div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(int,BobcatLib.Utilities.CANDeviceDetails.Manufacturer)" class="member-name-link">CANDeviceDetails</a><wbr>(int&nbsp;deviceNumber,
  <a href="CANDeviceDetails.Manufacturer.html" title="enum class in BobcatLib.Utilities">CANDeviceDetails.Manufacturer</a>&nbsp;manufacturer)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">CAN Device Id constructor given only the device number Uses the default bus name of "" (empty
- string)</div>
+<div class="block">Constructs a CANDeviceDetails object with the specified device number and manufacturer.</div>
 </div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int,BobcatLib.Utilities.CANDeviceDetails.Manufacturer,java.lang.String)" class="member-name-link">CANDeviceDetails</a><wbr>(int&nbsp;deviceNumber,
  <a href="CANDeviceDetails.Manufacturer.html" title="enum class in BobcatLib.Utilities">CANDeviceDetails.Manufacturer</a>&nbsp;manufacturer,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;subsystemName)</code></div>
 <div class="col-last even-row-color">
-<div class="block">CAN Device Id constructor given only the device number Uses the default bus name of "" (empty
- string)</div>
+<div class="block">Constructs a CANDeviceDetails object with the specified device number, manufacturer, and
+ subsystem name.</div>
 </div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(int,java.lang.String,BobcatLib.Utilities.CANDeviceDetails.Manufacturer)" class="member-name-link">CANDeviceDetails</a><wbr>(int&nbsp;deviceNumber,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;bus,
  <a href="CANDeviceDetails.Manufacturer.html" title="enum class in BobcatLib.Utilities">CANDeviceDetails.Manufacturer</a>&nbsp;manufacturer)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">CAN Device Id constructor given the device number, bus name , and manufacturer type.</div>
+<div class="block">Constructs a CANDeviceDetails object with the specified device number, bus name, and
+ manufacturer.</div>
 </div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int,java.lang.String,BobcatLib.Utilities.CANDeviceDetails.Manufacturer,java.lang.String)" class="member-name-link">CANDeviceDetails</a><wbr>(int&nbsp;deviceNumber,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;bus,
  <a href="CANDeviceDetails.Manufacturer.html" title="enum class in BobcatLib.Utilities">CANDeviceDetails.Manufacturer</a>&nbsp;manufacturer,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;subsystemName)</code></div>
 <div class="col-last even-row-color">
-<div class="block">CAN Device Id constructor given the device number, bus name , and manufacturer type.</div>
+<div class="block">Constructs a CANDeviceDetails object with the specified device number, bus name, manufacturer,
+ and subsystem name.</div>
 </div>
 </div>
 </section>
@@ -151,26 +156,28 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(BobcatLib.Utilities.CANDeviceDetails)" class="member-name-link">equals</a><wbr>(<a href="CANDeviceDetails.html" title="class in BobcatLib.Utilities">CANDeviceDetails</a>&nbsp;other)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Compares this CANDeviceDetails object with another to determine if they are equal.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBus()" class="member-name-link">getBus</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Gets the bus name</div>
+<div class="block">Gets the bus name of the CAN device.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDeviceNumber()" class="member-name-link">getDeviceNumber</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Gets the device number</div>
+<div class="block">Gets the device number of the CAN device.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CANDeviceDetails.Manufacturer.html" title="enum class in BobcatLib.Utilities">CANDeviceDetails.Manufacturer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getManufacturer()" class="member-name-link">getManufacturer</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Gets the manufacturer type</div>
+<div class="block">Gets the manufacturer type of the CAN device.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSubsysemName()" class="member-name-link">getSubsysemName</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Gets the Subsystem this is associated with.</div>
+<div class="block">Gets the subsystem name this CAN device is associated with.</div>
 </div>
 </div>
 </div>
@@ -196,12 +203,14 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;bus,
  <a href="CANDeviceDetails.Manufacturer.html" title="enum class in BobcatLib.Utilities">CANDeviceDetails.Manufacturer</a>&nbsp;manufacturer,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;subsystemName)</span></div>
-<div class="block">CAN Device Id constructor given the device number, bus name , and manufacturer type.</div>
+<div class="block">Constructs a CANDeviceDetails object with the specified device number, bus name, manufacturer,
+ and subsystem name.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>deviceNumber</code> - </dd>
-<dd><code>bus</code> - </dd>
-<dd><code>manufacturer</code> - </dd>
+<dd><code>deviceNumber</code> - The unique identifier for the CAN device.</dd>
+<dd><code>bus</code> - The bus name to which the device is connected.</dd>
+<dd><code>manufacturer</code> - The manufacturer of the CAN device.</dd>
+<dd><code>subsystemName</code> - The name of the subsystem this device is associated with.</dd>
 </dl>
 </section>
 </li>
@@ -211,12 +220,13 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CANDeviceDetails</span><wbr><span class="parameters">(int&nbsp;deviceNumber,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;bus,
  <a href="CANDeviceDetails.Manufacturer.html" title="enum class in BobcatLib.Utilities">CANDeviceDetails.Manufacturer</a>&nbsp;manufacturer)</span></div>
-<div class="block">CAN Device Id constructor given the device number, bus name , and manufacturer type.</div>
+<div class="block">Constructs a CANDeviceDetails object with the specified device number, bus name, and
+ manufacturer. The subsystem name will be set to an empty string.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>deviceNumber</code> - </dd>
-<dd><code>bus</code> - </dd>
-<dd><code>manufacturer</code> - </dd>
+<dd><code>deviceNumber</code> - The unique identifier for the CAN device.</dd>
+<dd><code>bus</code> - The bus name to which the device is connected.</dd>
+<dd><code>manufacturer</code> - The manufacturer of the CAN device.</dd>
 </dl>
 </section>
 </li>
@@ -225,12 +235,12 @@ loadScripts(document, 'script');</script>
 <h3>CANDeviceDetails</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CANDeviceDetails</span><wbr><span class="parameters">(int&nbsp;deviceNumber,
  <a href="CANDeviceDetails.Manufacturer.html" title="enum class in BobcatLib.Utilities">CANDeviceDetails.Manufacturer</a>&nbsp;manufacturer)</span></div>
-<div class="block">CAN Device Id constructor given only the device number Uses the default bus name of "" (empty
- string)</div>
+<div class="block">Constructs a CANDeviceDetails object with the specified device number and manufacturer. The bus
+ name will be set to an empty string, and the subsystem name will be set to an empty string.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>deviceNumber</code> - </dd>
-<dd><code>manufacturer</code> - </dd>
+<dd><code>deviceNumber</code> - The unique identifier for the CAN device.</dd>
+<dd><code>manufacturer</code> - The manufacturer of the CAN device.</dd>
 </dl>
 </section>
 </li>
@@ -240,13 +250,13 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CANDeviceDetails</span><wbr><span class="parameters">(int&nbsp;deviceNumber,
  <a href="CANDeviceDetails.Manufacturer.html" title="enum class in BobcatLib.Utilities">CANDeviceDetails.Manufacturer</a>&nbsp;manufacturer,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;subsystemName)</span></div>
-<div class="block">CAN Device Id constructor given only the device number Uses the default bus name of "" (empty
- string)</div>
+<div class="block">Constructs a CANDeviceDetails object with the specified device number, manufacturer, and
+ subsystem name. The bus name will be set to an empty string.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>deviceNumber</code> - </dd>
-<dd><code>manufacturer</code> - </dd>
-<dd><code>subsystemName</code> - </dd>
+<dd><code>deviceNumber</code> - The unique identifier for the CAN device.</dd>
+<dd><code>manufacturer</code> - The manufacturer of the CAN device.</dd>
+<dd><code>subsystemName</code> - The name of the subsystem this device is associated with.</dd>
 </dl>
 </section>
 </li>
@@ -254,11 +264,11 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;(int)">
 <h3>CANDeviceDetails</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CANDeviceDetails</span><wbr><span class="parameters">(int&nbsp;deviceNumber)</span></div>
-<div class="block">CAN Device Id constructor given only the device number Uses the default bus name of "" (empty
- string) and Unknown manufacturer</div>
+<div class="block">Constructs a CANDeviceDetails object with the specified device number. The bus name will be set
+ to an empty string, and the manufacturer will be set to Unknown.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>deviceNumber</code> - </dd>
+<dd><code>deviceNumber</code> - The unique identifier for the CAN device.</dd>
 </dl>
 </section>
 </li>
@@ -274,10 +284,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getManufacturer()">
 <h3>getManufacturer</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CANDeviceDetails.Manufacturer.html" title="enum class in BobcatLib.Utilities">CANDeviceDetails.Manufacturer</a></span>&nbsp;<span class="element-name">getManufacturer</span>()</div>
-<div class="block">Gets the manufacturer type</div>
+<div class="block">Gets the manufacturer type of the CAN device.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>Manufacturer type.</dd>
+<dd>The manufacturer of the CAN device.</dd>
 </dl>
 </section>
 </li>
@@ -285,10 +295,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getDeviceNumber()">
 <h3>getDeviceNumber</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getDeviceNumber</span>()</div>
-<div class="block">Gets the device number</div>
+<div class="block">Gets the device number of the CAN device.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>device number</dd>
+<dd>The device number of the CAN device.</dd>
 </dl>
 </section>
 </li>
@@ -296,10 +306,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getBus()">
 <h3>getBus</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getBus</span>()</div>
-<div class="block">Gets the bus name</div>
+<div class="block">Gets the bus name of the CAN device.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>bus name</dd>
+<dd>The bus name of the CAN device.</dd>
 </dl>
 </section>
 </li>
@@ -307,10 +317,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getSubsysemName()">
 <h3>getSubsysemName</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getSubsysemName</span>()</div>
-<div class="block">Gets the Subsystem this is associated with.</div>
+<div class="block">Gets the subsystem name this CAN device is associated with.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>Subsystem this is associated with.</dd>
+<dd>The subsystem name of the CAN device.</dd>
 </dl>
 </section>
 </li>
@@ -318,6 +328,14 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="equals(BobcatLib.Utilities.CANDeviceDetails)">
 <h3>equals</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="CANDeviceDetails.html" title="class in BobcatLib.Utilities">CANDeviceDetails</a>&nbsp;other)</span></div>
+<div class="block">Compares this CANDeviceDetails object with another to determine if they are equal.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>other</code> - The other CANDeviceDetails object to compare.</dd>
+<dt>Returns:</dt>
+<dd><code>true</code> if the device numbers, bus, manufacturer, and subsystem name are all the
+     same; <code>false</code> otherwise.</dd>
+</dl>
 </section>
 </li>
 </ul>

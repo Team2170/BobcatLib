@@ -31,7 +31,7 @@ public class ClimberSim implements ClimberIO {
    */
   public ClimberSim(MotorIO motor, SoftwareLimitWrapper limits) {
     this.limits = limits;
-    climberMotor = new BaseMotor(motor, limits);
+    climberMotor = new BaseMotor(motor, "Climber/Motor", limits);
     request = new DutyCycleOut(0).withEnableFOC(true);
     holdPosRequest = new PositionDutyCycle(0).withEnableFOC(true);
   }

@@ -83,6 +83,8 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">ElevatorModuleReal</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="ElevatorModuleIO.html" title="interface in BobcatLib.Subsystems.Elevators.Modules">ElevatorModuleIO</a></span></div>
+<div class="block">Implementation of the ElevatorModule interface for a real elevator module. Handles motor control,
+ position tracking, and voltage control.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -104,7 +106,22 @@ implements <a href="ElevatorModuleIO.html" title="interface in BobcatLib.Subsyst
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">ElevatorModuleReal</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Default constructor.</div>
+</div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(BobcatLib.Hardware.Motors.Utility.CTRE.MotionMagicWrapper)" class="member-name-link">ElevatorModuleReal</a><wbr>(<a href="../../../Hardware/Motors/Utility/CTRE/MotionMagicWrapper.html" title="class in BobcatLib.Hardware.Motors.Utility.CTRE">MotionMagicWrapper</a>&nbsp;mm)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Constructor that initializes the elevator module with Motion Magic.</div>
+</div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(BobcatLib.Hardware.Motors.Utility.SoftwareLimitWrapper)" class="member-name-link">ElevatorModuleReal</a><wbr>(<a href="../../../Hardware/Motors/Utility/SoftwareLimitWrapper.html" title="class in BobcatLib.Hardware.Motors.Utility">SoftwareLimitWrapper</a>&nbsp;limits)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Constructor that initializes the elevator module with software limits.</div>
+</div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(BobcatLib.Hardware.Motors.Utility.SoftwareLimitWrapper,BobcatLib.Hardware.Motors.Utility.CTRE.MotionMagicWrapper)" class="member-name-link">ElevatorModuleReal</a><wbr>(<a href="../../../Hardware/Motors/Utility/SoftwareLimitWrapper.html" title="class in BobcatLib.Hardware.Motors.Utility">SoftwareLimitWrapper</a>&nbsp;limits,
+ <a href="../../../Hardware/Motors/Utility/CTRE/MotionMagicWrapper.html" title="class in BobcatLib.Hardware.Motors.Utility.CTRE">MotionMagicWrapper</a>&nbsp;mm)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Constructor that initializes the elevator module with software limits and Motion Magic.</div>
+</div>
 </div>
 </section>
 </li>
@@ -121,24 +138,39 @@ implements <a href="ElevatorModuleIO.html" title="interface in BobcatLib.Subsyst
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/geometry/Rotation2d.html" title="class or interface in edu.wpi.first.math.geometry" class="external-link">Rotation2d</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPosition()" class="member-name-link">getPosition</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveElevator(edu.wpi.first.math.geometry.Rotation2d)" class="member-name-link">moveElevator</a><wbr>(<a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/geometry/Rotation2d.html" title="class or interface in edu.wpi.first.math.geometry" class="external-link">Rotation2d</a>&nbsp;setPoint)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#runElevator(double)" class="member-name-link">runElevator</a><wbr>(double&nbsp;velocity)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCurrentSetPoint(double)" class="member-name-link">setCurrentSetPoint</a><wbr>(double&nbsp;rotations)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stop()" class="member-name-link">stop</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Stops the elevator motor immediately.</div>
+<div class="block">Gets the current position of the elevator.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateInputs(BobcatLib.Subsystems.Elevators.Modules.ElevatorModuleIO.ElevatorIOInputs)" class="member-name-link">updateInputs</a><wbr>(<a href="ElevatorModuleIO.ElevatorIOInputs.html" title="class in BobcatLib.Subsystems.Elevators.Modules">ElevatorModuleIO.ElevatorIOInputs</a>&nbsp;inputs)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveElevator(edu.wpi.first.math.geometry.Rotation2d)" class="member-name-link">moveElevator</a><wbr>(<a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/geometry/Rotation2d.html" title="class or interface in edu.wpi.first.math.geometry" class="external-link">Rotation2d</a>&nbsp;setPoint)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Moves the elevator to a specified setpoint.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#runElevator(double)" class="member-name-link">runElevator</a><wbr>(double&nbsp;velocity)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Runs the elevator at a specified velocity.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#runVoltage(edu.wpi.first.units.measure.Voltage)" class="member-name-link">runVoltage</a><wbr>(<a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/units/measure/Voltage.html" title="class or interface in edu.wpi.first.units.measure" class="external-link">Voltage</a>&nbsp;volts)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Runs the elevator using a specified voltage.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCurrentSetPoint(double)" class="member-name-link">setCurrentSetPoint</a><wbr>(double&nbsp;rotations)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the current setpoint for the elevator position.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stop()" class="member-name-link">stop</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Stops the elevator motor immediately.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateInputs(BobcatLib.Subsystems.Elevators.Modules.ElevatorModuleIO.ElevatorIOInputs)" class="member-name-link">updateInputs</a><wbr>(<a href="ElevatorModuleIO.ElevatorIOInputs.html" title="class in BobcatLib.Subsystems.Elevators.Modules">ElevatorModuleIO.ElevatorIOInputs</a>&nbsp;inputs)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Updates the input values for the elevator module.</div>
+</div>
 </div>
 </div>
 </div>
@@ -160,6 +192,42 @@ implements <a href="ElevatorModuleIO.html" title="interface in BobcatLib.Subsyst
 <section class="detail" id="&lt;init&gt;()">
 <h3>ElevatorModuleReal</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ElevatorModuleReal</span>()</div>
+<div class="block">Default constructor.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="&lt;init&gt;(BobcatLib.Hardware.Motors.Utility.SoftwareLimitWrapper,BobcatLib.Hardware.Motors.Utility.CTRE.MotionMagicWrapper)">
+<h3>ElevatorModuleReal</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ElevatorModuleReal</span><wbr><span class="parameters">(<a href="../../../Hardware/Motors/Utility/SoftwareLimitWrapper.html" title="class in BobcatLib.Hardware.Motors.Utility">SoftwareLimitWrapper</a>&nbsp;limits,
+ <a href="../../../Hardware/Motors/Utility/CTRE/MotionMagicWrapper.html" title="class in BobcatLib.Hardware.Motors.Utility.CTRE">MotionMagicWrapper</a>&nbsp;mm)</span></div>
+<div class="block">Constructor that initializes the elevator module with software limits and Motion Magic.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>limits</code> - Software limit wrapper for motor control.</dd>
+<dd><code>mm</code> - Motion Magic configuration wrapper.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="&lt;init&gt;(BobcatLib.Hardware.Motors.Utility.CTRE.MotionMagicWrapper)">
+<h3>ElevatorModuleReal</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ElevatorModuleReal</span><wbr><span class="parameters">(<a href="../../../Hardware/Motors/Utility/CTRE/MotionMagicWrapper.html" title="class in BobcatLib.Hardware.Motors.Utility.CTRE">MotionMagicWrapper</a>&nbsp;mm)</span></div>
+<div class="block">Constructor that initializes the elevator module with Motion Magic.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>mm</code> - Motion Magic configuration wrapper.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="&lt;init&gt;(BobcatLib.Hardware.Motors.Utility.SoftwareLimitWrapper)">
+<h3>ElevatorModuleReal</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ElevatorModuleReal</span><wbr><span class="parameters">(<a href="../../../Hardware/Motors/Utility/SoftwareLimitWrapper.html" title="class in BobcatLib.Hardware.Motors.Utility">SoftwareLimitWrapper</a>&nbsp;limits)</span></div>
+<div class="block">Constructor that initializes the elevator module with software limits.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>limits</code> - Software limit wrapper for motor control.</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -174,9 +242,12 @@ implements <a href="ElevatorModuleIO.html" title="interface in BobcatLib.Subsyst
 <section class="detail" id="updateInputs(BobcatLib.Subsystems.Elevators.Modules.ElevatorModuleIO.ElevatorIOInputs)">
 <h3>updateInputs</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updateInputs</span><wbr><span class="parameters">(<a href="ElevatorModuleIO.ElevatorIOInputs.html" title="class in BobcatLib.Subsystems.Elevators.Modules">ElevatorModuleIO.ElevatorIOInputs</a>&nbsp;inputs)</span></div>
+<div class="block">Updates the input values for the elevator module.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="ElevatorModuleIO.html#updateInputs(BobcatLib.Subsystems.Elevators.Modules.ElevatorModuleIO.ElevatorIOInputs)">updateInputs</a></code>&nbsp;in interface&nbsp;<code><a href="ElevatorModuleIO.html" title="interface in BobcatLib.Subsystems.Elevators.Modules">ElevatorModuleIO</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>inputs</code> - Elevator input structure containing position and setpoint data.</dd>
 </dl>
 </section>
 </li>
@@ -184,9 +255,12 @@ implements <a href="ElevatorModuleIO.html" title="interface in BobcatLib.Subsyst
 <section class="detail" id="moveElevator(edu.wpi.first.math.geometry.Rotation2d)">
 <h3>moveElevator</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">moveElevator</span><wbr><span class="parameters">(<a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/geometry/Rotation2d.html" title="class or interface in edu.wpi.first.math.geometry" class="external-link">Rotation2d</a>&nbsp;setPoint)</span></div>
+<div class="block">Moves the elevator to a specified setpoint.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="ElevatorModuleIO.html#moveElevator(edu.wpi.first.math.geometry.Rotation2d)">moveElevator</a></code>&nbsp;in interface&nbsp;<code><a href="ElevatorModuleIO.html" title="interface in BobcatLib.Subsystems.Elevators.Modules">ElevatorModuleIO</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>setPoint</code> - The target position for the elevator.</dd>
 </dl>
 </section>
 </li>
@@ -194,9 +268,12 @@ implements <a href="ElevatorModuleIO.html" title="interface in BobcatLib.Subsyst
 <section class="detail" id="runElevator(double)">
 <h3>runElevator</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">runElevator</span><wbr><span class="parameters">(double&nbsp;velocity)</span></div>
+<div class="block">Runs the elevator at a specified velocity.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="ElevatorModuleIO.html#runElevator(double)">runElevator</a></code>&nbsp;in interface&nbsp;<code><a href="ElevatorModuleIO.html" title="interface in BobcatLib.Subsystems.Elevators.Modules">ElevatorModuleIO</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>velocity</code> - The velocity at which to run the elevator.</dd>
 </dl>
 </section>
 </li>
@@ -204,9 +281,12 @@ implements <a href="ElevatorModuleIO.html" title="interface in BobcatLib.Subsyst
 <section class="detail" id="getPosition()">
 <h3>getPosition</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/geometry/Rotation2d.html" title="class or interface in edu.wpi.first.math.geometry" class="external-link">Rotation2d</a></span>&nbsp;<span class="element-name">getPosition</span>()</div>
+<div class="block">Gets the current position of the elevator.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="ElevatorModuleIO.html#getPosition()">getPosition</a></code>&nbsp;in interface&nbsp;<code><a href="ElevatorModuleIO.html" title="interface in BobcatLib.Subsystems.Elevators.Modules">ElevatorModuleIO</a></code></dd>
+<dt>Returns:</dt>
+<dd>The elevator position as a Rotation2d object.</dd>
 </dl>
 </section>
 </li>
@@ -225,9 +305,25 @@ implements <a href="ElevatorModuleIO.html" title="interface in BobcatLib.Subsyst
 <section class="detail" id="setCurrentSetPoint(double)">
 <h3>setCurrentSetPoint</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setCurrentSetPoint</span><wbr><span class="parameters">(double&nbsp;rotations)</span></div>
+<div class="block">Sets the current setpoint for the elevator position.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="ElevatorModuleIO.html#setCurrentSetPoint(double)">setCurrentSetPoint</a></code>&nbsp;in interface&nbsp;<code><a href="ElevatorModuleIO.html" title="interface in BobcatLib.Subsystems.Elevators.Modules">ElevatorModuleIO</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>rotations</code> - The setpoint in rotations.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="runVoltage(edu.wpi.first.units.measure.Voltage)">
+<h3>runVoltage</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">runVoltage</span><wbr><span class="parameters">(<a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/units/measure/Voltage.html" title="class or interface in edu.wpi.first.units.measure" class="external-link">Voltage</a>&nbsp;volts)</span></div>
+<div class="block">Runs the elevator using a specified voltage.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="ElevatorModuleIO.html#runVoltage(edu.wpi.first.units.measure.Voltage)">runVoltage</a></code>&nbsp;in interface&nbsp;<code><a href="ElevatorModuleIO.html" title="interface in BobcatLib.Subsystems.Elevators.Modules">ElevatorModuleIO</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>volts</code> - The voltage to apply to the motor.</dd>
 </dl>
 </section>
 </li>

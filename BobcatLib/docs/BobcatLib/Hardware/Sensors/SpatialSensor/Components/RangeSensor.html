@@ -78,6 +78,9 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">RangeSensor</span></div>
+<div class="block">The RangeSensor interface defines the basic operations for any range sensor, including methods
+ for retrieving the sensor's range, configuring the sensor, and retrieving the sensor's mode.
+ Implementations of this interface should provide specific logic for hardware interaction.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -95,25 +98,27 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#configRangeSensor()" class="member-name-link">configRangeSensor</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">config the sensor with default setting for the device.</div>
+<div class="block">Configures the sensor with default settings.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#configRangeSensor(BobcatLib.Hardware.Sensors.SpatialSensor.Utility.DistanceMode)" class="member-name-link">configRangeSensor</a><wbr>(<a href="../Utility/DistanceMode.html" title="class in BobcatLib.Hardware.Sensors.SpatialSensor.Utility">DistanceMode</a>&nbsp;mode)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Given the mode , config the sensor to the right detection parameters.</div>
+<div class="block">Configures the sensor to the correct detection parameters based on the specified mode.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../Utility/DistanceMode.html" title="class in BobcatLib.Hardware.Sensors.SpatialSensor.Utility">DistanceMode</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getMode()" class="member-name-link">getMode</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Gets the Ranging Mode of the sensor</div>
+<div class="block">Gets the current ranging mode of the sensor.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../Utility/DistanceMode.html" title="class in BobcatLib.Hardware.Sensors.SpatialSensor.Utility">DistanceMode</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getOptimalMode()" class="member-name-link">getOptimalMode</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Retrieves the optimal ranging mode based on the current sensor reading.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default double</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getRange()" class="member-name-link">getRange</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Gets the range in front of the sensor.</div>
+<div class="block">Gets the range (distance) in front of the sensor.</div>
 </div>
 </div>
 </div>
@@ -133,10 +138,11 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getRange()">
 <h3>getRange</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">getRange</span>()</div>
-<div class="block">Gets the range in front of the sensor.</div>
+<div class="block">Gets the range (distance) in front of the sensor. This method should be implemented to return
+ the actual distance measurement from the sensor in millimeters.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>range in mm</dd>
+<dd>The range in millimeters.</dd>
 </dl>
 </section>
 </li>
@@ -144,17 +150,20 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="configRangeSensor()">
 <h3>configRangeSensor</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">configRangeSensor</span>()</div>
-<div class="block">config the sensor with default setting for the device.</div>
+<div class="block">Configures the sensor with default settings. This method should be implemented to apply the
+ default configuration for the sensor hardware, ensuring it's ready for operation.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="configRangeSensor(BobcatLib.Hardware.Sensors.SpatialSensor.Utility.DistanceMode)">
 <h3>configRangeSensor</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">configRangeSensor</span><wbr><span class="parameters">(<a href="../Utility/DistanceMode.html" title="class in BobcatLib.Hardware.Sensors.SpatialSensor.Utility">DistanceMode</a>&nbsp;mode)</span></div>
-<div class="block">Given the mode , config the sensor to the right detection parameters.</div>
+<div class="block">Configures the sensor to the correct detection parameters based on the specified mode. The
+ implementation should update the sensor's settings to match the specified detection mode (e.g.,
+ short, medium, long range).</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>mode</code> - </dd>
+<dd><code>mode</code> - The mode to configure the sensor with.</dd>
 </dl>
 </section>
 </li>
@@ -162,10 +171,11 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getMode()">
 <h3>getMode</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../Utility/DistanceMode.html" title="class in BobcatLib.Hardware.Sensors.SpatialSensor.Utility">DistanceMode</a></span>&nbsp;<span class="element-name">getMode</span>()</div>
-<div class="block">Gets the Ranging Mode of the sensor</div>
+<div class="block">Gets the current ranging mode of the sensor. This method should return the current mode of the
+ sensor, such as short, medium, or long range.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>RangingMode</dd>
+<dd>The current ranging mode of the sensor.</dd>
 </dl>
 </section>
 </li>
@@ -173,6 +183,12 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getOptimalMode()">
 <h3>getOptimalMode</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../Utility/DistanceMode.html" title="class in BobcatLib.Hardware.Sensors.SpatialSensor.Utility">DistanceMode</a></span>&nbsp;<span class="element-name">getOptimalMode</span>()</div>
+<div class="block">Retrieves the optimal ranging mode based on the current sensor reading. This method should
+ calculate and return the best mode to use for the current range.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The optimal mode for the sensor.</dd>
+</dl>
 </section>
 </li>
 </ul>

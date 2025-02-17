@@ -83,6 +83,9 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">SpatialTOF</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="SpatialIO.html" title="interface in BobcatLib.Hardware.Sensors.SpatialSensor">SpatialIO</a></span></div>
+<div class="block">The SpatialTOF class implements the SpatialIO interface. It is responsible for managing and
+ interacting with time-of-flight (TOF) sensors. The class handles updating inputs, configuring
+ sensors, and detecting objects in the environment.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -121,7 +124,9 @@ implements <a href="SpatialIO.html" title="interface in BobcatLib.Hardware.Senso
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.util.List)" class="member-name-link">SpatialTOF</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Components/RangeSensor.html" title="interface in BobcatLib.Hardware.Sensors.SpatialSensor.Components">RangeSensor</a>&gt;&nbsp;sensors)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructs a SpatialTOF object with the specified list of range sensors.</div>
+</div>
 </div>
 </section>
 </li>
@@ -139,16 +144,18 @@ implements <a href="SpatialIO.html" title="interface in BobcatLib.Hardware.Senso
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#configAllSensors()" class="member-name-link">configAllSensors</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Configure all Sensors</div>
+<div class="block">Configures all sensors.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashMap.html" title="class or interface in java.util" class="external-link">HashMap</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#detectObjects()" class="member-name-link">detectObjects</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Find the object distances on all sides.</div>
+<div class="block">Detects objects and calculates the distances from the left and right sensors.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Components/RangeSensor.html" title="interface in BobcatLib.Hardware.Sensors.SpatialSensor.Components">RangeSensor</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRangeSensors()" class="member-name-link">getRangeSensors</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retrieves the list of range sensors used in the Spatial system.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSquared(double,double,double)" class="member-name-link">isSquared</a><wbr>(double&nbsp;l1,
  double&nbsp;l2,
@@ -197,6 +204,12 @@ implements <a href="SpatialIO.html" title="interface in BobcatLib.Hardware.Senso
 <section class="detail" id="&lt;init&gt;(java.util.List)">
 <h3>SpatialTOF</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">SpatialTOF</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Components/RangeSensor.html" title="interface in BobcatLib.Hardware.Sensors.SpatialSensor.Components">RangeSensor</a>&gt;&nbsp;sensors)</span></div>
+<div class="block">Constructs a SpatialTOF object with the specified list of range sensors. The sensors are
+ configured after construction.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>sensors</code> - A list of <a href="Components/RangeSensor.html" title="interface in BobcatLib.Hardware.Sensors.SpatialSensor.Components"><code>RangeSensor</code></a> objects representing the spatial sensors.</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -211,12 +224,13 @@ implements <a href="SpatialIO.html" title="interface in BobcatLib.Hardware.Senso
 <section class="detail" id="updateInputs(BobcatLib.Hardware.Sensors.SpatialSensor.SpatialIO.SpatialIOInputs)">
 <h3>updateInputs</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updateInputs</span><wbr><span class="parameters">(<a href="SpatialIO.SpatialIOInputs.html" title="class in BobcatLib.Hardware.Sensors.SpatialSensor">SpatialIO.SpatialIOInputs</a>&nbsp;inputs)</span></div>
-<div class="block">Updates the gyro inputs based on external sources.</div>
+<div class="block">Updates the gyro inputs based on external sources. This method retrieves the distances from the
+ sensors and updates the alignment status.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="SpatialIO.html#updateInputs(BobcatLib.Hardware.Sensors.SpatialSensor.SpatialIO.SpatialIOInputs)">updateInputs</a></code>&nbsp;in interface&nbsp;<code><a href="SpatialIO.html" title="interface in BobcatLib.Hardware.Sensors.SpatialSensor">SpatialIO</a></code></dd>
 <dt>Parameters:</dt>
-<dd><code>inputs</code> - The inputs to update.</dd>
+<dd><code>inputs</code> - The SpatialIOInputs object to update with the new sensor data.</dd>
 </dl>
 </section>
 </li>
@@ -224,17 +238,18 @@ implements <a href="SpatialIO.html" title="interface in BobcatLib.Hardware.Senso
 <section class="detail" id="configAllSensors()">
 <h3>configAllSensors</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">configAllSensors</span>()</div>
-<div class="block">Configure all Sensors</div>
+<div class="block">Configures all sensors. This method can be used to apply any necessary settings or calibration
+ to the sensors.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="detectObjects()">
 <h3>detectObjects</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashMap.html" title="class or interface in java.util" class="external-link">HashMap</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&gt;</span>&nbsp;<span class="element-name">detectObjects</span>()</div>
-<div class="block">Find the object distances on all sides.</div>
+<div class="block">Detects objects and calculates the distances from the left and right sensors.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>range in mm</dd>
+<dd>A <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashMap.html" title="class or interface in java.util" class="external-link"><code>HashMap</code></a> with the distances from the left and right sensors in millimeters.</dd>
 </dl>
 </section>
 </li>
@@ -244,14 +259,15 @@ implements <a href="SpatialIO.html" title="interface in BobcatLib.Hardware.Senso
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isSquared</span><wbr><span class="parameters">(double&nbsp;l1,
  double&nbsp;l2,
  double&nbsp;tolerance)</span></div>
-<div class="block">Checks if two lengths are approximately equal within a given tolerance.</div>
+<div class="block">Checks if two lengths are approximately equal within a given tolerance. This is useful for
+ determining if the system is aligned or squared.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="SpatialIO.html#isSquared(double,double,double)">isSquared</a></code>&nbsp;in interface&nbsp;<code><a href="SpatialIO.html" title="interface in BobcatLib.Hardware.Sensors.SpatialSensor">SpatialIO</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>l1</code> - The first length in mm.</dd>
 <dd><code>l2</code> - The second length in mm.</dd>
-<dd><code>tolerance</code> - The acceptable difference between the two lengths in mm</dd>
+<dd><code>tolerance</code> - The acceptable difference between the two lengths in mm.</dd>
 <dt>Returns:</dt>
 <dd><code>true</code> if the absolute difference between l1 and l2 is within the tolerance,
      <code>false</code> otherwise.</dd>
@@ -262,9 +278,12 @@ implements <a href="SpatialIO.html" title="interface in BobcatLib.Hardware.Senso
 <section class="detail" id="getRangeSensors()">
 <h3>getRangeSensors</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Components/RangeSensor.html" title="interface in BobcatLib.Hardware.Sensors.SpatialSensor.Components">RangeSensor</a>&gt;</span>&nbsp;<span class="element-name">getRangeSensors</span>()</div>
+<div class="block">Retrieves the list of range sensors used in the Spatial system.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="SpatialIO.html#getRangeSensors()">getRangeSensors</a></code>&nbsp;in interface&nbsp;<code><a href="SpatialIO.html" title="interface in BobcatLib.Hardware.Sensors.SpatialSensor">SpatialIO</a></code></dd>
+<dt>Returns:</dt>
+<dd>A list of <a href="Components/RangeSensor.html" title="interface in BobcatLib.Hardware.Sensors.SpatialSensor.Components"><code>RangeSensor</code></a> objects.</dd>
 </dl>
 </section>
 </li>

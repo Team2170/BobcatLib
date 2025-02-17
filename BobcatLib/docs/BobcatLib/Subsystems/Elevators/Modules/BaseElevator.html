@@ -78,6 +78,8 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">BaseElevator</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">Base class for controlling an elevator subsystem. Manages elevator movement, setpoints, and
+ logging.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -90,7 +92,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(BobcatLib.Subsystems.Elevators.Modules.ElevatorModuleIO)" class="member-name-link">BaseElevator</a><wbr>(<a href="ElevatorModuleIO.html" title="interface in BobcatLib.Subsystems.Elevators.Modules">ElevatorModuleIO</a>&nbsp;io)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructs a BaseElevator instance with the given elevator module IO.</div>
+</div>
 </div>
 </section>
 </li>
@@ -107,30 +111,49 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/geometry/Rotation2d.html" title="class or interface in edu.wpi.first.math.geometry" class="external-link">Rotation2d</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCurrentSetPoint()" class="member-name-link">getCurrentSetPoint</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#holdPosition()" class="member-name-link">holdPosition</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveElevatorToNext(BobcatLib.Utilities.SetPointWrapper)" class="member-name-link">moveElevatorToNext</a><wbr>(<a href="../../../Utilities/SetPointWrapper.html" title="class in BobcatLib.Utilities">SetPointWrapper</a>&nbsp;setPoints)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveElevatorToPrevious(BobcatLib.Utilities.SetPointWrapper)" class="member-name-link">moveElevatorToPrevious</a><wbr>(<a href="../../../Utilities/SetPointWrapper.html" title="class in BobcatLib.Utilities">SetPointWrapper</a>&nbsp;setPoints)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#runElevator()" class="member-name-link">runElevator</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#runElevator(double)" class="member-name-link">runElevator</a><wbr>(double&nbsp;velocity)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stop()" class="member-name-link">stop</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Stops the elevators motor immediately.</div>
+<div class="block">Gets the current setpoint of the elevator.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update()" class="member-name-link">update</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#holdPosition()" class="member-name-link">holdPosition</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Holds the elevator at its current position.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveElevatorToNext(BobcatLib.Utilities.SetPointWrapper)" class="member-name-link">moveElevatorToNext</a><wbr>(<a href="../../../Utilities/SetPointWrapper.html" title="class in BobcatLib.Utilities">SetPointWrapper</a>&nbsp;setPoints)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Moves the elevator to the next setpoint.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#moveElevatorToPrevious(BobcatLib.Utilities.SetPointWrapper)" class="member-name-link">moveElevatorToPrevious</a><wbr>(<a href="../../../Utilities/SetPointWrapper.html" title="class in BobcatLib.Utilities">SetPointWrapper</a>&nbsp;setPoints)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Moves the elevator to the previous setpoint.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#runElevator()" class="member-name-link">runElevator</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Runs the elevator to the current setpoint.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#runElevator(double)" class="member-name-link">runElevator</a><wbr>(double&nbsp;velocity)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Runs the elevator at a specified velocity.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#runVoltage(edu.wpi.first.units.measure.Voltage)" class="member-name-link">runVoltage</a><wbr>(<a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/units/measure/Voltage.html" title="class or interface in edu.wpi.first.units.measure" class="external-link">Voltage</a>&nbsp;volts)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Runs the elevator using a specified voltage.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stop()" class="member-name-link">stop</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Stops the elevator motor immediately.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update()" class="member-name-link">update</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Updates the elevator state by setting the current setpoint and logging inputs.</div>
+</div>
 </div>
 </div>
 </div>
@@ -152,6 +175,11 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;(BobcatLib.Subsystems.Elevators.Modules.ElevatorModuleIO)">
 <h3>BaseElevator</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">BaseElevator</span><wbr><span class="parameters">(<a href="ElevatorModuleIO.html" title="interface in BobcatLib.Subsystems.Elevators.Modules">ElevatorModuleIO</a>&nbsp;io)</span></div>
+<div class="block">Constructs a BaseElevator instance with the given elevator module IO.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>io</code> - The elevator module interface for hardware interactions.</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -166,49 +194,83 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="update()">
 <h3>update</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">update</span>()</div>
+<div class="block">Updates the elevator state by setting the current setpoint and logging inputs.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="moveElevatorToNext(BobcatLib.Utilities.SetPointWrapper)">
 <h3>moveElevatorToNext</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">moveElevatorToNext</span><wbr><span class="parameters">(<a href="../../../Utilities/SetPointWrapper.html" title="class in BobcatLib.Utilities">SetPointWrapper</a>&nbsp;setPoints)</span></div>
+<div class="block">Moves the elevator to the next setpoint.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>setPoints</code> - The wrapper containing multiple setpoints.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="moveElevatorToPrevious(BobcatLib.Utilities.SetPointWrapper)">
 <h3>moveElevatorToPrevious</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">moveElevatorToPrevious</span><wbr><span class="parameters">(<a href="../../../Utilities/SetPointWrapper.html" title="class in BobcatLib.Utilities">SetPointWrapper</a>&nbsp;setPoints)</span></div>
+<div class="block">Moves the elevator to the previous setpoint.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>setPoints</code> - The wrapper containing multiple setpoints.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="holdPosition()">
 <h3>holdPosition</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">holdPosition</span>()</div>
+<div class="block">Holds the elevator at its current position.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="getCurrentSetPoint()">
 <h3>getCurrentSetPoint</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/geometry/Rotation2d.html" title="class or interface in edu.wpi.first.math.geometry" class="external-link">Rotation2d</a></span>&nbsp;<span class="element-name">getCurrentSetPoint</span>()</div>
+<div class="block">Gets the current setpoint of the elevator.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The current setpoint as a Rotation2d object.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="runElevator(double)">
 <h3>runElevator</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">runElevator</span><wbr><span class="parameters">(double&nbsp;velocity)</span></div>
+<div class="block">Runs the elevator at a specified velocity.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>velocity</code> - The velocity at which to run the elevator.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="runElevator()">
 <h3>runElevator</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">runElevator</span>()</div>
+<div class="block">Runs the elevator to the current setpoint.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="stop()">
 <h3>stop</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">stop</span>()</div>
-<div class="block">Stops the elevators motor immediately.</div>
+<div class="block">Stops the elevator motor immediately.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="runVoltage(edu.wpi.first.units.measure.Voltage)">
+<h3>runVoltage</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">runVoltage</span><wbr><span class="parameters">(<a href="https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/units/measure/Voltage.html" title="class or interface in edu.wpi.first.units.measure" class="external-link">Voltage</a>&nbsp;volts)</span></div>
+<div class="block">Runs the elevator using a specified voltage.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>volts</code> - The voltage to apply to the motor.</dd>
+</dl>
 </section>
 </li>
 </ul>

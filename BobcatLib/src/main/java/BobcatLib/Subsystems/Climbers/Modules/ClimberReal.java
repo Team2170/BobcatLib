@@ -23,7 +23,7 @@ public class ClimberReal implements ClimberIO {
    */
   public ClimberReal(MotorIO motor, SoftwareLimitWrapper limits) {
     this.limits = limits;
-    climberMotor = new BaseMotor(motor, limits);
+    climberMotor = new BaseMotor(motor, "Climber/Motor", limits);
   }
 
   /**

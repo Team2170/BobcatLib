@@ -78,6 +78,8 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">BaseElevatorMotor</span></div>
+<div class="block">Interface representing a base elevator motor with default implementations for motor control,
+ position tracking, and configuration.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -94,30 +96,53 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#configAngleMotor()" class="member-name-link">configAngleMotor</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Configures the angle motor with default settings.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default double</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getErrorPosition()" class="member-name-link">getErrorPosition</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Gets the error in position of the steer motor.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default double</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getPosition()" class="member-name-link">getPosition</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">gets the position of the steer motor.</div>
+<div class="block">Gets the current position of the steer motor.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#setAngle(double)" class="member-name-link">setAngle</a><wbr>(double&nbsp;rotations)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#setControl(double)" class="member-name-link">setControl</a><wbr>(double&nbsp;percent)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#setPosition(double)" class="member-name-link">setPosition</a><wbr>(double&nbsp;absolutePosition)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">sets the position of the steer motor given the desired rotations.</div>
+<div class="block">Sets the angle of the motor using the internal PID controller.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#stopMotor()" class="member-name-link">stopMotor</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#setControl(double)" class="member-name-link">setControl</a><wbr>(double&nbsp;percent)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Stops the motors properly.</div>
+<div class="block">Sets the motor control using a percentage output.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#setControl(com.ctre.phoenix6.controls.VoltageOut)" class="member-name-link">setControl</a><wbr>(<a href="https://api.ctr-electronics.com/phoenix6/release/java/com/ctre/phoenix6/controls/VoltageOut.html" title="class or interface in com.ctre.phoenix6.controls" class="external-link">VoltageOut</a>&nbsp;output)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Sets the motor control using a VoltageOut object.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#setPosition(double)" class="member-name-link">setPosition</a><wbr>(double&nbsp;absolutePosition)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Sets the absolute position of the steer motor.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#stopMotor()" class="member-name-link">stopMotor</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Stops the motor safely.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="BaseElevatorMotor.html" title="interface in BobcatLib.Subsystems.Elevators.Modules.Motors">BaseElevatorMotor</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withMotionMagic(BobcatLib.Hardware.Motors.Utility.CTRE.MotionMagicWrapper)" class="member-name-link">withMotionMagic</a><wbr>(<a href="../../../../Hardware/Motors/Utility/CTRE/MotionMagicWrapper.html" title="class in BobcatLib.Hardware.Motors.Utility.CTRE">MotionMagicWrapper</a>&nbsp;mmConfigs)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Applies Motion Magic configuration to the elevator motor.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="BaseElevatorMotor.html" title="interface in BobcatLib.Subsystems.Elevators.Modules.Motors">BaseElevatorMotor</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withSoftwareLimit(BobcatLib.Hardware.Motors.Utility.SoftwareLimitWrapper)" class="member-name-link">withSoftwareLimit</a><wbr>(<a href="../../../../Hardware/Motors/Utility/SoftwareLimitWrapper.html" title="class in BobcatLib.Hardware.Motors.Utility">SoftwareLimitWrapper</a>&nbsp;limitsWrapper)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Applies software limit settings to the elevator motor.</div>
 </div>
 </div>
 </div>
@@ -137,28 +162,50 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="configAngleMotor()">
 <h3>configAngleMotor</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">configAngleMotor</span>()</div>
+<div class="block">Configures the angle motor with default settings.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="setAngle(double)">
 <h3>setAngle</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setAngle</span><wbr><span class="parameters">(double&nbsp;rotations)</span></div>
+<div class="block">Sets the angle of the motor using the internal PID controller.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>rotations</code> - The desired angle in rotations.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="setControl(double)">
 <h3>setControl</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setControl</span><wbr><span class="parameters">(double&nbsp;percent)</span></div>
+<div class="block">Sets the motor control using a percentage output.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>percent</code> - The percentage of power to apply to the motor.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setControl(com.ctre.phoenix6.controls.VoltageOut)">
+<h3>setControl</h3>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setControl</span><wbr><span class="parameters">(<a href="https://api.ctr-electronics.com/phoenix6/release/java/com/ctre/phoenix6/controls/VoltageOut.html" title="class or interface in com.ctre.phoenix6.controls" class="external-link">VoltageOut</a>&nbsp;output)</span></div>
+<div class="block">Sets the motor control using a VoltageOut object.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>output</code> - The voltage output control for the motor.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getPosition()">
 <h3>getPosition</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">getPosition</span>()</div>
-<div class="block">gets the position of the steer motor.</div>
+<div class="block">Gets the current position of the steer motor.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>position of the steer motor in rotations.</dd>
+<dd>The position of the steer motor in rotations.</dd>
 </dl>
 </section>
 </li>
@@ -166,16 +213,21 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getErrorPosition()">
 <h3>getErrorPosition</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">getErrorPosition</span>()</div>
+<div class="block">Gets the error in position of the steer motor.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The position error in rotations.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="setPosition(double)">
 <h3>setPosition</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPosition</span><wbr><span class="parameters">(double&nbsp;absolutePosition)</span></div>
-<div class="block">sets the position of the steer motor given the desired rotations.</div>
+<div class="block">Sets the absolute position of the steer motor.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>absolutePosition</code> - </dd>
+<dd><code>absolutePosition</code> - The desired absolute position in rotations.</dd>
 </dl>
 </section>
 </li>
@@ -183,7 +235,33 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="stopMotor()">
 <h3>stopMotor</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">stopMotor</span>()</div>
-<div class="block">Stops the motors properly.</div>
+<div class="block">Stops the motor safely.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="withMotionMagic(BobcatLib.Hardware.Motors.Utility.CTRE.MotionMagicWrapper)">
+<h3>withMotionMagic</h3>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="BaseElevatorMotor.html" title="interface in BobcatLib.Subsystems.Elevators.Modules.Motors">BaseElevatorMotor</a></span>&nbsp;<span class="element-name">withMotionMagic</span><wbr><span class="parameters">(<a href="../../../../Hardware/Motors/Utility/CTRE/MotionMagicWrapper.html" title="class in BobcatLib.Hardware.Motors.Utility.CTRE">MotionMagicWrapper</a>&nbsp;mmConfigs)</span></div>
+<div class="block">Applies Motion Magic configuration to the elevator motor.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>mmConfigs</code> - The Motion Magic configuration wrapper.</dd>
+<dt>Returns:</dt>
+<dd>A new BaseElevatorMotor instance with Motion Magic settings applied.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="withSoftwareLimit(BobcatLib.Hardware.Motors.Utility.SoftwareLimitWrapper)">
+<h3>withSoftwareLimit</h3>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="BaseElevatorMotor.html" title="interface in BobcatLib.Subsystems.Elevators.Modules.Motors">BaseElevatorMotor</a></span>&nbsp;<span class="element-name">withSoftwareLimit</span><wbr><span class="parameters">(<a href="../../../../Hardware/Motors/Utility/SoftwareLimitWrapper.html" title="class in BobcatLib.Hardware.Motors.Utility">SoftwareLimitWrapper</a>&nbsp;limitsWrapper)</span></div>
+<div class="block">Applies software limit settings to the elevator motor.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>limitsWrapper</code> - The software limit configuration wrapper.</dd>
+<dt>Returns:</dt>
+<dd>A new BaseElevatorMotor instance with software limit settings applied.</dd>
+</dl>
 </section>
 </li>
 </ul>

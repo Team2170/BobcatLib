@@ -78,6 +78,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">MotorConfigurator</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">A utility class for configuring motor controllers.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -90,11 +91,17 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">MotorConfigurator</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructs a new MotorConfigurator with default configurations for both CTRE and REV motors.</div>
+</div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(com.ctre.phoenix6.configs.TalonFXConfiguration)" class="member-name-link">MotorConfigurator</a><wbr>(<a href="https://api.ctr-electronics.com/phoenix6/release/java/com/ctre/phoenix6/configs/TalonFXConfiguration.html" title="class or interface in com.ctre.phoenix6.configs" class="external-link">TalonFXConfiguration</a>&nbsp;ctreConfig)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Constructs a new MotorConfigurator with a specified CTRE configuration.</div>
+</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(com.revrobotics.spark.config.SparkMaxConfig)" class="member-name-link">MotorConfigurator</a><wbr>(<a href="https://codedocs.revrobotics.com/java/com/revrobotics/spark/config/SparkMaxConfig.html" title="class or interface in com.revrobotics.spark.config" class="external-link">SparkMaxConfig</a>&nbsp;revConfig)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructs a new MotorConfigurator with a specified REV configuration.</div>
+</div>
 </div>
 </section>
 </li>
@@ -111,16 +118,24 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://api.ctr-electronics.com/phoenix6/release/java/com/ctre/phoenix6/configs/TalonFXConfiguration.html" title="class or interface in com.ctre.phoenix6.configs" class="external-link">TalonFXConfiguration</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCtreConfig()" class="member-name-link">getCtreConfig</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Gets the CTRE motor configuration.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://codedocs.revrobotics.com/java/com/revrobotics/spark/config/SparkMaxConfig.html" title="class or interface in com.revrobotics.spark.config" class="external-link">SparkMaxConfig</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRevConfig()" class="member-name-link">getRevConfig</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Gets the REV motor configuration.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(com.ctre.phoenix6.configs.TalonFXConfiguration)" class="member-name-link">update</a><wbr>(<a href="https://api.ctr-electronics.com/phoenix6/release/java/com/ctre/phoenix6/configs/TalonFXConfiguration.html" title="class or interface in com.ctre.phoenix6.configs" class="external-link">TalonFXConfiguration</a>&nbsp;ctreConfig)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Updates the CTRE motor configuration.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(com.revrobotics.spark.config.SparkMaxConfig)" class="member-name-link">update</a><wbr>(<a href="https://codedocs.revrobotics.com/java/com/revrobotics/spark/config/SparkMaxConfig.html" title="class or interface in com.revrobotics.spark.config" class="external-link">SparkMaxConfig</a>&nbsp;revConfig)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Updates the REV motor configuration.</div>
+</div>
 </div>
 </div>
 </div>
@@ -142,18 +157,29 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;()">
 <h3>MotorConfigurator</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">MotorConfigurator</span>()</div>
+<div class="block">Constructs a new MotorConfigurator with default configurations for both CTRE and REV motors.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="&lt;init&gt;(com.ctre.phoenix6.configs.TalonFXConfiguration)">
 <h3>MotorConfigurator</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">MotorConfigurator</span><wbr><span class="parameters">(<a href="https://api.ctr-electronics.com/phoenix6/release/java/com/ctre/phoenix6/configs/TalonFXConfiguration.html" title="class or interface in com.ctre.phoenix6.configs" class="external-link">TalonFXConfiguration</a>&nbsp;ctreConfig)</span></div>
+<div class="block">Constructs a new MotorConfigurator with a specified CTRE configuration.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>ctreConfig</code> - the TalonFXConfiguration to be used</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="&lt;init&gt;(com.revrobotics.spark.config.SparkMaxConfig)">
 <h3>MotorConfigurator</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">MotorConfigurator</span><wbr><span class="parameters">(<a href="https://codedocs.revrobotics.com/java/com/revrobotics/spark/config/SparkMaxConfig.html" title="class or interface in com.revrobotics.spark.config" class="external-link">SparkMaxConfig</a>&nbsp;revConfig)</span></div>
+<div class="block">Constructs a new MotorConfigurator with a specified REV configuration.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>revConfig</code> - the SparkMaxConfig to be used</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -168,24 +194,44 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getCtreConfig()">
 <h3>getCtreConfig</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://api.ctr-electronics.com/phoenix6/release/java/com/ctre/phoenix6/configs/TalonFXConfiguration.html" title="class or interface in com.ctre.phoenix6.configs" class="external-link">TalonFXConfiguration</a></span>&nbsp;<span class="element-name">getCtreConfig</span>()</div>
+<div class="block">Gets the CTRE motor configuration.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the current TalonFXConfiguration</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getRevConfig()">
 <h3>getRevConfig</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://codedocs.revrobotics.com/java/com/revrobotics/spark/config/SparkMaxConfig.html" title="class or interface in com.revrobotics.spark.config" class="external-link">SparkMaxConfig</a></span>&nbsp;<span class="element-name">getRevConfig</span>()</div>
+<div class="block">Gets the REV motor configuration.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the current SparkMaxConfig</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="update(com.ctre.phoenix6.configs.TalonFXConfiguration)">
 <h3>update</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">update</span><wbr><span class="parameters">(<a href="https://api.ctr-electronics.com/phoenix6/release/java/com/ctre/phoenix6/configs/TalonFXConfiguration.html" title="class or interface in com.ctre.phoenix6.configs" class="external-link">TalonFXConfiguration</a>&nbsp;ctreConfig)</span></div>
+<div class="block">Updates the CTRE motor configuration.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>ctreConfig</code> - the new TalonFXConfiguration to be applied</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="update(com.revrobotics.spark.config.SparkMaxConfig)">
 <h3>update</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">update</span><wbr><span class="parameters">(<a href="https://codedocs.revrobotics.com/java/com/revrobotics/spark/config/SparkMaxConfig.html" title="class or interface in com.revrobotics.spark.config" class="external-link">SparkMaxConfig</a>&nbsp;revConfig)</span></div>
+<div class="block">Updates the REV motor configuration.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>revConfig</code> - the new SparkMaxConfig to be applied</dd>
+</dl>
 </section>
 </li>
 </ul>

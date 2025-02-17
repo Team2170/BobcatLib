@@ -78,6 +78,9 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">DistanceMode</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">The DistanceMode class represents the different distance modes used by various Time-of-Flight
+ (ToF) sensors. This class allows conversion between different ranging modes used in various
+ sensor libraries, such as LaserCAN and PWF.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -92,7 +95,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static enum&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="DistanceMode.modes.html" class="type-name-link" title="enum class in BobcatLib.Hardware.Sensors.SpatialSensor.Utility">DistanceMode.modes</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Enumeration of possible distance modes.</div>
+</div>
 </div>
 </section>
 </li>
@@ -120,9 +125,13 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">DistanceMode</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Default constructor for the DistanceMode class.</div>
+</div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(BobcatLib.Hardware.Sensors.SpatialSensor.Utility.DistanceMode.modes)" class="member-name-link">DistanceMode</a><wbr>(<a href="DistanceMode.modes.html" title="enum class in BobcatLib.Hardware.Sensors.SpatialSensor.Utility">DistanceMode.modes</a>&nbsp;cm)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Constructs a new DistanceMode instance with the specified mode.</div>
+</div>
 </div>
 </section>
 </li>
@@ -139,16 +148,24 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>au.grapplerobotics.interfaces.LaserCanInterface.RangingMode</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#asLaserCAN()" class="member-name-link">asLaserCAN</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Converts the current distance mode to a LaserCAN compatible ranging mode.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>com.playingwithfusion.TimeOfFlight.RangingMode</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#asPWF()" class="member-name-link">asPWF</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Converts the current distance mode to a PWF (Playing With Fusion) compatible ranging mode.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DistanceMode.html" title="class in BobcatLib.Hardware.Sensors.SpatialSensor.Utility">DistanceMode</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#fromLaserCAN(au.grapplerobotics.interfaces.LaserCanInterface.RangingMode)" class="member-name-link">fromLaserCAN</a><wbr>(au.grapplerobotics.interfaces.LaserCanInterface.RangingMode&nbsp;mode)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Converts a LaserCAN RangingMode to a corresponding DistanceMode.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DistanceMode.html" title="class in BobcatLib.Hardware.Sensors.SpatialSensor.Utility">DistanceMode</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#fromPWF(com.playingwithfusion.TimeOfFlight.RangingMode)" class="member-name-link">fromPWF</a><wbr>(com.playingwithfusion.TimeOfFlight.RangingMode&nbsp;mode)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Converts a PWF RangingMode to a corresponding DistanceMode.</div>
+</div>
 </div>
 </div>
 </div>
@@ -184,12 +201,19 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;(BobcatLib.Hardware.Sensors.SpatialSensor.Utility.DistanceMode.modes)">
 <h3>DistanceMode</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">DistanceMode</span><wbr><span class="parameters">(<a href="DistanceMode.modes.html" title="enum class in BobcatLib.Hardware.Sensors.SpatialSensor.Utility">DistanceMode.modes</a>&nbsp;cm)</span></div>
+<div class="block">Constructs a new DistanceMode instance with the specified mode.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>cm</code> - The distance mode (e.g., SHORT, MEDIUM, LONG).</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="&lt;init&gt;()">
 <h3>DistanceMode</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">DistanceMode</span>()</div>
+<div class="block">Default constructor for the DistanceMode class. Initializes the distance mode to null (or
+ undefined).</div>
 </section>
 </li>
 </ul>
@@ -204,24 +228,48 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="asLaserCAN()">
 <h3>asLaserCAN</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">au.grapplerobotics.interfaces.LaserCanInterface.RangingMode</span>&nbsp;<span class="element-name">asLaserCAN</span>()</div>
+<div class="block">Converts the current distance mode to a LaserCAN compatible ranging mode.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The corresponding LaserCAN RangingMode (SHORT, MEDIUM, LONG), or null if no valid mode.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="asPWF()">
 <h3>asPWF</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">com.playingwithfusion.TimeOfFlight.RangingMode</span>&nbsp;<span class="element-name">asPWF</span>()</div>
+<div class="block">Converts the current distance mode to a PWF (Playing With Fusion) compatible ranging mode.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The corresponding PWF RangingMode (Short, Medium, Long), or null if no valid mode.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="fromPWF(com.playingwithfusion.TimeOfFlight.RangingMode)">
 <h3>fromPWF</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DistanceMode.html" title="class in BobcatLib.Hardware.Sensors.SpatialSensor.Utility">DistanceMode</a></span>&nbsp;<span class="element-name">fromPWF</span><wbr><span class="parameters">(com.playingwithfusion.TimeOfFlight.RangingMode&nbsp;mode)</span></div>
+<div class="block">Converts a PWF RangingMode to a corresponding DistanceMode.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>mode</code> - The PWF RangingMode (Short, Medium, Long).</dd>
+<dt>Returns:</dt>
+<dd>A new DistanceMode instance corresponding to the PWF RangingMode.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="fromLaserCAN(au.grapplerobotics.interfaces.LaserCanInterface.RangingMode)">
 <h3>fromLaserCAN</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DistanceMode.html" title="class in BobcatLib.Hardware.Sensors.SpatialSensor.Utility">DistanceMode</a></span>&nbsp;<span class="element-name">fromLaserCAN</span><wbr><span class="parameters">(au.grapplerobotics.interfaces.LaserCanInterface.RangingMode&nbsp;mode)</span></div>
+<div class="block">Converts a LaserCAN RangingMode to a corresponding DistanceMode.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>mode</code> - The LaserCAN RangingMode (SHORT, MEDIUM, LONG).</dd>
+<dt>Returns:</dt>
+<dd>A new DistanceMode instance corresponding to the LaserCAN RangingMode.</dd>
+</dl>
 </section>
 </li>
 </ul>

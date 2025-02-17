@@ -7,7 +7,13 @@ import au.grapplerobotics.ConfigurationFailedException;
 import au.grapplerobotics.LaserCan;
 import au.grapplerobotics.interfaces.LaserCanInterface.RangingMode;
 
+/**
+ * The LaserCAN class represents a range sensor that uses the LaserCan hardware over a CAN
+ * interface. It provides methods for configuring the sensor, retrieving measurements, and handling
+ * faults.
+ */
 public class LaserCAN implements RangeSensor {
+
   public int id;
   public LaserCan tof;
   public DistanceMode mode;
@@ -15,6 +21,13 @@ public class LaserCAN implements RangeSensor {
   public Alert sensorAlert;
   public double sampleTime;
 
+  /**
+   * Constructs a new LaserCAN sensor instance with the specified parameters.
+   *
+   * @param id The ID of the range sensor.
+   * @param mode The mode of operation for the sensor (e.g., distance mode).
+   * @param sampleTime The time interval between sensor readings in seconds.
+   */
   public LaserCAN(int id, DistanceMode mode, double sampleTime) {
     this.id = id;
     this.sampleTime = sampleTime;
@@ -23,17 +36,17 @@ public class LaserCAN implements RangeSensor {
       tof = new LaserCan(id);
       configRangeSensor();
     } catch (Exception e) {
-      // TODO: handle exception
+      // Handle the exception and generate an alert
       AlertType level = AlertType.INFO;
-      sensorAlert = new Alert("TOF", "TOF " + id + " hardware fault occured", level);
+      sensorAlert = new Alert("TOF", "TOF " + id + " hardware fault occurred", level);
       sensorAlert.set(true);
     }
   }
 
   /**
-   * Gets the range in front of the sensor.
+   * Gets the range (distance) in front of the sensor.
    *
-   * @return range in mm
+   * @return The distance measured by the sensor in millimeters.
    */
   public double getRange() {
     range = 0;
@@ -44,9 +57,13 @@ public class LaserCAN implements RangeSensor {
     return range;
   }
 
+  /**
+   * Configures the range sensor with default settings. This method applies the necessary
+   * configuration to the LaserCAN sensor for basic usage.
+   */
   public void configRangeSensor() {
-    // Optionally initialise the settings of the LaserCAN, if you haven't already
-    // done so in GrappleHook
+    // Optionally initialise the settings of the LaserCAN, if you haven't already done so in
+    // GrappleHook
     try {
       tof.setRangingMode(mode.asLaserCAN());
       tof.setRegionOfInterest(new LaserCan.RegionOfInterest(0, 0, 16, 16));
@@ -56,10 +73,15 @@ public class LaserCAN implements RangeSensor {
     }
   }
 
+  /**
+   * Configures the range sensor with a specific distance mode.
+   *
+   * @param m The desired distance mode (e.g., short, medium, or long).
+   */
   public void configRangeSensor(DistanceMode m) {
     this.mode = m;
-    // Optionally initialise the settings of the LaserCAN, if you haven't already
-    // done so in GrappleHook
+    // Optionally initialise the settings of the LaserCAN, if you haven't already done so in
+    // GrappleHook
     try {
       tof.setRangingMode(m.asLaserCAN());
       tof.setRegionOfInterest(new LaserCan.RegionOfInterest(0, 0, 16, 16));
@@ -69,15 +91,24 @@ public class LaserCAN implements RangeSensor {
     }
   }
 
+  /**
+   * Retrieves the current distance mode of the sensor.
+   *
+   * @return The current distance mode of the sensor.
+   */
   public DistanceMode getMode() {
     return mode;
   }
+
   /**
-   * Sets the distance mode of the sensor based on the provided distance.
+   * Retrieves the optimal distance mode based on the current range reading. The optimal mode is
+   * chosen based on the distance measured by the sensor.
    *
-   * <p>RangingMode.Short: if distance less than 1250 mm RangingMode.Medium: if 1250 mm less than or
-   * equal too distance less than 2250 mm RangingMode.Long: if distance greater than or equal to
-   * 2250 mm
+   * <p>RangingMode.Short: if distance less than 1250 mm<br>
+   * RangingMode.Medium: if distance between 1250 mm and 2250 mm<br>
+   * RangingMode.Long: if distance greater than or equal to 2250 mm
+   *
+   * @return The optimal distance mode based on the current range.
    */
   public DistanceMode getOptimalMode() {
     double distance = getRange();
@@ -89,5 +120,11 @@ public class LaserCAN implements RangeSensor {
     return distanceMode.fromLaserCAN(mode);
   }
 
+  /**
+   * Updates the sensor's state based on directional translation. This method can be used to adjust
+   * the sensor state based on movement or translation.
+   *
+   * @param translation The translation value used to adjust the sensor state.
+   */
   public void updateFromDirectional(double translation) {}
 }

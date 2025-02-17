@@ -78,6 +78,8 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">BobcatRunner</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">The <code>BobcatRunner</code> class provides a mechanism to execute a given method periodically or as
+ a one-time execution after a specified delay.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -93,8 +95,8 @@ loadScripts(document, 'script');</script>
  int&nbsp;delayInSeconds,
  boolean&nbsp;isContinuous)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Constructs an instance of the runner, this will allow you to take an method and execute
- periodically given a configuration you pass in.</div>
+<div class="block">Constructs an instance of the <code>BobcatRunner</code>, allowing a method to be executed
+ periodically or once after a given delay.</div>
 </div>
 </div>
 </section>
@@ -112,7 +114,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#endExecution()" class="member-name-link">endExecution</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Stops the execution of the scheduled task.</div>
+</div>
 </div>
 </div>
 </div>
@@ -136,12 +140,14 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">BobcatRunner</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a>&nbsp;callback,
  int&nbsp;delayInSeconds,
  boolean&nbsp;isContinuous)</span></div>
-<div class="block">Constructs an instance of the runner, this will allow you to take an method and execute
- periodically given a configuration you pass in.</div>
+<div class="block">Constructs an instance of the <code>BobcatRunner</code>, allowing a method to be executed
+ periodically or once after a given delay.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>callback</code> - </dd>
-<dd><code>delayInSeconds</code> - </dd>
+<dd><code>callback</code> - The method to be executed.</dd>
+<dd><code>delayInSeconds</code> - The delay in seconds before the execution starts.</dd>
+<dd><code>isContinuous</code> - If <code>true</code>, the method runs periodically with the given delay;
+     otherwise, it runs only once after the delay.</dd>
 </dl>
 </section>
 </li>
@@ -157,6 +163,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="endExecution()">
 <h3>endExecution</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">endExecution</span>()</div>
+<div class="block">Stops the execution of the scheduled task.</div>
 </section>
 </li>
 </ul>

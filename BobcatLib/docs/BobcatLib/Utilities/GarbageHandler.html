@@ -78,6 +78,8 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">GarbageHandler</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">The <code>GarbageHandler</code> class is responsible for periodically triggering garbage collection to
+ help manage memory usage in the application.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -90,7 +92,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int)" class="member-name-link">GarbageHandler</a><wbr>(int&nbsp;seconds)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructs a <code>GarbageHandler</code> that schedules periodic garbage collection execution.</div>
+</div>
 </div>
 </section>
 </li>
@@ -106,11 +110,15 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#ExecuteCleanup()" class="member-name-link">ExecuteCleanup</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#executeCleanup()" class="member-name-link">executeCleanup</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Executes garbage collection by invoking <code>System.gc()</code>.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stop()" class="member-name-link">stop</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Stops the scheduled garbage collection execution.</div>
+</div>
 </div>
 </div>
 </div>
@@ -132,6 +140,11 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;(int)">
 <h3>GarbageHandler</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">GarbageHandler</span><wbr><span class="parameters">(int&nbsp;seconds)</span></div>
+<div class="block">Constructs a <code>GarbageHandler</code> that schedules periodic garbage collection execution.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>seconds</code> - The interval in seconds at which garbage collection is triggered.</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -143,15 +156,17 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="ExecuteCleanup()">
-<h3>ExecuteCleanup</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">ExecuteCleanup</span>()</div>
+<section class="detail" id="executeCleanup()">
+<h3>executeCleanup</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">executeCleanup</span>()</div>
+<div class="block">Executes garbage collection by invoking <code>System.gc()</code>.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="stop()">
 <h3>stop</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">stop</span>()</div>
+<div class="block">Stops the scheduled garbage collection execution.</div>
 </section>
 </li>
 </ul>

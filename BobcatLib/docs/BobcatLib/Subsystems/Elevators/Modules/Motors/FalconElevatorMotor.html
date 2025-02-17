@@ -112,31 +112,54 @@ implements <a href="BaseElevatorMotor.html" title="interface in BobcatLib.Subsys
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#configAngleMotor()" class="member-name-link">configAngleMotor</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#configElevatorMotor()" class="member-name-link">configElevatorMotor</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Configures the angle motor with default settings.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getErrorPosition()" class="member-name-link">getErrorPosition</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Gets the error in position of the steer motor.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPosition()" class="member-name-link">getPosition</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">gets the position of the steer motor.</div>
+<div class="block">Gets the current position of the steer motor.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAngle(double)" class="member-name-link">setAngle</a><wbr>(double&nbsp;rotations)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setControl(double)" class="member-name-link">setControl</a><wbr>(double&nbsp;percent)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPosition(double)" class="member-name-link">setPosition</a><wbr>(double&nbsp;absolutePosition)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">sets the position of the steer motor given the desired rotations.</div>
+<div class="block">Sets the angle of the motor using the internal PID controller.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopMotor()" class="member-name-link">stopMotor</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setControl(double)" class="member-name-link">setControl</a><wbr>(double&nbsp;percent)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Stops the motors properly.</div>
+<div class="block">Sets the motor control using a percentage output.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setControl(com.ctre.phoenix6.controls.VoltageOut)" class="member-name-link">setControl</a><wbr>(<a href="https://api.ctr-electronics.com/phoenix6/release/java/com/ctre/phoenix6/controls/VoltageOut.html" title="class or interface in com.ctre.phoenix6.controls" class="external-link">VoltageOut</a>&nbsp;output)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the motor control using a VoltageOut object.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPosition(double)" class="member-name-link">setPosition</a><wbr>(double&nbsp;absolutePosition)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the absolute position of the steer motor.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stopMotor()" class="member-name-link">stopMotor</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Stops the motor safely.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BaseElevatorMotor.html" title="interface in BobcatLib.Subsystems.Elevators.Modules.Motors">BaseElevatorMotor</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withMotionMagic(BobcatLib.Hardware.Motors.Utility.CTRE.MotionMagicWrapper)" class="member-name-link">withMotionMagic</a><wbr>(<a href="../../../../Hardware/Motors/Utility/CTRE/MotionMagicWrapper.html" title="class in BobcatLib.Hardware.Motors.Utility.CTRE">MotionMagicWrapper</a>&nbsp;mmWrapper)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Applies Motion Magic configuration to the elevator motor.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BaseElevatorMotor.html" title="interface in BobcatLib.Subsystems.Elevators.Modules.Motors">BaseElevatorMotor</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withSoftwareLimit(BobcatLib.Hardware.Motors.Utility.SoftwareLimitWrapper)" class="member-name-link">withSoftwareLimit</a><wbr>(<a href="../../../../Hardware/Motors/Utility/SoftwareLimitWrapper.html" title="class in BobcatLib.Hardware.Motors.Utility">SoftwareLimitWrapper</a>&nbsp;limitsWrapper)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Applies software limit settings to the elevator motor.</div>
 </div>
 </div>
 </div>
@@ -144,6 +167,9 @@ implements <a href="BaseElevatorMotor.html" title="interface in BobcatLib.Subsys
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-BobcatLib.Subsystems.Elevators.Modules.Motors.BaseElevatorMotor">Methods inherited from interface&nbsp;BobcatLib.Subsystems.Elevators.Modules.Motors.<a href="BaseElevatorMotor.html" title="interface in BobcatLib.Subsystems.Elevators.Modules.Motors">BaseElevatorMotor</a></h3>
+<code><a href="BaseElevatorMotor.html#configAngleMotor()">configAngleMotor</a></code></div>
 </section>
 </li>
 </ul>
@@ -171,12 +197,39 @@ implements <a href="BaseElevatorMotor.html" title="interface in BobcatLib.Subsys
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="configAngleMotor()">
-<h3>configAngleMotor</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">configAngleMotor</span>()</div>
+<section class="detail" id="configElevatorMotor()">
+<h3>configElevatorMotor</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">configElevatorMotor</span>()</div>
+<div class="block">Configures the angle motor with default settings.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="withMotionMagic(BobcatLib.Hardware.Motors.Utility.CTRE.MotionMagicWrapper)">
+<h3>withMotionMagic</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BaseElevatorMotor.html" title="interface in BobcatLib.Subsystems.Elevators.Modules.Motors">BaseElevatorMotor</a></span>&nbsp;<span class="element-name">withMotionMagic</span><wbr><span class="parameters">(<a href="../../../../Hardware/Motors/Utility/CTRE/MotionMagicWrapper.html" title="class in BobcatLib.Hardware.Motors.Utility.CTRE">MotionMagicWrapper</a>&nbsp;mmWrapper)</span></div>
+<div class="block">Applies Motion Magic configuration to the elevator motor.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="BaseElevatorMotor.html#configAngleMotor()">configAngleMotor</a></code>&nbsp;in interface&nbsp;<code><a href="BaseElevatorMotor.html" title="interface in BobcatLib.Subsystems.Elevators.Modules.Motors">BaseElevatorMotor</a></code></dd>
+<dd><code><a href="BaseElevatorMotor.html#withMotionMagic(BobcatLib.Hardware.Motors.Utility.CTRE.MotionMagicWrapper)">withMotionMagic</a></code>&nbsp;in interface&nbsp;<code><a href="BaseElevatorMotor.html" title="interface in BobcatLib.Subsystems.Elevators.Modules.Motors">BaseElevatorMotor</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>mmWrapper</code> - The Motion Magic configuration wrapper.</dd>
+<dt>Returns:</dt>
+<dd>A new BaseElevatorMotor instance with Motion Magic settings applied.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="withSoftwareLimit(BobcatLib.Hardware.Motors.Utility.SoftwareLimitWrapper)">
+<h3>withSoftwareLimit</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BaseElevatorMotor.html" title="interface in BobcatLib.Subsystems.Elevators.Modules.Motors">BaseElevatorMotor</a></span>&nbsp;<span class="element-name">withSoftwareLimit</span><wbr><span class="parameters">(<a href="../../../../Hardware/Motors/Utility/SoftwareLimitWrapper.html" title="class in BobcatLib.Hardware.Motors.Utility">SoftwareLimitWrapper</a>&nbsp;limitsWrapper)</span></div>
+<div class="block">Applies software limit settings to the elevator motor.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="BaseElevatorMotor.html#withSoftwareLimit(BobcatLib.Hardware.Motors.Utility.SoftwareLimitWrapper)">withSoftwareLimit</a></code>&nbsp;in interface&nbsp;<code><a href="BaseElevatorMotor.html" title="interface in BobcatLib.Subsystems.Elevators.Modules.Motors">BaseElevatorMotor</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>limitsWrapper</code> - The software limit configuration wrapper.</dd>
+<dt>Returns:</dt>
+<dd>A new BaseElevatorMotor instance with software limit settings applied.</dd>
 </dl>
 </section>
 </li>
@@ -184,9 +237,12 @@ implements <a href="BaseElevatorMotor.html" title="interface in BobcatLib.Subsys
 <section class="detail" id="setAngle(double)">
 <h3>setAngle</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setAngle</span><wbr><span class="parameters">(double&nbsp;rotations)</span></div>
+<div class="block">Sets the angle of the motor using the internal PID controller.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="BaseElevatorMotor.html#setAngle(double)">setAngle</a></code>&nbsp;in interface&nbsp;<code><a href="BaseElevatorMotor.html" title="interface in BobcatLib.Subsystems.Elevators.Modules.Motors">BaseElevatorMotor</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>rotations</code> - The desired angle in rotations.</dd>
 </dl>
 </section>
 </li>
@@ -194,9 +250,25 @@ implements <a href="BaseElevatorMotor.html" title="interface in BobcatLib.Subsys
 <section class="detail" id="setControl(double)">
 <h3>setControl</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setControl</span><wbr><span class="parameters">(double&nbsp;percent)</span></div>
+<div class="block">Sets the motor control using a percentage output.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="BaseElevatorMotor.html#setControl(double)">setControl</a></code>&nbsp;in interface&nbsp;<code><a href="BaseElevatorMotor.html" title="interface in BobcatLib.Subsystems.Elevators.Modules.Motors">BaseElevatorMotor</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>percent</code> - The percentage of power to apply to the motor.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setControl(com.ctre.phoenix6.controls.VoltageOut)">
+<h3>setControl</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setControl</span><wbr><span class="parameters">(<a href="https://api.ctr-electronics.com/phoenix6/release/java/com/ctre/phoenix6/controls/VoltageOut.html" title="class or interface in com.ctre.phoenix6.controls" class="external-link">VoltageOut</a>&nbsp;output)</span></div>
+<div class="block">Sets the motor control using a VoltageOut object.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="BaseElevatorMotor.html#setControl(com.ctre.phoenix6.controls.VoltageOut)">setControl</a></code>&nbsp;in interface&nbsp;<code><a href="BaseElevatorMotor.html" title="interface in BobcatLib.Subsystems.Elevators.Modules.Motors">BaseElevatorMotor</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>output</code> - The voltage output control for the motor.</dd>
 </dl>
 </section>
 </li>
@@ -204,12 +276,12 @@ implements <a href="BaseElevatorMotor.html" title="interface in BobcatLib.Subsys
 <section class="detail" id="getPosition()">
 <h3>getPosition</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">getPosition</span>()</div>
-<div class="block">gets the position of the steer motor.</div>
+<div class="block">Gets the current position of the steer motor.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="BaseElevatorMotor.html#getPosition()">getPosition</a></code>&nbsp;in interface&nbsp;<code><a href="BaseElevatorMotor.html" title="interface in BobcatLib.Subsystems.Elevators.Modules.Motors">BaseElevatorMotor</a></code></dd>
 <dt>Returns:</dt>
-<dd>position of the steer motor in rotations.</dd>
+<dd>The position of the steer motor in rotations.</dd>
 </dl>
 </section>
 </li>
@@ -217,9 +289,12 @@ implements <a href="BaseElevatorMotor.html" title="interface in BobcatLib.Subsys
 <section class="detail" id="getErrorPosition()">
 <h3>getErrorPosition</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">getErrorPosition</span>()</div>
+<div class="block">Gets the error in position of the steer motor.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="BaseElevatorMotor.html#getErrorPosition()">getErrorPosition</a></code>&nbsp;in interface&nbsp;<code><a href="BaseElevatorMotor.html" title="interface in BobcatLib.Subsystems.Elevators.Modules.Motors">BaseElevatorMotor</a></code></dd>
+<dt>Returns:</dt>
+<dd>The position error in rotations.</dd>
 </dl>
 </section>
 </li>
@@ -227,12 +302,12 @@ implements <a href="BaseElevatorMotor.html" title="interface in BobcatLib.Subsys
 <section class="detail" id="setPosition(double)">
 <h3>setPosition</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPosition</span><wbr><span class="parameters">(double&nbsp;absolutePosition)</span></div>
-<div class="block">sets the position of the steer motor given the desired rotations.</div>
+<div class="block">Sets the absolute position of the steer motor.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="BaseElevatorMotor.html#setPosition(double)">setPosition</a></code>&nbsp;in interface&nbsp;<code><a href="BaseElevatorMotor.html" title="interface in BobcatLib.Subsystems.Elevators.Modules.Motors">BaseElevatorMotor</a></code></dd>
 <dt>Parameters:</dt>
-<dd><code>absolutePosition</code> - </dd>
+<dd><code>absolutePosition</code> - The desired absolute position in rotations.</dd>
 </dl>
 </section>
 </li>
@@ -240,7 +315,7 @@ implements <a href="BaseElevatorMotor.html" title="interface in BobcatLib.Subsys
 <section class="detail" id="stopMotor()">
 <h3>stopMotor</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">stopMotor</span>()</div>
-<div class="block">Stops the motors properly.</div>
+<div class="block">Stops the motor safely.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="BaseElevatorMotor.html#stopMotor()">stopMotor</a></code>&nbsp;in interface&nbsp;<code><a href="BaseElevatorMotor.html" title="interface in BobcatLib.Subsystems.Elevators.Modules.Motors">BaseElevatorMotor</a></code></dd>

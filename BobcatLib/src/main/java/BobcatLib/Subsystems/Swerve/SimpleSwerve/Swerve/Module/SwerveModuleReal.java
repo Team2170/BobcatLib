@@ -161,6 +161,7 @@ public class SwerveModuleReal implements SwerveModuleIO {
             new KrakenSteerMotor(
                 details, canId, chosenModule, jsonModule.angle.canbus, swerveLimits);
     }
+    mAngleMotor.withStatorCurrent();
   }
 
   public void assignDriveMotor(String type, int canId) {
@@ -192,6 +193,7 @@ public class SwerveModuleReal implements SwerveModuleIO {
             new KrakenDriveMotor(
                 details, canId, chosenModule, jsonModule.drive.canbus, swerveLimits);
     }
+    mDriveMotor.withStatorCurrent();
   }
 
   public ModuleJson loadConfigurationFromFile() {

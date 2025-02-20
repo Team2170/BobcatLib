@@ -92,9 +92,6 @@ public class Neo550SteerMotor implements SteerWrapper {
 
     /* Gear Ratio Config */
 
-    /* Current Limiting */
-    motorConfig.smartCurrentLimit(chosenModule.json.angleCurrentLimit);
-
     /* PID Config */
     motorConfig
         .closedLoop
@@ -107,6 +104,15 @@ public class Neo550SteerMotor implements SteerWrapper {
     /* Open and Closed Loop Ramping */
     motorConfig.closedLoopRampRate(chosenModule.json.closedLoopRamp);
     motorConfig.openLoopRampRate(chosenModule.json.openLoopRamp);
+  }
+
+  public void withSupplyCurrent() {
+    /* Current Limiting */
+    motorConfig.smartCurrentLimit(chosenModule.json.angleSupplyCurrentLimit);
+  }
+
+  public void withStatorCurrent() {
+    /* Current Limiting */
   }
 
   /*

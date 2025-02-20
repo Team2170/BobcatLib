@@ -115,12 +115,6 @@ public class FalconDriveMotor implements DriveWrapper {
     /* Gear Ratio Config */
     swerveDriveFXConfig.Feedback.SensorToMechanismRatio = chosenModule.driveGearRatio;
 
-    /* Current Limiting */
-    swerveDriveFXConfig.CurrentLimits.SupplyCurrentLimitEnable =
-        chosenModule.json.driveEnableCurrentLimit;
-
-    swerveDriveFXConfig.CurrentLimits.SupplyCurrentLimit = chosenModule.json.driveCurrentLimit;
-
     /* PID Config */
     swerveDriveFXConfig.Slot0.kP = chosenModule.drivePID.kP;
     swerveDriveFXConfig.Slot0.kI = chosenModule.drivePID.kI;
@@ -134,6 +128,22 @@ public class FalconDriveMotor implements DriveWrapper {
         chosenModule.json.closedLoopRamp;
     swerveDriveFXConfig.ClosedLoopRamps.VoltageClosedLoopRampPeriod =
         chosenModule.json.closedLoopRamp;
+  }
+
+  public void withSupplyCurrent() {
+    /* Current Limiting */
+    swerveDriveFXConfig.CurrentLimits.SupplyCurrentLimitEnable =
+        chosenModule.json.driveEnableSupplyCurrentLimit;
+    swerveDriveFXConfig.CurrentLimits.SupplyCurrentLimit =
+        chosenModule.json.driveSupplyCurrentLimit;
+  }
+
+  public void withStatorCurrent() {
+    /* Current Limiting */
+    swerveDriveFXConfig.CurrentLimits.StatorCurrentLimitEnable =
+        chosenModule.json.driveEnableStatorCurrentLimit;
+    swerveDriveFXConfig.CurrentLimits.StatorCurrentLimit =
+        chosenModule.json.driveStatorCurrentLimit;
   }
 
   /**

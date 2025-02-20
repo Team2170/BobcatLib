@@ -158,6 +158,7 @@ public class SwerveModuleSim implements SwerveModuleIO {
         details = new CANDeviceDetails(canId, Manufacturer.Ctre, "Swerve/Module" + moduleNumber);
         mAngleMotor = new SimSteerMotor(chosenModule, swerveLimits);
     }
+    mAngleMotor.withStatorCurrent();
   }
 
   public void assignDriveMotor(String type, int canId) {
@@ -187,6 +188,7 @@ public class SwerveModuleSim implements SwerveModuleIO {
         details = new CANDeviceDetails(canId, Manufacturer.Rev, "Swerve/Module" + moduleNumber);
         mDriveMotor = new SimDriveMotor(chosenModule, swerveLimits);
     }
+    mDriveMotor.withStatorCurrent();
   }
 
   /**

@@ -38,6 +38,10 @@ public class SimDriveMotor implements DriveWrapper {
             DRIVE_GEARBOX);
   }
 
+  public void withSupplyCurrent() {}
+
+  public void withStatorCurrent() {}
+
   public void updateOutputs() {}
 
   /**

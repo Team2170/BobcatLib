@@ -52,5 +52,8 @@ public interface DriveWrapper {
 
   /** Stops the motors properly. */
   public default void stopMotor() {}
-  ;
+
+  public default void withSupplyCurrent() {}
+
+  public default void withStatorCurrent() {}
 }

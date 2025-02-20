@@ -89,25 +89,21 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code><a href="ModuleMotorJson.html" title="class in BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.parser">ModuleMotorJson</a></code></div>
 <div class="col-second even-row-color"><code><a href="#angle" class="member-name-link">angle</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>int</code></div>
-<div class="col-second odd-row-color"><code><a href="#angleCurrentLimit" class="member-name-link">angleCurrentLimit</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Angle Current Limit</div>
-</div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><a href="#angleCurrentThreshold" class="member-name-link">angleCurrentThreshold</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Angle Current Threshold</div>
-</div>
-<div class="col-first odd-row-color"><code>double</code></div>
-<div class="col-second odd-row-color"><code><a href="#angleCurrentThresholdTime" class="member-name-link">angleCurrentThresholdTime</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Angle Current ThresholdTime</div>
-</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#angleEnableStatorCurrentLimit" class="member-name-link">angleEnableStatorCurrentLimit</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#angleEnableCurrentLimit" class="member-name-link">angleEnableCurrentLimit</a></code></div>
+<div class="col-second even-row-color"><code><a href="#angleEnableSupplyCurrentLimit" class="member-name-link">angleEnableSupplyCurrentLimit</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">ANgle Enable Current Limit</div>
+</div>
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><code><a href="#angleStatorCurrentLimit" class="member-name-link">angleStatorCurrentLimit</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>int</code></div>
+<div class="col-second even-row-color"><code><a href="#angleSupplyCurrentLimit" class="member-name-link">angleSupplyCurrentLimit</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Angle Current Limit</div>
 </div>
 <div class="col-first odd-row-color"><code>double</code></div>
 <div class="col-second odd-row-color"><code><a href="#closedLoopRamp" class="member-name-link">closedLoopRamp</a></code></div>
@@ -117,25 +113,21 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code><a href="ModuleMotorJson.html" title="class in BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.parser">ModuleMotorJson</a></code></div>
 <div class="col-second even-row-color"><code><a href="#drive" class="member-name-link">drive</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>int</code></div>
-<div class="col-second odd-row-color"><code><a href="#driveCurrentLimit" class="member-name-link">driveCurrentLimit</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Drive Current Limit</div>
-</div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><code><a href="#driveCurrentThreshold" class="member-name-link">driveCurrentThreshold</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Drive Current Threshold</div>
-</div>
-<div class="col-first odd-row-color"><code>double</code></div>
-<div class="col-second odd-row-color"><code><a href="#driveCurrentThresholdTime" class="member-name-link">driveCurrentThresholdTime</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Drive Current THreshold Time</div>
-</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#driveEnableStatorCurrentLimit" class="member-name-link">driveEnableStatorCurrentLimit</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><code><a href="#driveEnableCurrentLimit" class="member-name-link">driveEnableCurrentLimit</a></code></div>
+<div class="col-second even-row-color"><code><a href="#driveEnableSupplyCurrentLimit" class="member-name-link">driveEnableSupplyCurrentLimit</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Drive ENable Current Limit</div>
+</div>
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><code><a href="#driveStatorCurrentLimit" class="member-name-link">driveStatorCurrentLimit</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>int</code></div>
+<div class="col-second even-row-color"><code><a href="#driveSupplyCurrentLimit" class="member-name-link">driveSupplyCurrentLimit</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Drive Current Limit</div>
 </div>
 <div class="col-first odd-row-color"><code><a href="ModuleEncoderJson.html" title="class in BobcatLib.Subsystems.Swerve.SimpleSwerve.Swerve.Module.parser">ModuleEncoderJson</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#encoder" class="member-name-link">encoder</a></code></div>
@@ -234,59 +226,55 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="driveCurrentLimit">
-<h3>driveCurrentLimit</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">driveCurrentLimit</span></div>
+<section class="detail" id="driveSupplyCurrentLimit">
+<h3>driveSupplyCurrentLimit</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">driveSupplyCurrentLimit</span></div>
 <div class="block">Drive Current Limit</div>
 </section>
 </li>
 <li>
-<section class="detail" id="driveCurrentThreshold">
-<h3>driveCurrentThreshold</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">driveCurrentThreshold</span></div>
-<div class="block">Drive Current Threshold</div>
+<section class="detail" id="driveStatorCurrentLimit">
+<h3>driveStatorCurrentLimit</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">driveStatorCurrentLimit</span></div>
 </section>
 </li>
 <li>
-<section class="detail" id="driveCurrentThresholdTime">
-<h3>driveCurrentThresholdTime</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">driveCurrentThresholdTime</span></div>
-<div class="block">Drive Current THreshold Time</div>
-</section>
-</li>
-<li>
-<section class="detail" id="driveEnableCurrentLimit">
-<h3>driveEnableCurrentLimit</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">driveEnableCurrentLimit</span></div>
+<section class="detail" id="driveEnableSupplyCurrentLimit">
+<h3>driveEnableSupplyCurrentLimit</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">driveEnableSupplyCurrentLimit</span></div>
 <div class="block">Drive ENable Current Limit</div>
 </section>
 </li>
 <li>
-<section class="detail" id="angleCurrentLimit">
-<h3>angleCurrentLimit</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">angleCurrentLimit</span></div>
+<section class="detail" id="driveEnableStatorCurrentLimit">
+<h3>driveEnableStatorCurrentLimit</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">driveEnableStatorCurrentLimit</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="angleSupplyCurrentLimit">
+<h3>angleSupplyCurrentLimit</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">angleSupplyCurrentLimit</span></div>
 <div class="block">Angle Current Limit</div>
 </section>
 </li>
 <li>
-<section class="detail" id="angleCurrentThreshold">
-<h3>angleCurrentThreshold</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">angleCurrentThreshold</span></div>
-<div class="block">Angle Current Threshold</div>
+<section class="detail" id="angleStatorCurrentLimit">
+<h3>angleStatorCurrentLimit</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">angleStatorCurrentLimit</span></div>
 </section>
 </li>
 <li>
-<section class="detail" id="angleCurrentThresholdTime">
-<h3>angleCurrentThresholdTime</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">angleCurrentThresholdTime</span></div>
-<div class="block">Angle Current ThresholdTime</div>
-</section>
-</li>
-<li>
-<section class="detail" id="angleEnableCurrentLimit">
-<h3>angleEnableCurrentLimit</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">angleEnableCurrentLimit</span></div>
+<section class="detail" id="angleEnableSupplyCurrentLimit">
+<h3>angleEnableSupplyCurrentLimit</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">angleEnableSupplyCurrentLimit</span></div>
 <div class="block">ANgle Enable Current Limit</div>
+</section>
+</li>
+<li>
+<section class="detail" id="angleEnableStatorCurrentLimit">
+<h3>angleEnableStatorCurrentLimit</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">angleEnableStatorCurrentLimit</span></div>
 </section>
 </li>
 <li>

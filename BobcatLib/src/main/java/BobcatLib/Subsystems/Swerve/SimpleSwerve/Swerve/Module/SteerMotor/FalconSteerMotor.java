@@ -88,10 +88,6 @@ public class FalconSteerMotor implements SteerWrapper {
 
     swerveAngleFXConfig.Feedback.SensorToMechanismRatio = chosenModule.angleGearRatio;
     swerveAngleFXConfig.ClosedLoopGeneral.ContinuousWrap = true;
-    /* Current Limiting */
-    swerveAngleFXConfig.CurrentLimits.SupplyCurrentLimitEnable =
-        chosenModule.json.angleEnableCurrentLimit;
-    swerveAngleFXConfig.CurrentLimits.SupplyCurrentLimit = chosenModule.json.angleCurrentLimit;
 
     /* PID Config */
     swerveAngleFXConfig.Slot0.kP = chosenModule.anglePID.kP;
@@ -102,6 +98,22 @@ public class FalconSteerMotor implements SteerWrapper {
     swerveAngleFXConfig.ClosedLoopRamps.withVoltageClosedLoopRampPeriod(
         chosenModule.json.closedLoopRamp);
     swerveAngleFXConfig.OpenLoopRamps.withVoltageOpenLoopRampPeriod(chosenModule.json.openLoopRamp);
+  }
+
+  public void withSupplyCurrent() {
+    /* Current Limiting */
+    swerveAngleFXConfig.CurrentLimits.SupplyCurrentLimitEnable =
+        chosenModule.json.angleEnableSupplyCurrentLimit;
+    swerveAngleFXConfig.CurrentLimits.SupplyCurrentLimit =
+        chosenModule.json.angleSupplyCurrentLimit;
+  }
+
+  public void withStatorCurrent() {
+    /* Current Limiting */
+    swerveAngleFXConfig.CurrentLimits.StatorCurrentLimitEnable =
+        chosenModule.json.angleEnableStatorCurrentLimit;
+    swerveAngleFXConfig.CurrentLimits.StatorCurrentLimit =
+        chosenModule.json.angleStatorCurrentLimit;
   }
 
   /*

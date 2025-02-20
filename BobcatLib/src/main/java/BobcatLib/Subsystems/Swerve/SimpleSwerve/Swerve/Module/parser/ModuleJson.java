@@ -9,21 +9,21 @@ public class ModuleJson {
   public String level = "";
   public double wheelCircumference = 0.0;
   /** Drive Current Limit */
-  public int driveCurrentLimit = 35;
-  /** Drive Current Threshold */
-  public int driveCurrentThreshold = 60;
-  /** Drive Current THreshold Time */
-  public double driveCurrentThresholdTime = 0.1;
+  public int driveSupplyCurrentLimit = 35;
+
+  public int driveStatorCurrentLimit = 100;
   /** Drive ENable Current Limit */
-  public boolean driveEnableCurrentLimit = true;
+  public boolean driveEnableSupplyCurrentLimit = false;
+
+  public boolean driveEnableStatorCurrentLimit = true;
   /** Angle Current Limit */
-  public int angleCurrentLimit = 25;
-  /** Angle Current Threshold */
-  public int angleCurrentThreshold = 40;
-  /** Angle Current ThresholdTime */
-  public double angleCurrentThresholdTime = 0.1;
+  public int angleSupplyCurrentLimit = 25;
+
+  public int angleStatorCurrentLimit = 25;
   /** ANgle Enable Current Limit */
-  public boolean angleEnableCurrentLimit = true;
+  public boolean angleEnableSupplyCurrentLimit = false;
+
+  public boolean angleEnableStatorCurrentLimit = true;
   /** Ioen Loop Ramp */
   public double openLoopRamp = 0.25;
   /** Closed Loop Ramp */

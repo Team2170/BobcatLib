@@ -110,9 +110,6 @@ public class VortexDriveMotor implements DriveWrapper {
     IdleMode motorMode = chosenModule.driveNeutralMode.asIdleMode();
     motorConfig.idleMode(motorMode);
 
-    /* Current Limiting */
-    motorConfig.smartCurrentLimit(chosenModule.json.driveCurrentLimit);
-
     /* PID Config */
     motorConfig
         .closedLoop
@@ -126,6 +123,13 @@ public class VortexDriveMotor implements DriveWrapper {
     motorConfig.closedLoopRampRate(chosenModule.json.closedLoopRamp);
     motorConfig.openLoopRampRate(chosenModule.json.openLoopRamp);
   }
+
+  public void withSupplyCurrent() {
+    /* Current Limiting */
+    motorConfig.smartCurrentLimit(chosenModule.json.driveSupplyCurrentLimit);
+  }
+
+  public void withStatorCurrent() {}
 
   /**
    * gets the velocity of the drive motor in rotations per second either using percentage output (

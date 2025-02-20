@@ -32,6 +32,10 @@ public class SimSteerMotor implements SteerWrapper {
     turnController.enableContinuousInput(-Math.PI, Math.PI);
   }
 
+  public void withSupplyCurrent() {}
+
+  public void withStatorCurrent() {}
+
   public void updateOutputs() {
     turnSim.setInputVoltage(MathUtil.clamp(turnAppliedVolts, -12.0, 12.0));
     turnSim.update(0.02);

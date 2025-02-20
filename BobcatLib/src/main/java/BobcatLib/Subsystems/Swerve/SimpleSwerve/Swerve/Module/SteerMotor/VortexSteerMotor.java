@@ -49,6 +49,7 @@ public class VortexSteerMotor implements SteerWrapper {
     mAngleMotor.configure(
         motorConfig, ResetMode.kResetSafeParameters, PersistMode.kNoPersistParameters);
   }
+
   /** Updates the Motor Outputs */
   public void updateOutputs() {
     Logger.recordOutput(
@@ -90,9 +91,6 @@ public class VortexSteerMotor implements SteerWrapper {
     IdleMode motorMode = chosenModule.angleNeutralMode.asIdleMode();
     motorConfig.idleMode(motorMode);
 
-    /* Current Limiting */
-    motorConfig.smartCurrentLimit(chosenModule.json.angleCurrentLimit);
-
     /* PID Config */
     motorConfig
         .closedLoop
@@ -105,6 +103,15 @@ public class VortexSteerMotor implements SteerWrapper {
     /* Open and Closed Loop Ramping */
     motorConfig.closedLoopRampRate(chosenModule.json.closedLoopRamp);
     motorConfig.openLoopRampRate(chosenModule.json.openLoopRamp);
+  }
+
+  public void withSupplyCurrent() {
+    /* Current Limiting */
+    motorConfig.smartCurrentLimit(chosenModule.json.angleSupplyCurrentLimit);
+  }
+
+  public void withStatorCurrent() {
+    /* Current Limiting */
   }
 
   /*
